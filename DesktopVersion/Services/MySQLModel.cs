@@ -1,12 +1,9 @@
-﻿
-// enable-migrations | add-migration <NameMigration> | update-database
-
+﻿// enable-migrations | add-migration <NameMigration> | update-database
 namespace DesktopVersion
 {
 	using MySql.Data.Entity;
 	using System.Data.Entity;
 
-	//
 	[DbConfigurationType(typeof(MySqlEFConfiguration))] //Тип модели конфигурации
 	public class MySQLModel : DbContext
 	{

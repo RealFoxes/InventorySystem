@@ -1,5 +1,4 @@
-﻿// enable-migrations | add-migration <NameMigration> | update-database
-namespace DesktopVersion
+﻿namespace DesktopVersion
 {
 	using System;
 	using System.Collections.Generic;

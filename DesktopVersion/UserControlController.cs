@@ -16,12 +16,12 @@ namespace DesktopVersion
 			UsersContorl
 		}
 
-		private static UserControlController instance;  //
-		public static UserControlController init()      //
-		{                                               // Singleton https://metanit.com/sharp/patterns/2.3.php
-			if (instance == null)                       //
-				instance = new UserControlController(); //
-			return instance;                            //
+		private static UserControlController instance; 
+		public static UserControlController init()     
+		{                                              
+			if (instance == null)                      
+				instance = new UserControlController();
+			return instance;                           
 		}
 
 		private UserControlController()
