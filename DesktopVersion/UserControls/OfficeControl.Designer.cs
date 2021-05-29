@@ -28,38 +28,48 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.Label labelSearch;
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.Label labelSearch;
-			this.labelAuthorizationsMain = new System.Windows.Forms.Label();
+			this.label = new System.Windows.Forms.Label();
 			this.dataGridViewMain = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.panelAddItem = new System.Windows.Forms.Panel();
+			this.panelAddOffice = new System.Windows.Forms.Panel();
 			this.textBoxOfficeName = new System.Windows.Forms.TextBox();
-			this.buttonItemDelete = new System.Windows.Forms.Button();
-			this.buttonItemAdd = new System.Windows.Forms.Button();
-			this.textBoxOwner = new System.Windows.Forms.TextBox();
+			this.buttonOfficeDelete = new System.Windows.Forms.Button();
+			this.buttonOfficeAdd = new System.Windows.Forms.Button();
 			this.textBoxAddress = new System.Windows.Forms.TextBox();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			labelSearch = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
-			this.panelAddItem.SuspendLayout();
+			this.panelAddOffice.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// labelAuthorizationsMain
+			// labelSearch
 			// 
-			this.labelAuthorizationsMain.AutoSize = true;
-			this.labelAuthorizationsMain.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			this.labelAuthorizationsMain.ForeColor = System.Drawing.Color.Firebrick;
-			this.labelAuthorizationsMain.Location = new System.Drawing.Point(50, 11);
-			this.labelAuthorizationsMain.Name = "labelAuthorizationsMain";
-			this.labelAuthorizationsMain.Size = new System.Drawing.Size(179, 48);
-			this.labelAuthorizationsMain.TabIndex = 5;
-			this.labelAuthorizationsMain.Text = "Добавить новый\r\nофис";
-			this.labelAuthorizationsMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			labelSearch.AutoSize = true;
+			labelSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			labelSearch.ForeColor = System.Drawing.Color.Firebrick;
+			labelSearch.Location = new System.Drawing.Point(12, 25);
+			labelSearch.Name = "labelSearch";
+			labelSearch.Size = new System.Drawing.Size(76, 24);
+			labelSearch.TabIndex = 19;
+			labelSearch.Text = "Поиск";
+			labelSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label
+			// 
+			this.label.AutoSize = true;
+			this.label.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.label.ForeColor = System.Drawing.Color.Firebrick;
+			this.label.Location = new System.Drawing.Point(50, 11);
+			this.label.Name = "label";
+			this.label.Size = new System.Drawing.Size(179, 48);
+			this.label.TabIndex = 5;
+			this.label.Text = "Добавить новый\r\nофис";
+			this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// dataGridViewMain
 			// 
@@ -81,9 +91,7 @@
 			this.dataGridViewMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column5,
-            this.Column2,
-            this.Column3});
-			this.dataGridViewMain.DoubleBuffered = true;
+            this.Column2});
 			this.dataGridViewMain.EnableHeadersVisualStyles = false;
 			this.dataGridViewMain.HeaderBgColor = System.Drawing.Color.Firebrick;
 			this.dataGridViewMain.HeaderForeColor = System.Drawing.Color.White;
@@ -101,6 +109,7 @@
 			this.Column1.HeaderText = "Идентификатор";
 			this.Column1.Name = "Column1";
 			this.Column1.ReadOnly = true;
+			this.Column1.Visible = false;
 			// 
 			// Column5
 			// 
@@ -114,24 +123,17 @@
 			this.Column2.Name = "Column2";
 			this.Column2.ReadOnly = true;
 			// 
-			// Column3
+			// panelAddOffice
 			// 
-			this.Column3.HeaderText = "Глава";
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			// 
-			// panelAddItem
-			// 
-			this.panelAddItem.Controls.Add(this.textBoxOfficeName);
-			this.panelAddItem.Controls.Add(this.buttonItemDelete);
-			this.panelAddItem.Controls.Add(this.buttonItemAdd);
-			this.panelAddItem.Controls.Add(this.textBoxOwner);
-			this.panelAddItem.Controls.Add(this.textBoxAddress);
-			this.panelAddItem.Controls.Add(this.labelAuthorizationsMain);
-			this.panelAddItem.Location = new System.Drawing.Point(1015, 10);
-			this.panelAddItem.Name = "panelAddItem";
-			this.panelAddItem.Size = new System.Drawing.Size(280, 800);
-			this.panelAddItem.TabIndex = 1;
+			this.panelAddOffice.Controls.Add(this.textBoxOfficeName);
+			this.panelAddOffice.Controls.Add(this.buttonOfficeDelete);
+			this.panelAddOffice.Controls.Add(this.buttonOfficeAdd);
+			this.panelAddOffice.Controls.Add(this.textBoxAddress);
+			this.panelAddOffice.Controls.Add(this.label);
+			this.panelAddOffice.Location = new System.Drawing.Point(1015, 10);
+			this.panelAddOffice.Name = "panelAddOffice";
+			this.panelAddOffice.Size = new System.Drawing.Size(280, 800);
+			this.panelAddOffice.TabIndex = 1;
 			// 
 			// textBoxOfficeName
 			// 
@@ -144,52 +146,36 @@
 			this.textBoxOfficeName.Size = new System.Drawing.Size(271, 29);
 			this.textBoxOfficeName.TabIndex = 16;
 			this.textBoxOfficeName.Tag = "Наименование";
-			this.textBoxOfficeName.Enter += new System.EventHandler(this.EnterInElementsRight);
-			this.textBoxOfficeName.Leave += new System.EventHandler(this.LeaveFromElementsRight);
 			// 
-			// buttonItemDelete
+			// buttonOfficeDelete
 			// 
-			this.buttonItemDelete.BackColor = System.Drawing.Color.Firebrick;
-			this.buttonItemDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.buttonItemDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonItemDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			this.buttonItemDelete.ForeColor = System.Drawing.Color.White;
-			this.buttonItemDelete.Location = new System.Drawing.Point(4, 426);
-			this.buttonItemDelete.Name = "buttonItemDelete";
-			this.buttonItemDelete.Size = new System.Drawing.Size(270, 52);
-			this.buttonItemDelete.TabIndex = 15;
-			this.buttonItemDelete.Text = "Удалить";
-			this.buttonItemDelete.UseVisualStyleBackColor = false;
-			this.buttonItemDelete.Click += new System.EventHandler(this.buttonItemDelete_Click);
+			this.buttonOfficeDelete.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonOfficeDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonOfficeDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonOfficeDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonOfficeDelete.ForeColor = System.Drawing.Color.White;
+			this.buttonOfficeDelete.Location = new System.Drawing.Point(4, 745);
+			this.buttonOfficeDelete.Name = "buttonOfficeDelete";
+			this.buttonOfficeDelete.Size = new System.Drawing.Size(270, 52);
+			this.buttonOfficeDelete.TabIndex = 15;
+			this.buttonOfficeDelete.Text = "Удалить";
+			this.buttonOfficeDelete.UseVisualStyleBackColor = false;
+			this.buttonOfficeDelete.Click += new System.EventHandler(this.buttonOfficeDelete_Click);
 			// 
-			// buttonItemAdd
+			// buttonOfficeAdd
 			// 
-			this.buttonItemAdd.BackColor = System.Drawing.Color.Firebrick;
-			this.buttonItemAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.buttonItemAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonItemAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			this.buttonItemAdd.ForeColor = System.Drawing.Color.White;
-			this.buttonItemAdd.Location = new System.Drawing.Point(4, 372);
-			this.buttonItemAdd.Name = "buttonItemAdd";
-			this.buttonItemAdd.Size = new System.Drawing.Size(270, 52);
-			this.buttonItemAdd.TabIndex = 15;
-			this.buttonItemAdd.Text = "Добавить";
-			this.buttonItemAdd.UseVisualStyleBackColor = false;
-			this.buttonItemAdd.Click += new System.EventHandler(this.buttonItemAdd_Click);
-			// 
-			// textBoxOwner
-			// 
-			this.textBoxOwner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.textBoxOwner.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-			this.textBoxOwner.Location = new System.Drawing.Point(3, 189);
-			this.textBoxOwner.MaxLength = 255;
-			this.textBoxOwner.Multiline = true;
-			this.textBoxOwner.Name = "textBoxOwner";
-			this.textBoxOwner.Size = new System.Drawing.Size(271, 41);
-			this.textBoxOwner.TabIndex = 13;
-			this.textBoxOwner.Tag = "Начальник офиса";
-			this.textBoxOwner.Enter += new System.EventHandler(this.EnterInElementsRight);
-			this.textBoxOwner.Leave += new System.EventHandler(this.LeaveFromElementsRight);
+			this.buttonOfficeAdd.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonOfficeAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonOfficeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonOfficeAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonOfficeAdd.ForeColor = System.Drawing.Color.White;
+			this.buttonOfficeAdd.Location = new System.Drawing.Point(4, 691);
+			this.buttonOfficeAdd.Name = "buttonOfficeAdd";
+			this.buttonOfficeAdd.Size = new System.Drawing.Size(270, 52);
+			this.buttonOfficeAdd.TabIndex = 15;
+			this.buttonOfficeAdd.Text = "Добавить";
+			this.buttonOfficeAdd.UseVisualStyleBackColor = false;
+			this.buttonOfficeAdd.Click += new System.EventHandler(this.buttonItemAdd_Click);
 			// 
 			// textBoxAddress
 			// 
@@ -202,8 +188,6 @@
 			this.textBoxAddress.Size = new System.Drawing.Size(271, 75);
 			this.textBoxAddress.TabIndex = 13;
 			this.textBoxAddress.Tag = "Адрес";
-			this.textBoxAddress.Enter += new System.EventHandler(this.EnterInElementsRight);
-			this.textBoxAddress.Leave += new System.EventHandler(this.LeaveFromElementsRight);
 			// 
 			// textBoxSearch
 			// 
@@ -218,31 +202,18 @@
 			this.textBoxSearch.Tag = "";
 			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			// 
-			// labelSearch
-			// 
-			labelSearch.AutoSize = true;
-			labelSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			labelSearch.ForeColor = System.Drawing.Color.Firebrick;
-			labelSearch.Location = new System.Drawing.Point(12, 25);
-			labelSearch.Name = "labelSearch";
-			labelSearch.Size = new System.Drawing.Size(76, 24);
-			labelSearch.TabIndex = 19;
-			labelSearch.Text = "Поиск";
-			labelSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// OfficeControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
 			this.Controls.Add(this.textBoxSearch);
 			this.Controls.Add(labelSearch);
-			this.Controls.Add(this.panelAddItem);
+			this.Controls.Add(this.panelAddOffice);
 			this.Controls.Add(this.dataGridViewMain);
-			this.DoubleBuffered = true;
 			this.Name = "OfficeControl";
 			this.Size = new System.Drawing.Size(1300, 820);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
-			this.panelAddItem.ResumeLayout(false);
-			this.panelAddItem.PerformLayout();
+			this.panelAddOffice.ResumeLayout(false);
+			this.panelAddOffice.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -251,17 +222,15 @@
 		#endregion
 
 		private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridViewMain;
-		private System.Windows.Forms.Panel panelAddItem;
+		private System.Windows.Forms.Panel panelAddOffice;
 		private System.Windows.Forms.TextBox textBoxAddress;
-		private System.Windows.Forms.Button buttonItemAdd;
-		private System.Windows.Forms.Button buttonItemDelete;
+		private System.Windows.Forms.Button buttonOfficeAdd;
+		private System.Windows.Forms.Button buttonOfficeDelete;
 		private System.Windows.Forms.TextBox textBoxOfficeName;
-		private System.Windows.Forms.Label labelAuthorizationsMain;
-		private System.Windows.Forms.TextBox textBoxOwner;
+		private System.Windows.Forms.Label label;
+		private System.Windows.Forms.TextBox textBoxSearch;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.TextBox textBoxSearch;
 	}
 }

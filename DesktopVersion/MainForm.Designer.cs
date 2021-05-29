@@ -39,6 +39,7 @@ namespace DesktopVersion
 			System.Windows.Forms.Panel panelUnderMenu;
 			System.Windows.Forms.Panel panelMenuLineUnderButton5;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			System.Windows.Forms.Panel panelMenuLineUnderButton6;
 			this.panelTop = new System.Windows.Forms.Panel();
 			this.labelName = new System.Windows.Forms.Label();
 			this.labelTopPanel = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@ namespace DesktopVersion
 			this.panelMenuRight = new System.Windows.Forms.Panel();
 			this.timerMenu = new System.Windows.Forms.Timer(this.components);
 			this.pictureBoxBackGround = new System.Windows.Forms.PictureBox();
+			this.buttonMenu6 = new Bunifu.Framework.UI.BunifuFlatButton();
 			panelMenuLineUnderButto3 = new System.Windows.Forms.Panel();
 			panelMenuLineUnderButton2 = new System.Windows.Forms.Panel();
 			panelMenuLineUnderButton1 = new System.Windows.Forms.Panel();
@@ -62,6 +64,7 @@ namespace DesktopVersion
 			panelMenuBottom = new System.Windows.Forms.Panel();
 			panelUnderMenu = new System.Windows.Forms.Panel();
 			panelMenuLineUnderButton5 = new System.Windows.Forms.Panel();
+			panelMenuLineUnderButton6 = new System.Windows.Forms.Panel();
 			this.panelTop.SuspendLayout();
 			this.panelMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoInMenu)).BeginInit();
@@ -229,6 +232,8 @@ namespace DesktopVersion
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.Firebrick;
+			this.panelMenu.Controls.Add(panelMenuLineUnderButton6);
+			this.panelMenu.Controls.Add(this.buttonMenu6);
 			this.panelMenu.Controls.Add(this.buttonMenu5);
 			this.panelMenu.Controls.Add(panelMenuLineUnderButton5);
 			this.panelMenu.Controls.Add(panelMenuBottom);
@@ -443,7 +448,7 @@ namespace DesktopVersion
 			this.buttonMenu1.selected = false;
 			this.buttonMenu1.Size = new System.Drawing.Size(60, 63);
 			this.buttonMenu1.TabIndex = 8;
-			this.buttonMenu1.Tag = DesktopVersion.UserControlController.E_Control.ItemsControl;
+			this.buttonMenu1.Tag = DesktopVersion.UserControlController.E_Control.ServerControl;
 			this.buttonMenu1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.buttonMenu1.Textcolor = System.Drawing.Color.White;
 			this.buttonMenu1.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
@@ -488,6 +493,56 @@ namespace DesktopVersion
 			this.pictureBoxBackGround.TabIndex = 5;
 			this.pictureBoxBackGround.TabStop = false;
 			this.pictureBoxBackGround.Visible = false;
+			// 
+			// panelMenuLineUnderButton6
+			// 
+			panelMenuLineUnderButton6.BackColor = System.Drawing.Color.White;
+			panelMenuLineUnderButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			panelMenuLineUnderButton6.Dock = System.Windows.Forms.DockStyle.Top;
+			panelMenuLineUnderButton6.Location = new System.Drawing.Point(0, 406);
+			panelMenuLineUnderButton6.Name = "panelMenuLineUnderButton6";
+			panelMenuLineUnderButton6.Size = new System.Drawing.Size(60, 3);
+			panelMenuLineUnderButton6.TabIndex = 13;
+			// 
+			// buttonMenu6
+			// 
+			this.buttonMenu6.Activecolor = System.Drawing.Color.Brown;
+			this.buttonMenu6.AutoSize = true;
+			this.buttonMenu6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.buttonMenu6.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonMenu6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonMenu6.BorderRadius = 1;
+			this.buttonMenu6.ButtonText = "";
+			this.buttonMenu6.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonMenu6.DisabledColor = System.Drawing.Color.Gray;
+			this.buttonMenu6.Dock = System.Windows.Forms.DockStyle.Top;
+			this.buttonMenu6.Font = new System.Drawing.Font("Century Gothic", 8.75F);
+			this.buttonMenu6.Iconcolor = System.Drawing.Color.Transparent;
+			this.buttonMenu6.Iconimage = global::DesktopVersion.Properties.Resources.exit_2;
+			this.buttonMenu6.Iconimage_right = null;
+			this.buttonMenu6.Iconimage_right_Selected = null;
+			this.buttonMenu6.Iconimage_Selected = null;
+			this.buttonMenu6.IconMarginLeft = 0;
+			this.buttonMenu6.IconMarginRight = 0;
+			this.buttonMenu6.IconRightVisible = false;
+			this.buttonMenu6.IconRightZoom = 0D;
+			this.buttonMenu6.IconVisible = true;
+			this.buttonMenu6.IconZoom = 50D;
+			this.buttonMenu6.IsTab = false;
+			this.buttonMenu6.Location = new System.Drawing.Point(0, 343);
+			this.buttonMenu6.Margin = new System.Windows.Forms.Padding(5);
+			this.buttonMenu6.Name = "buttonMenu6";
+			this.buttonMenu6.Normalcolor = System.Drawing.Color.Firebrick;
+			this.buttonMenu6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+			this.buttonMenu6.OnHoverTextColor = System.Drawing.Color.White;
+			this.buttonMenu6.selected = false;
+			this.buttonMenu6.Size = new System.Drawing.Size(60, 63);
+			this.buttonMenu6.TabIndex = 18;
+			this.buttonMenu6.Tag = UserControlController.E_Control.OrdersControl;
+			this.buttonMenu6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.buttonMenu6.Textcolor = System.Drawing.Color.White;
+			this.buttonMenu6.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
+			this.buttonMenu6.Click += new System.EventHandler(this.buttonsMenu_Click);
 			// 
 			// MainForm
 			// 
@@ -536,6 +591,7 @@ namespace DesktopVersion
 		public Bunifu.Framework.UI.BunifuFlatButton buttonMenu2;
 		public Bunifu.Framework.UI.BunifuFlatButton buttonMenu4;
 		public System.Windows.Forms.PictureBox pictureBoxBackGround;
+		private Bunifu.Framework.UI.BunifuFlatButton buttonMenu6;
 	}
 }
 

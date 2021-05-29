@@ -28,33 +28,26 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.Label labelRight1;
+			System.Windows.Forms.Label label;
 			System.Windows.Forms.Label labelRight2;
+			System.Windows.Forms.Label labelSearch;
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.Label labelSearch;
 			this.dataGridViewMain = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Отчество = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panelAddEmployee = new System.Windows.Forms.Panel();
 			this.datepickerBirthday = new ns1.BunifuDatepicker();
-			this.textBoxItemPatronymic = new System.Windows.Forms.TextBox();
-			this.textBoxItemSurname = new System.Windows.Forms.TextBox();
-			this.textBoxItemName = new System.Windows.Forms.TextBox();
-			this.buttonItemDelete = new System.Windows.Forms.Button();
-			this.buttonItemAdd = new System.Windows.Forms.Button();
+			this.textBoxEmployeePatronymic = new System.Windows.Forms.TextBox();
+			this.textBoxEmployeeSurname = new System.Windows.Forms.TextBox();
+			this.textBoxEmployeeName = new System.Windows.Forms.TextBox();
+			this.buttonEmployeeDelete = new System.Windows.Forms.Button();
+			this.buttonEmployeeAdd = new System.Windows.Forms.Button();
 			this.buttonAddNewJobPosition = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.comboBoxJobPosition = new System.Windows.Forms.ComboBox();
 			this.comboBoxOffices = new System.Windows.Forms.ComboBox();
 			this.panelAddJobPosition = new System.Windows.Forms.Panel();
-			this.TextBoxAddJobPosition = new Bunifu.Framework.UI.BunifuMetroTextbox();
+			this.textBoxAddJobPosition = new Bunifu.Framework.UI.BunifuMetroTextbox();
 			this.buttonAddJobPositionAdd = new System.Windows.Forms.Button();
 			this.buttonAddJobPositionDelete = new System.Windows.Forms.Button();
 			this.dataGridJobPosition = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -62,7 +55,14 @@
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.buttonClosePanelAddJobPosition = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
-			labelRight1 = new System.Windows.Forms.Label();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Отчество = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			label = new System.Windows.Forms.Label();
 			labelRight2 = new System.Windows.Forms.Label();
 			labelSearch = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
@@ -71,17 +71,17 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridJobPosition)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// labelRight1
+			// label
 			// 
-			labelRight1.AutoSize = true;
-			labelRight1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			labelRight1.ForeColor = System.Drawing.Color.Firebrick;
-			labelRight1.Location = new System.Drawing.Point(50, 0);
-			labelRight1.Name = "labelRight1";
-			labelRight1.Size = new System.Drawing.Size(188, 48);
-			labelRight1.TabIndex = 5;
-			labelRight1.Text = "Добавить нового\r\nсотрудника";
-			labelRight1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			label.AutoSize = true;
+			label.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			label.ForeColor = System.Drawing.Color.Firebrick;
+			label.Location = new System.Drawing.Point(50, 0);
+			label.Name = "label";
+			label.Size = new System.Drawing.Size(188, 48);
+			label.TabIndex = 5;
+			label.Text = "Добавить нового\r\nсотрудника";
+			label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// labelRight2
 			// 
@@ -94,6 +94,18 @@
 			labelRight2.TabIndex = 5;
 			labelRight2.Text = "Дата рождения:";
 			labelRight2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// labelSearch
+			// 
+			labelSearch.AutoSize = true;
+			labelSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			labelSearch.ForeColor = System.Drawing.Color.Firebrick;
+			labelSearch.Location = new System.Drawing.Point(11, 25);
+			labelSearch.Name = "labelSearch";
+			labelSearch.Size = new System.Drawing.Size(76, 24);
+			labelSearch.TabIndex = 21;
+			labelSearch.Text = "Поиск";
+			labelSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// dataGridViewMain
 			// 
@@ -114,13 +126,12 @@
 			this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column4,
             this.Column5,
             this.Column2,
             this.Отчество,
             this.Column6,
+            this.Column4,
             this.Column3});
-			this.dataGridViewMain.DoubleBuffered = true;
 			this.dataGridViewMain.EnableHeadersVisualStyles = false;
 			this.dataGridViewMain.HeaderBgColor = System.Drawing.Color.Firebrick;
 			this.dataGridViewMain.HeaderForeColor = System.Drawing.Color.White;
@@ -134,61 +145,19 @@
 			this.dataGridViewMain.Size = new System.Drawing.Size(1000, 750);
 			this.dataGridViewMain.TabIndex = 0;
 			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "Идентификатор";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			// 
-			// Column4
-			// 
-			this.Column4.HeaderText = "Должность";
-			this.Column4.Name = "Column4";
-			this.Column4.ReadOnly = true;
-			// 
-			// Column5
-			// 
-			this.Column5.HeaderText = "Имя";
-			this.Column5.Name = "Column5";
-			this.Column5.ReadOnly = true;
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "Фамилия";
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			// 
-			// Отчество
-			// 
-			this.Отчество.HeaderText = "Отчество";
-			this.Отчество.Name = "Отчество";
-			this.Отчество.ReadOnly = true;
-			// 
-			// Column6
-			// 
-			this.Column6.HeaderText = "Дата рождения";
-			this.Column6.Name = "Column6";
-			this.Column6.ReadOnly = true;
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "Офис";
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			// 
 			// panelAddEmployee
 			// 
 			this.panelAddEmployee.Controls.Add(this.datepickerBirthday);
-			this.panelAddEmployee.Controls.Add(this.textBoxItemPatronymic);
-			this.panelAddEmployee.Controls.Add(this.textBoxItemSurname);
-			this.panelAddEmployee.Controls.Add(this.textBoxItemName);
-			this.panelAddEmployee.Controls.Add(this.buttonItemDelete);
-			this.panelAddEmployee.Controls.Add(this.buttonItemAdd);
+			this.panelAddEmployee.Controls.Add(this.textBoxEmployeePatronymic);
+			this.panelAddEmployee.Controls.Add(this.textBoxEmployeeSurname);
+			this.panelAddEmployee.Controls.Add(this.textBoxEmployeeName);
+			this.panelAddEmployee.Controls.Add(this.buttonEmployeeDelete);
+			this.panelAddEmployee.Controls.Add(this.buttonEmployeeAdd);
 			this.panelAddEmployee.Controls.Add(this.buttonAddNewJobPosition);
 			this.panelAddEmployee.Controls.Add(this.comboBoxJobPosition);
 			this.panelAddEmployee.Controls.Add(this.comboBoxOffices);
 			this.panelAddEmployee.Controls.Add(labelRight2);
-			this.panelAddEmployee.Controls.Add(labelRight1);
+			this.panelAddEmployee.Controls.Add(label);
 			this.panelAddEmployee.Location = new System.Drawing.Point(1015, 10);
 			this.panelAddEmployee.Name = "panelAddEmployee";
 			this.panelAddEmployee.Size = new System.Drawing.Size(280, 800);
@@ -207,77 +176,71 @@
 			this.datepickerBirthday.TabIndex = 6;
 			this.datepickerBirthday.Value = new System.DateTime(2020, 5, 20, 3, 6, 1, 333);
 			// 
-			// textBoxItemPatronymic
+			// textBoxEmployeePatronymic
 			// 
-			this.textBoxItemPatronymic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.textBoxItemPatronymic.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-			this.textBoxItemPatronymic.Location = new System.Drawing.Point(6, 206);
-			this.textBoxItemPatronymic.MaxLength = 255;
-			this.textBoxItemPatronymic.Multiline = true;
-			this.textBoxItemPatronymic.Name = "textBoxItemPatronymic";
-			this.textBoxItemPatronymic.Size = new System.Drawing.Size(271, 29);
-			this.textBoxItemPatronymic.TabIndex = 5;
-			this.textBoxItemPatronymic.Tag = "Отчество";
-			this.textBoxItemPatronymic.Enter += new System.EventHandler(this.EnterInElementsRight);
-			this.textBoxItemPatronymic.Leave += new System.EventHandler(this.LeaveFromElementsRight);
+			this.textBoxEmployeePatronymic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxEmployeePatronymic.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxEmployeePatronymic.Location = new System.Drawing.Point(6, 206);
+			this.textBoxEmployeePatronymic.MaxLength = 255;
+			this.textBoxEmployeePatronymic.Multiline = true;
+			this.textBoxEmployeePatronymic.Name = "textBoxEmployeePatronymic";
+			this.textBoxEmployeePatronymic.Size = new System.Drawing.Size(271, 29);
+			this.textBoxEmployeePatronymic.TabIndex = 5;
+			this.textBoxEmployeePatronymic.Tag = "Отчество";
 			// 
-			// textBoxItemSurname
+			// textBoxEmployeeSurname
 			// 
-			this.textBoxItemSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.textBoxItemSurname.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-			this.textBoxItemSurname.Location = new System.Drawing.Point(6, 171);
-			this.textBoxItemSurname.MaxLength = 255;
-			this.textBoxItemSurname.Multiline = true;
-			this.textBoxItemSurname.Name = "textBoxItemSurname";
-			this.textBoxItemSurname.Size = new System.Drawing.Size(271, 29);
-			this.textBoxItemSurname.TabIndex = 4;
-			this.textBoxItemSurname.Tag = "Фамилия";
-			this.textBoxItemSurname.Enter += new System.EventHandler(this.EnterInElementsRight);
-			this.textBoxItemSurname.Leave += new System.EventHandler(this.LeaveFromElementsRight);
+			this.textBoxEmployeeSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxEmployeeSurname.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxEmployeeSurname.Location = new System.Drawing.Point(6, 171);
+			this.textBoxEmployeeSurname.MaxLength = 255;
+			this.textBoxEmployeeSurname.Multiline = true;
+			this.textBoxEmployeeSurname.Name = "textBoxEmployeeSurname";
+			this.textBoxEmployeeSurname.Size = new System.Drawing.Size(271, 29);
+			this.textBoxEmployeeSurname.TabIndex = 4;
+			this.textBoxEmployeeSurname.Tag = "Фамилия";
 			// 
-			// textBoxItemName
+			// textBoxEmployeeName
 			// 
-			this.textBoxItemName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.textBoxItemName.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-			this.textBoxItemName.Location = new System.Drawing.Point(6, 136);
-			this.textBoxItemName.MaxLength = 255;
-			this.textBoxItemName.Multiline = true;
-			this.textBoxItemName.Name = "textBoxItemName";
-			this.textBoxItemName.Size = new System.Drawing.Size(271, 29);
-			this.textBoxItemName.TabIndex = 3;
-			this.textBoxItemName.Tag = "Имя";
-			this.textBoxItemName.Enter += new System.EventHandler(this.EnterInElementsRight);
-			this.textBoxItemName.Leave += new System.EventHandler(this.LeaveFromElementsRight);
+			this.textBoxEmployeeName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxEmployeeName.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxEmployeeName.Location = new System.Drawing.Point(6, 136);
+			this.textBoxEmployeeName.MaxLength = 255;
+			this.textBoxEmployeeName.Multiline = true;
+			this.textBoxEmployeeName.Name = "textBoxEmployeeName";
+			this.textBoxEmployeeName.Size = new System.Drawing.Size(271, 29);
+			this.textBoxEmployeeName.TabIndex = 3;
+			this.textBoxEmployeeName.Tag = "Имя";
 			// 
-			// buttonItemDelete
+			// buttonEmployeeDelete
 			// 
-			this.buttonItemDelete.BackColor = System.Drawing.Color.Firebrick;
-			this.buttonItemDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.buttonItemDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonItemDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			this.buttonItemDelete.ForeColor = System.Drawing.Color.White;
-			this.buttonItemDelete.Location = new System.Drawing.Point(5, 467);
-			this.buttonItemDelete.Name = "buttonItemDelete";
-			this.buttonItemDelete.Size = new System.Drawing.Size(270, 52);
-			this.buttonItemDelete.TabIndex = 15;
-			this.buttonItemDelete.Text = "Удалить";
-			this.buttonItemDelete.UseVisualStyleBackColor = false;
-			this.buttonItemDelete.Click += new System.EventHandler(this.buttonItemDelete_Click);
+			this.buttonEmployeeDelete.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonEmployeeDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonEmployeeDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonEmployeeDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonEmployeeDelete.ForeColor = System.Drawing.Color.White;
+			this.buttonEmployeeDelete.Location = new System.Drawing.Point(5, 740);
+			this.buttonEmployeeDelete.Name = "buttonEmployeeDelete";
+			this.buttonEmployeeDelete.Size = new System.Drawing.Size(270, 52);
+			this.buttonEmployeeDelete.TabIndex = 15;
+			this.buttonEmployeeDelete.Text = "Удалить";
+			this.buttonEmployeeDelete.UseVisualStyleBackColor = false;
+			this.buttonEmployeeDelete.Click += new System.EventHandler(this.buttonEmployeeDelete_Click);
 			// 
-			// buttonItemAdd
+			// buttonEmployeeAdd
 			// 
-			this.buttonItemAdd.BackColor = System.Drawing.Color.Firebrick;
-			this.buttonItemAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.buttonItemAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonItemAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			this.buttonItemAdd.ForeColor = System.Drawing.Color.White;
-			this.buttonItemAdd.Location = new System.Drawing.Point(5, 409);
-			this.buttonItemAdd.Name = "buttonItemAdd";
-			this.buttonItemAdd.Size = new System.Drawing.Size(270, 52);
-			this.buttonItemAdd.TabIndex = 7;
-			this.buttonItemAdd.Text = "Добавить";
-			this.buttonItemAdd.UseVisualStyleBackColor = false;
-			this.buttonItemAdd.Click += new System.EventHandler(this.buttonItemAdd_Click);
+			this.buttonEmployeeAdd.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonEmployeeAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonEmployeeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonEmployeeAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonEmployeeAdd.ForeColor = System.Drawing.Color.White;
+			this.buttonEmployeeAdd.Location = new System.Drawing.Point(5, 682);
+			this.buttonEmployeeAdd.Name = "buttonEmployeeAdd";
+			this.buttonEmployeeAdd.Size = new System.Drawing.Size(270, 52);
+			this.buttonEmployeeAdd.TabIndex = 7;
+			this.buttonEmployeeAdd.Text = "Добавить";
+			this.buttonEmployeeAdd.UseVisualStyleBackColor = false;
+			this.buttonEmployeeAdd.Click += new System.EventHandler(this.buttonItemAdd_Click);
 			// 
 			// buttonAddNewJobPosition
 			// 
@@ -315,7 +278,6 @@
 			this.buttonAddNewJobPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.buttonAddNewJobPosition.Textcolor = System.Drawing.Color.White;
 			this.buttonAddNewJobPosition.TextFont = new System.Drawing.Font("Century Gothic", 20F);
-			this.buttonAddNewJobPosition.Click += new System.EventHandler(this.buttonAddNewJobPosition_Click);
 			// 
 			// comboBoxJobPosition
 			// 
@@ -329,8 +291,6 @@
 			this.comboBoxJobPosition.Size = new System.Drawing.Size(221, 29);
 			this.comboBoxJobPosition.TabIndex = 1;
 			this.comboBoxJobPosition.Tag = "Должность";
-			this.comboBoxJobPosition.Enter += new System.EventHandler(this.EnterInElementsRight);
-			this.comboBoxJobPosition.Leave += new System.EventHandler(this.LeaveFromElementsRight);
 			// 
 			// comboBoxOffices
 			// 
@@ -344,13 +304,11 @@
 			this.comboBoxOffices.Size = new System.Drawing.Size(272, 29);
 			this.comboBoxOffices.TabIndex = 2;
 			this.comboBoxOffices.Tag = "Офис";
-			this.comboBoxOffices.Enter += new System.EventHandler(this.EnterInElementsRight);
-			this.comboBoxOffices.Leave += new System.EventHandler(this.LeaveFromElementsRight);
 			// 
 			// panelAddJobPosition
 			// 
 			this.panelAddJobPosition.BackColor = System.Drawing.Color.Firebrick;
-			this.panelAddJobPosition.Controls.Add(this.TextBoxAddJobPosition);
+			this.panelAddJobPosition.Controls.Add(this.textBoxAddJobPosition);
 			this.panelAddJobPosition.Controls.Add(this.buttonAddJobPositionAdd);
 			this.panelAddJobPosition.Controls.Add(this.buttonAddJobPositionDelete);
 			this.panelAddJobPosition.Controls.Add(this.dataGridJobPosition);
@@ -360,28 +318,25 @@
 			this.panelAddJobPosition.Size = new System.Drawing.Size(450, 300);
 			this.panelAddJobPosition.TabIndex = 3;
 			this.panelAddJobPosition.Visible = false;
-			this.panelAddJobPosition.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelAddTypеOfItem_MouseDown);
-			this.panelAddJobPosition.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelAddTypеOfItem_MouseMove);
-			this.panelAddJobPosition.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelAddTypеOfItem_MouseUp);
 			// 
-			// TextBoxAddJobPosition
+			// textBoxAddJobPosition
 			// 
-			this.TextBoxAddJobPosition.BackColor = System.Drawing.Color.White;
-			this.TextBoxAddJobPosition.BorderColorFocused = System.Drawing.Color.Firebrick;
-			this.TextBoxAddJobPosition.BorderColorIdle = System.Drawing.Color.Firebrick;
-			this.TextBoxAddJobPosition.BorderColorMouseHover = System.Drawing.Color.Firebrick;
-			this.TextBoxAddJobPosition.BorderThickness = 1;
-			this.TextBoxAddJobPosition.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.TextBoxAddJobPosition.Font = new System.Drawing.Font("Segoe UI", 11F);
-			this.TextBoxAddJobPosition.ForeColor = System.Drawing.Color.Gray;
-			this.TextBoxAddJobPosition.isPassword = false;
-			this.TextBoxAddJobPosition.Location = new System.Drawing.Point(17, 262);
-			this.TextBoxAddJobPosition.Margin = new System.Windows.Forms.Padding(4);
-			this.TextBoxAddJobPosition.Name = "TextBoxAddJobPosition";
-			this.TextBoxAddJobPosition.Size = new System.Drawing.Size(197, 30);
-			this.TextBoxAddJobPosition.TabIndex = 15;
-			this.TextBoxAddJobPosition.Tag = "";
-			this.TextBoxAddJobPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.textBoxAddJobPosition.BackColor = System.Drawing.Color.White;
+			this.textBoxAddJobPosition.BorderColorFocused = System.Drawing.Color.Firebrick;
+			this.textBoxAddJobPosition.BorderColorIdle = System.Drawing.Color.Firebrick;
+			this.textBoxAddJobPosition.BorderColorMouseHover = System.Drawing.Color.Firebrick;
+			this.textBoxAddJobPosition.BorderThickness = 1;
+			this.textBoxAddJobPosition.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.textBoxAddJobPosition.Font = new System.Drawing.Font("Segoe UI", 11F);
+			this.textBoxAddJobPosition.ForeColor = System.Drawing.Color.Gray;
+			this.textBoxAddJobPosition.isPassword = false;
+			this.textBoxAddJobPosition.Location = new System.Drawing.Point(17, 262);
+			this.textBoxAddJobPosition.Margin = new System.Windows.Forms.Padding(4);
+			this.textBoxAddJobPosition.Name = "textBoxAddJobPosition";
+			this.textBoxAddJobPosition.Size = new System.Drawing.Size(197, 30);
+			this.textBoxAddJobPosition.TabIndex = 15;
+			this.textBoxAddJobPosition.Tag = "";
+			this.textBoxAddJobPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
 			// buttonAddJobPositionAdd
 			// 
@@ -431,7 +386,6 @@
 			this.dataGridJobPosition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-			this.dataGridJobPosition.DoubleBuffered = true;
 			this.dataGridJobPosition.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
 			this.dataGridJobPosition.EnableHeadersVisualStyles = false;
 			this.dataGridJobPosition.GridColor = System.Drawing.Color.Firebrick;
@@ -458,6 +412,7 @@
 			this.dataGridViewTextBoxColumn1.HeaderText = "Идентификатор";
 			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			this.dataGridViewTextBoxColumn1.Visible = false;
 			this.dataGridViewTextBoxColumn1.Width = 150;
 			// 
 			// dataGridViewTextBoxColumn2
@@ -482,7 +437,6 @@
 			this.buttonClosePanelAddJobPosition.TabIndex = 5;
 			this.buttonClosePanelAddJobPosition.Text = "X";
 			this.buttonClosePanelAddJobPosition.UseVisualStyleBackColor = true;
-			this.buttonClosePanelAddJobPosition.Click += new System.EventHandler(this.buttonClosePanelAddJobPosition_Click);
 			// 
 			// textBoxSearch
 			// 
@@ -497,17 +451,48 @@
 			this.textBoxSearch.Tag = "";
 			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			// 
-			// labelSearch
+			// Column1
 			// 
-			labelSearch.AutoSize = true;
-			labelSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			labelSearch.ForeColor = System.Drawing.Color.Firebrick;
-			labelSearch.Location = new System.Drawing.Point(11, 25);
-			labelSearch.Name = "labelSearch";
-			labelSearch.Size = new System.Drawing.Size(76, 24);
-			labelSearch.TabIndex = 21;
-			labelSearch.Text = "Поиск";
-			labelSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Column1.HeaderText = "Идентификатор";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Visible = false;
+			// 
+			// Column5
+			// 
+			this.Column5.HeaderText = "Имя";
+			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
+			// 
+			// Column2
+			// 
+			this.Column2.HeaderText = "Фамилия";
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			// 
+			// Отчество
+			// 
+			this.Отчество.HeaderText = "Отчество";
+			this.Отчество.Name = "Отчество";
+			this.Отчество.ReadOnly = true;
+			// 
+			// Column6
+			// 
+			this.Column6.HeaderText = "Дата рождения";
+			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this.Column4.HeaderText = "Должность";
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this.Column3.HeaderText = "Офис";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
 			// 
 			// EmployeesControl
 			// 
@@ -517,7 +502,6 @@
 			this.Controls.Add(this.panelAddJobPosition);
 			this.Controls.Add(this.panelAddEmployee);
 			this.Controls.Add(this.dataGridViewMain);
-			this.DoubleBuffered = true;
 			this.Name = "EmployeesControl";
 			this.Size = new System.Drawing.Size(1300, 820);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
@@ -541,23 +525,23 @@
 		private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridJobPosition;
 		private System.Windows.Forms.Button buttonAddJobPositionDelete;
 		private System.Windows.Forms.Button buttonClosePanelAddJobPosition;
-		private Bunifu.Framework.UI.BunifuMetroTextbox TextBoxAddJobPosition;
+		private Bunifu.Framework.UI.BunifuMetroTextbox textBoxAddJobPosition;
 		private System.Windows.Forms.Button buttonAddJobPositionAdd;
-		private System.Windows.Forms.Button buttonItemAdd;
-		private System.Windows.Forms.Button buttonItemDelete;
-		private System.Windows.Forms.TextBox textBoxItemName;
+		private System.Windows.Forms.Button buttonEmployeeAdd;
+		private System.Windows.Forms.Button buttonEmployeeDelete;
+		private System.Windows.Forms.TextBox textBoxEmployeeName;
+		private ns1.BunifuDatepicker datepickerBirthday;
+		private System.Windows.Forms.TextBox textBoxEmployeePatronymic;
+		private System.Windows.Forms.TextBox textBoxEmployeeSurname;
+		private System.Windows.Forms.TextBox textBoxSearch;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Отчество;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-		private ns1.BunifuDatepicker datepickerBirthday;
-		private System.Windows.Forms.TextBox textBoxItemPatronymic;
-		private System.Windows.Forms.TextBox textBoxItemSurname;
-		private System.Windows.Forms.TextBox textBoxSearch;
 	}
 }

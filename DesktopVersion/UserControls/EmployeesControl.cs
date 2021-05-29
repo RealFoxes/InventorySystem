@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopVersion.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -10,230 +11,98 @@ namespace DesktopVersion
 {
 	public partial class EmployeesControl : UserControl
 	{
-		private bool dragging = false;
-		private Point dragCursorPoint, dragFormPoint;
-		private MySQLModel Model = SessionClass.init().Model;
+		private MySQLModel context = SessionClass.Instance().Context;
 		public EmployeesControl()
 		{
 			InitializeComponent();
-			foreach (Control Element in panelAddEmployee.Controls.Cast<Control>().OrderBy(c => c.TabIndex)) // Первоначальная прогрузка подсказок на контролах
-			{
-				if (Element.Tag != null)
-				{
-					if (Element.Text == "")
-					{
-						Element.Text = Element.Tag.ToString();
-						Element.ForeColor = Color.Gray;
-					}
-				}
-			}
-			Model = new MySQLModel();//Подгрузка комбобоксов
-			foreach (Office office in Model.Offices)
-			{
-				comboBoxOffices.Items.Add(office.Name.ToString());
-			}
-			foreach (JobPosition TypeOfIt in Model.JobPositions)//cboxHour.Items.Clear() Подругзка после добавления и удаления
-			{
-				comboBoxJobPosition.Items.Add(TypeOfIt.Name.ToString());
-			}
 
-			Utilities.ListToDataGridViewWithoutHat(Model.Employees.ToListAsync().Result, dataGridViewMain);
-			Utilities.ListToDataGridViewWithoutHat(Model.JobPositions.ToListAsync().Result, dataGridJobPosition);
+			DragPanel dragPanel = new DragPanel(panelAddJobPosition, buttonClosePanelAddJobPosition, buttonAddNewJobPosition);
+
+			panelAddEmployee.SignOnEventControlsToShowHint();
+
+			comboBoxOffices.AddClearEntities<Office>(context, "Name");
+			comboBoxJobPosition.AddClearEntities<JobPosition>(context, "Name");
+
+			dataGridViewMain.AddClearRange(context.Employees.ToList());
+			dataGridJobPosition.AddClearRange(context.JobPositions.ToList());
 		}
-		private void EnterInElementsRight(object sender, EventArgs e) //При входе в элемент открузка подсказки
-		{
-			Control Element = (Control)sender;
-			if (Element.Tag != null)
-			{
-				if (Element.Text == Element.Tag.ToString())
-				{
-					Element.Text = "";
-				}
-				Element.ForeColor = Color.Black;
-			}
-		}
-
-		private void LeaveFromElementsRight(object sender, EventArgs e) //И наоборот
-		{
-			Control Element = (Control)sender;
-			if (Element.Tag != null)
-			{
-				if (Element.Text == "")
-				{
-					Element.Text = Element.Tag.ToString();
-					Element.ForeColor = Color.Gray;
-				}
-			}
-
-		}
-		private void buttonAddNewJobPosition_Click(object sender, EventArgs e)//Открытие панельки по добавлению типа предмета
-		{
-			if (!panelAddJobPosition.Visible)
-			{
-				panelAddJobPosition.Visible = true;
-				dataGridJobPosition.ClearSelection();
-				Point p = GetPositionInForm(buttonAddNewJobPosition);
-				panelAddJobPosition.Location = new Point(p.X - panelAddJobPosition.Width, p.Y);
-			}
-		}
-
-		public Point GetPositionInForm(Control ctrl) // Получение координаты в форме а не в панельке
-		{
-			Point p = ctrl.Location;
-			Control parent = ctrl.Parent;
-			while (!(parent is Form))
-			{
-				p.Offset(parent.Location.X, parent.Location.Y);
-				parent = parent.Parent;
-			}
-			return p;
-		}
-
-		private void buttonClosePanelAddJobPosition_Click(object sender, EventArgs e)//Закрытие кнопки МБ тут сохранение данных
-		{
-			panelAddJobPosition.Visible = false;
-
-		}
-
-		#region DragPanelAddJobPosition
-		private void panelAddTypеOfItem_MouseUp(object sender, MouseEventArgs e)
-		{
-			dragging = false;
-		}
-
-		private void panelAddTypеOfItem_MouseMove(object sender, MouseEventArgs e)
-		{
-			if (dragging)
-			{
-
-				Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
-				panelAddJobPosition.Location = Point.Add(dragFormPoint, new Size(dif));
-			}
-		}
-
-		private void panelAddTypеOfItem_MouseDown(object sender, MouseEventArgs e)
-		{
-			dragging = true;
-			dragCursorPoint = Cursor.Position;
-			dragFormPoint = panelAddJobPosition.Location;
-		}
-		#endregion
-
 		private void buttonAddJobPositionDelete_Click(object sender, EventArgs e)
 		{
 			if (dataGridJobPosition.SelectedRows.Count > 0)
 			{
-
-
-				DialogResult dialogResult = MessageBox.Show("Вы уверенны что хотите удалить тип предмета", "Потверждение", MessageBoxButtons.YesNo);
+				DialogResult dialogResult = MessageBox.Show("Вы уверенны что хотите удалить должность?", "Потверждение", MessageBoxButtons.YesNo);
 				if (dialogResult == DialogResult.Yes)
 				{
-					int cell = Convert.ToInt32(dataGridJobPosition.SelectedRows[0].Cells[0].Value);
-					Model.JobPositions.Remove(Model.JobPositions.Single(ToI => ToI.Id == cell));
-					Model.SaveChanges();
-					Utilities.ListToDataGridViewWithoutHat(Model.JobPositions.ToListAsync().Result, dataGridJobPosition);
-					comboBoxJobPosition.Items.Clear();
-					foreach (JobPosition TypeOfIt in Model.JobPositions)//cboxHour.Items.Clear() Подругзка после добавления и удаления
-					{
-						comboBoxJobPosition.Items.Add(TypeOfIt.Name.ToString());
-					}
+					JobPosition jobPosition = (JobPosition)dataGridJobPosition.SelectedRows[0].Tag;
+					context.JobPositions.Remove(jobPosition);
+					context.SaveChanges();
+
+					dataGridJobPosition.AddClearRange(context.JobPositions.ToList());
+					comboBoxJobPosition.AddClearEntities<JobPosition>(context, "Name");
 				}
 			}
-			else
-			{
-				MessageBox.Show("Не выбран тип предмета");
-			}
+			else 
+				MessageBox.Show("Не выбрана должность");
 		}
 
 		private void buttonItemAdd_Click(object sender, EventArgs e)
 		{
-			if (comboBoxJobPosition.SelectedItem != null && comboBoxOffices.SelectedItem != null)
+			if (panelAddEmployee.CheckFullnessOfContols())
 			{
-				bool Contains = true;
-				foreach (Control Element in panelAddEmployee.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
-				{
-					if (Element.Tag != null)
-					{
-						if (Element.Text == Element.Tag.ToString())
-						{
-							Contains = false;
-						}
-					}
+				Employee employee = new Employee();
+				employee.JobPosition = (JobPosition)comboBoxJobPosition.SelectedItem;
+				employee.Office = (Office)comboBoxOffices.SelectedItem;
+				employee.Birthdate = datepickerBirthday.Value;
+				employee.Name = textBoxEmployeeName.Text;
+				employee.Patronymic = textBoxEmployeeSurname.Text;
+				employee.Surname = textBoxEmployeePatronymic.Text;
 
-				}
-				if (!Contains)
-				{
-					MessageBox.Show("Один или несколько параметров не заполнены");
-				}
-				else
-				{
-					JobPosition JobPosition = Model.JobPositions.Where(ToI => ToI.Name == comboBoxJobPosition.SelectedItem.ToString()).First();
-					Office _office = Model.Offices.Where(off => off.Name == comboBoxOffices.SelectedItem.ToString()).First();
-					String _name = textBoxItemName.Text;
-					String _surname = textBoxItemSurname.Text;
-					String _patronymic = textBoxItemPatronymic.Text;
-					DateTime _birthdate = datepickerBirthday.Value;
-					Employee employee = new Employee { JobPosition = JobPosition, Office = _office, Birthdate = _birthdate, Name = _name, Patronymic = _patronymic, Surname = _surname };
-					Model.Employees.Add(employee);
-					Model.SaveChanges();
-					Utilities.ListToDataGridViewWithoutHat(Model.Employees.ToListAsync().Result, dataGridViewMain);
-				}
-			}
-			else
-			{
-				MessageBox.Show("Один или несколько параметров не заполненые");
+				context.Employees.Add(employee);
+				context.SaveChanges();
+				dataGridViewMain.AddClearRange(context.Employees.ToList());
+
 			}
 		}
 
-		private void buttonItemDelete_Click(object sender, EventArgs e)
+		private void buttonEmployeeDelete_Click(object sender, EventArgs e)
 		{
 			if (dataGridViewMain.SelectedRows.Count > 0)
 			{
-
-				DialogResult dialogResult = MessageBox.Show("Вы уверенны что хотите удалить предмет", "Потверждение", MessageBoxButtons.YesNo);
+				DialogResult dialogResult = MessageBox.Show("Вы уверенны что хотите удалить сотрудника?", "Потверждение", MessageBoxButtons.YesNo);
 				if (dialogResult == DialogResult.Yes)
 				{
-					int cell = Convert.ToInt32(dataGridViewMain.SelectedRows[0].Cells[0].Value);
-					Model.Employees.Remove(Model.Employees.Single(ToI => ToI.Id == cell));
-					Model.SaveChanges();
-					Utilities.ListToDataGridViewWithoutHat(Model.Employees.ToListAsync().Result, dataGridViewMain);
+					Employee employee = (Employee)dataGridViewMain.SelectedRows[0].Tag;
+
+					context.Employees.Remove(employee);
+					context.SaveChanges();
+					dataGridViewMain.AddClearRange(context.Employees.ToList());
 				}
 			}
 			else
-			{
-				MessageBox.Show("Не выбран предмет");
-			}
+				MessageBox.Show("Не выбран сотрудник");
 		}
 
 		private void textBoxSearch_TextChanged(object sender, EventArgs e)
 		{
-			List<Employee> employee = Model.Employees.ToListAsync().Result;
-			Utilities.ListToDataGridViewWithoutHat(employee.Where(r => r.Surname.StartsWith(textBoxSearch.Text)).ToList(), dataGridViewMain);
+			List<Employee> employee = context.Employees.ToList();
+			dataGridViewMain.AddClearRange(employee.Where(r => r.Surname.StartsWith(textBoxSearch.Text)).ToList());
 		}
 
 		private void buttonAddJobPositionAdd_Click(object sender, EventArgs e)
 		{
-			if (TextBoxAddJobPosition.Text != string.Empty)
+			if (panelAddJobPosition.CheckFullnessOfContols())
 			{
-				JobPosition JobPosition = new JobPosition { Name = TextBoxAddJobPosition.Text };
-				Model.JobPositions.Add(JobPosition);
-				Console.WriteLine("Добавил новое значение: " + TextBoxAddJobPosition.Text);
-				Model.SaveChanges();
-				TextBoxAddJobPosition.Text = string.Empty;
-				Utilities.ListToDataGridViewWithoutHat(Model.JobPositions.ToListAsync().Result, dataGridJobPosition);
-				comboBoxJobPosition.Items.Clear();
-				foreach (JobPosition TypeOfIt in Model.JobPositions)
-				{
-					comboBoxJobPosition.Items.Add(TypeOfIt.Name.ToString());
-				}
-			}
-			else
-			{
-				MessageBox.Show("Строка не можзет содержать пустого значения!");
+				JobPosition jobPosition = new JobPosition();
+				jobPosition.Name = textBoxAddJobPosition.Text;
+
+				context.JobPositions.Add(jobPosition);
+				context.SaveChanges();
+
+				textBoxAddJobPosition.Text = string.Empty;
+
+				dataGridJobPosition.AddClearRange(context.JobPositions.ToList());
+				comboBoxJobPosition.AddClearEntities<JobPosition>(context, "Name");
 			}
 		}
-
-
-
 	}
 }

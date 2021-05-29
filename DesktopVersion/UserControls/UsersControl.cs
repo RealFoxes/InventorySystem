@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopVersion.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -10,109 +11,57 @@ namespace DesktopVersion
 {
 	public partial class UsersControl : UserControl
 	{
-		private MySQLModel Model = SessionClass.init().Model;
+		private MySQLModel context = SessionClass.Instance().Context;
 
 		public UsersControl()
 		{
 			InitializeComponent();
-			foreach (Control Element in panelAddItem.Controls.Cast<Control>().OrderBy(c => c.TabIndex)) // Первоначальная прогрузка подсказок на контролах
-			{
-				if (Element.Tag != null)
-				{
-					if (Element.Text == "")
-					{
-						Element.Text = Element.Tag.ToString();
-						Element.ForeColor = Color.Gray;
-					}
-				}
-			}
-			Model = new MySQLModel();//Подгрузка комбобоксов
-			comboBoxEmployees.DisplayMember = "surname";
-			comboBoxEmployees.ValueMember = "Id";
 
-			foreach (Employee employee in Model.Employees)
-			{
+			panelAddUser.SignOnEventControlsToShowHint();
 
-				comboBoxEmployees.Items.Add(employee);
-			}
+			comboBoxEmployees.AddClearEntities<Employee>(context, "Surname");
 
-			Utilities.ListToDataGridViewWithoutHat(Model.Users.ToListAsync().Result, dataGridViewMain);
-
-
-
+			dataGridViewMain.AddClearRange(context.Users.ToList());
 		}
 
-		private void EnterInElementsRight(object sender, EventArgs e) //При входе в элемент открузка подсказки
+		private void buttonUserAdd_Click(object sender, EventArgs e)
 		{
-			Control Element = (Control)sender;
-			if (Element.Tag != null)
+			if (panelAddUser.CheckFullnessOfContols())
 			{
-				if (Element.Text == Element.Tag.ToString())
-				{
-					Element.Text = "";
-				}
-				Element.ForeColor = Color.Black;
+				User user = new User();
+				user.Username = textBoxUserLogin.Text;
+				user.Password = Utilities.GenerateHash(textBoxPassword.Text);
+				user.AccessLVL = (User.E_Access)comboBoxAccessLVL.SelectedIndex;
+				user.Employee = (Employee)comboBoxEmployees.SelectedItem;
+				context.Users.Add(user);
+				context.SaveChanges();
+				dataGridViewMain.AddClearRange(context.Users.ToList());
 			}
 		}
 
-		private void LeaveFromElementsRight(object sender, EventArgs e) //И наоборот
-		{
-			Control Element = (Control)sender;
-			if (Element.Tag != null)
-			{
-				if (Element.Text == "")
-				{
-					Element.Text = Element.Tag.ToString();
-					Element.ForeColor = Color.Gray;
-				}
-			}
-
-		}
-
-
-
-		private void buttonItemAdd_Click(object sender, EventArgs e)
-		{
-			if (Utilities.ContorslsIsNotEmptyWithHint(panelAddItem))
-			{
-				Employee employee = Model.Employees.Where(off => off.Id == ((Employee)comboBoxEmployees.SelectedItem).Id).First();
-				String username = textBoxItemName.Text;
-				String password = Utilities.GenerateHash(textBoxDetails.Text);
-				User user = new User { AccessLVL = (User.E_Access)comboBoxAccessLVL.SelectedIndex, Employee = employee, Password = password, Username = username };
-				Model.Users.Add(user);
-				Model.SaveChanges();
-				Utilities.ListToDataGridViewWithoutHat(Model.Users.ToListAsync().Result, dataGridViewMain);
-			}
-			else
-			{
-				MessageBox.Show("Один или несколько параметров не заполненые");
-			}
-		}
-
-		private void buttonItemDelete_Click(object sender, EventArgs e)
+		private void buttonUserDelete_Click(object sender, EventArgs e)
 		{
 			if (dataGridViewMain.SelectedRows.Count > 0)
 			{
-
-				DialogResult dialogResult = MessageBox.Show("Вы уверенны что хотите удалить предмет", "Потверждение", MessageBoxButtons.YesNo);
+				DialogResult dialogResult = MessageBox.Show("Вы уверенны что хотите удалить пользователя?", "Потверждение", MessageBoxButtons.YesNo);
 				if (dialogResult == DialogResult.Yes)
 				{
-					int cell = Convert.ToInt32(dataGridViewMain.SelectedRows[0].Cells[0].Value);
-					Model.Items.Remove(Model.Items.Single(ToI => ToI.Id == cell));
-					Model.SaveChanges();
-					Utilities.ListToDataGridViewWithoutHat(Model.Items.ToListAsync().Result, dataGridViewMain);
+					User user = (User)dataGridViewMain.SelectedRows[0].Tag;
+
+					context.Users.Remove(user);
+					context.SaveChanges();
+
+					dataGridViewMain.AddClearRange(context.Users.ToList());
 				}
 			}
 			else
-			{
-				MessageBox.Show("Не выбран предмет");
-			}
+				MessageBox.Show("Не выбран пользователь");
 		}
 
 		private void textBoxSearch_TextChanged(object sender, EventArgs e)
 		{
-			List<User> users = Model.Users.ToListAsync().Result;
-			Utilities.ListToDataGridViewWithoutHat(users.Where(r => r.Username.StartsWith(textBoxSearch.Text)).ToList(), dataGridViewMain);
+			List<User> users = context.Users.ToList();
+			dataGridViewMain.AddClearRange(users.Where(r => r.Username.StartsWith(textBoxSearch.Text)).ToList());
 
 		}
 	}

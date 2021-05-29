@@ -1,7 +1,11 @@
-﻿using System;
+﻿using DesktopVersion.Entities;
+using ns1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -9,127 +13,108 @@ using System.Windows.Forms;
 
 namespace DesktopVersion
 {
-	class Utilities
+	public static class Utilities
 	{
-		public static DataTable ToDataTable<T>(IList<T> data)
+		public static void SignOnEventControlsToShowHint(this Panel panel)
 		{
-			PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
-			DataTable table = new DataTable();
-			foreach (PropertyDescriptor prop in properties)
-				table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-			foreach (T item in data)
+			foreach (Control control in panel.Controls.Cast<Control>())
 			{
-				DataRow row = table.NewRow();
-				foreach (PropertyDescriptor prop in properties)
-					row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
-				table.Rows.Add(row);
+				if (control.Tag != null && control.Text == "")
+				{
+					control.Text = control.Tag.ToString();
+					control.ForeColor = Color.Gray;
+
+				}
+				control.Enter += EnterInControl;
+				control.Leave += LeaveFromElements;
 			}
-			return table;
 		}
-		public static void ListToDataGridViewWithoutHat<T>(IList<T> data, DataGridView table)
+
+		private static void EnterInControl(object sender, EventArgs e) 
+		{
+			Control control = (Control)sender;
+			if (control.Tag != null)
+			{
+				if (control.Text == control.Tag.ToString())
+				{
+					control.Text = "";
+				}
+				control.ForeColor = Color.Black;
+			}
+		}
+		private static void LeaveFromElements(object sender, EventArgs e) 
+		{
+			Control control = (Control)sender;
+			if (control.Tag != null && control.Text == "")
+			{
+				control.Text = control.Tag.ToString();
+				control.ForeColor = Color.Gray;
+
+			}
+
+		}
+		public static void AddClearEntities<TEntity>(this ComboBox comboBox, DbContext context, string NameOfPropetyToShow) where TEntity : class
+		{
+			var entities = context.Set<TEntity>().ToArray();
+
+			comboBox.Items.Clear();
+			comboBox.Items.AddRange(entities);
+
+			comboBox.DisplayMember = NameOfPropetyToShow;
+		}
+		public static bool CheckFullnessOfContols(this Panel panel)
+		{
+			bool isFilled = true;
+			foreach (var control in panel.Controls.Cast<Control>())
+			{
+				if (control is Label) continue;
+				if (control is Button || control is Bunifu.Framework.UI.BunifuFlatButton) continue;
+				if (control is DataGridView) continue;
+				if (control is BunifuDatepicker datepicker)
+				{
+					if (datepicker.Value == null)
+					{
+						isFilled = false;
+						break;
+					}
+					continue;
+				}
+				if (control is Control winControl)
+				{
+					if (winControl.Text == String.Empty || winControl.Text == winControl.Tag.ToString()) 
+					{
+						isFilled = false;
+						break;
+					}
+					continue;
+				}
+				
+			}
+
+			if (!isFilled)
+			{
+				MessageBox.Show("Один или несколько параметров не заполнены!","Внимание",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+			}
+			return isFilled;
+		}
+		public static void AddClearRange<T>(this DataGridView grid, List<T> list)
 		{
 			PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
-			table.Rows.Clear();
-			for (int i = 0; i < data.Count; i++)//T item in data
+			grid.Rows.Clear();
+			for (int i = 0; i < list.Count; i++)//T item in data
 			{
-				T item = data[i];
-				table.Rows.Add();
+				T item = list[i];
+				grid.Rows.Add();
+				grid.Rows[i].Tag = item;
 				for (int q = 0; q < properties.Count; q++)
 				{
-					var prop = properties[q];
-					table.Rows[i].Cells[q].Value = prop.GetValue(item) ?? DBNull.Value;
+					var property = properties[q];
+					if (property.Name == "Id") continue;
+					if (property.PropertyType.IsGenericType) continue;
+					object value = properties[q].GetValue(item) ?? DBNull.Value;
+					grid.Rows[i].Cells[q].Value = value.ToString();
 				}
 			}
-
-		}
-
-		public static void ListToDataGridViewWithoutHat(List<Item> data, DataGridView table)
-		{
-			table.Rows.Clear();
-			for (int i = 0; i < data.Count; i++)
-			{
-				Item item = data[i];
-				table.Rows.Add();
-
-				table.Rows[i].Cells[0].Value = item.Id;
-				table.Rows[i].Cells[1].Value = item.TypeItem.Name;
-				table.Rows[i].Cells[2].Value = item.Name;
-				table.Rows[i].Cells[3].Value = item.Details;
-				table.Rows[i].Cells[4].Value = item.Office.Name;
-
-			}
-
-		}
-
-		public static void ListToDataGridViewWithoutHat(IList<Employee> data, DataGridView table)
-		{
-			table.Rows.Clear();
-			for (int i = 0; i < data.Count; i++)
-			{
-				Employee item = data[i];
-				table.Rows.Add();
-
-				table.Rows[i].Cells[0].Value = item.Id;
-				table.Rows[i].Cells[1].Value = item.JobPosition.Name;
-				table.Rows[i].Cells[2].Value = item.Name;
-				table.Rows[i].Cells[3].Value = item.Surname;
-				table.Rows[i].Cells[4].Value = item.Patronymic;
-				table.Rows[i].Cells[5].Value = item.Birthdate.ToString("dd/MM/yyyy");
-				table.Rows[i].Cells[6].Value = item.Office.Name;
-			}
-
-		}
-
-		public static void ListToDataGridViewWithoutHat(IList<User> data, DataGridView table)
-		{
-			table.Rows.Clear();
-			for (int i = 0; i < data.Count; i++)
-			{
-				User item = data[i];
-				table.Rows.Add();
-
-				table.Rows[i].Cells[0].Value = item.Id;
-				table.Rows[i].Cells[1].Value = item.Username;
-				table.Rows[i].Cells[2].Value = item.Password;
-				table.Rows[i].Cells[3].Value = User.S_Access[(int)item.AccessLVL];
-				table.Rows[i].Cells[4].Value = $"{item.Employee.Surname} {item.Employee.Name[0]}.{item.Employee.Patronymic[0]}.";
-
-			}
-
-		}
-
-		public static void ListToDataGridViewWithoutHat(IList<Office> data, DataGridView table)
-		{
-			table.Rows.Clear();
-			for (int i = 0; i < data.Count; i++)
-			{
-				Office item = data[i];
-				table.Rows.Add();
-
-				table.Rows[i].Cells[0].Value = item.Id;
-				table.Rows[i].Cells[1].Value = item.Name;
-				table.Rows[i].Cells[2].Value = item.Adress;
-				table.Rows[i].Cells[3].Value = item.Chief;
-
-			}
-
-		}
-
-		public static bool ContorslsIsNotEmptyWithHint(Panel panel)
-		{
-			foreach (Control Element in panel.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
-			{
-				switch (Element)
-				{
-					case ComboBox comboBox:
-						if (comboBox.SelectedItem == null || comboBox.SelectedItem.ToString() == comboBox.Tag.ToString()) return false;
-						break;
-					case TextBox textBox:
-						if (textBox.Text == textBox.Tag.ToString()) return false;
-						break;
-				}
-			}
-			return true;
 		}
 
 		public static string GenerateHash(string value)

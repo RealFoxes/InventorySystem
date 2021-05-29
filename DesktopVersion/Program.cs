@@ -10,9 +10,7 @@ namespace DesktopVersion
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			UserControlController.init().ChangeControl(UserControlController.E_Control.AuthControl); //Инициализируем класс и сразу же вызываем функцию
-			SessionClass.init().Model = new MySQLModel();
-			SessionClass.init().Model.Database.Initialize(false);
+			UserControlController.Instance().ChangeControl(UserControlController.E_Control.LoadingControl); //Инициализируем класс и сразу же вызываем функцию
 			Application.Run();//Убрали запуск формы по умолчанию
 		}
 	}

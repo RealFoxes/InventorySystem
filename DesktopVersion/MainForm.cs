@@ -12,7 +12,7 @@ namespace DesktopVersion
 		{
 			InitializeComponent();
 			SetStyle(ControlStyles.ResizeRedraw, true);
-			SessionClass.init().Form = this;
+			SessionClass.Instance().Form = this;
 		}
 
 		private void buttonClose_Click(object sender, EventArgs e)
@@ -50,24 +50,24 @@ namespace DesktopVersion
 			buttonMenu3.ButtonText = String.Empty;
 			buttonMenu4.ButtonText = String.Empty;
 			buttonMenu5.ButtonText = String.Empty;
+			buttonMenu6.ButtonText = String.Empty;
 		}
 
 		private void ShowTextOnMenuButtons()//Умнее этого костыля ничего не придумал
 		{
-			buttonMenu1.ButtonText = "Предметы";
+			buttonMenu1.ButtonText = "Серверы";
 			buttonMenu2.ButtonText = "Сотрудники";
 			buttonMenu3.ButtonText = "Офисы";
 			buttonMenu4.ButtonText = "Пользователи";
 			buttonMenu5.ButtonText = "Выйти";
+			buttonMenu6.ButtonText = "Заказы";
 		}
 
 		private void buttonsMenu_Click(object sender, EventArgs e)//Открытие нужного контрола используя тэг кнопок
 		{
-			//panelMain.Visible = !panelMain.Visible;
-			//MessageBox.Show("У вас нет доступа к добавлению новых пользоватлей. Пожалуйста свяжитесь с вашим администратором");
 			pictureBoxBackGround.Visible = false;
 			Bunifu.Framework.UI.BunifuFlatButton btn = (Bunifu.Framework.UI.BunifuFlatButton)sender;
-			UserControlController.init().ChangeControl((UserControlController.E_Control)btn.Tag);
+			UserControlController.Instance().ChangeControl((UserControlController.E_Control)btn.Tag);
 		}
 
 		private void buttonMenu5_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace DesktopVersion
 			panelMain.Controls.Clear();
 			panelMenu.Visible = false;
 			labelName.Text = "";
-			UserControlController.init().ChangeControl(UserControlController.E_Control.AuthControl);
+			UserControlController.Instance().ChangeControl(UserControlController.E_Control.AuthControl);
 		}
 
 		private void timerMenu_Tick(object sender, EventArgs e)//Всегда активный таймер отвечающий за работу меню

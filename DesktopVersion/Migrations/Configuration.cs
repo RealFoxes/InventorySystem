@@ -7,7 +7,7 @@
 		public Configuration()
 		{
 			AutomaticMigrationsEnabled = false;
-			SetSqlGenerator("MySql.Data.MySqlClient", new Hueta2());
+			SetSqlGenerator("MySql.Data.MySqlClient", new SqlGenerator());
 		}
 	}
 }

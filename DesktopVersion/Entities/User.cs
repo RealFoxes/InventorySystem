@@ -1,8 +1,10 @@
-﻿namespace DesktopVersion
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DesktopVersion.Entities
 {
-	using System;
-	using System.ComponentModel.DataAnnotations;
-	using System.ComponentModel.DataAnnotations.Schema;
 	public class User
 	{
 		public static String[] S_Access = {
@@ -17,18 +19,24 @@
 			SimpleUser
 		}
 
-		[Key]//Указать ключегово индекса Primery Key
+		[Key]
 		public int Id { get; set; }
-		[Required]//Указатель Обязательного поля NOTNULL
+		[Required]
 		[Index(IsUnique = true)]//Указатель Уникальность / Без дубликатов
-		[MaxLength(16)]//Указать на максимальную длину
+		[MaxLength(16)]
+		[Description("Логин")]
 		public string Username { get; set; }
 		[Required]
 		[MaxLength(32)]
+		[Description("Зашифр. пароль")]
 		public string Password { get; set; }
-		[Required]
+		[Required, Description("Уровень привелегий")]
 		public E_Access AccessLVL { get; set; }
-		[Required]
+		[Required, Description("Сотрудник")]
 		public virtual Employee Employee { get; set; }
+		public override string ToString()
+		{
+			return Username;
+		}
 	}
 }

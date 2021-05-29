@@ -7,13 +7,13 @@ namespace DesktopVersion.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class Hueta : IMigrationMetadata
+    public sealed partial class v1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Hueta));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(v1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202010091306500_Hueta"; }
+            get { return "202105291804001_v1"; }
         }
         
         string IMigrationMetadata.Source

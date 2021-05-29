@@ -22,7 +22,7 @@
 		{
 			System.Windows.Forms.Label labelAuthorizationsMain;
 			System.Windows.Forms.Label lableNoAcc;
-			this.textBoxUserName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+			this.textBoxUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
 			this.textBoxPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
 			this.buttonAuth = new Bunifu.Framework.UI.BunifuFlatButton();
 			labelAuthorizationsMain = new System.Windows.Forms.Label();
@@ -52,24 +52,24 @@
 			lableNoAcc.Text = "Отсуствует аккаунт?";
 			lableNoAcc.Click += new System.EventHandler(this.lableNoAcc_Click);
 			// 
-			// textBoxUserName
+			// textBoxUsername
 			// 
-			this.textBoxUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.textBoxUserName.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-			this.textBoxUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.textBoxUserName.HintForeColor = System.Drawing.Color.Gray;
-			this.textBoxUserName.HintText = "Логин";
-			this.textBoxUserName.isPassword = false;
-			this.textBoxUserName.LineFocusedColor = System.Drawing.Color.Firebrick;
-			this.textBoxUserName.LineIdleColor = System.Drawing.Color.Firebrick;
-			this.textBoxUserName.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-			this.textBoxUserName.LineThickness = 4;
-			this.textBoxUserName.Location = new System.Drawing.Point(8, 66);
-			this.textBoxUserName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-			this.textBoxUserName.Name = "textBoxUserName";
-			this.textBoxUserName.Size = new System.Drawing.Size(500, 50);
-			this.textBoxUserName.TabIndex = 1;
-			this.textBoxUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.textBoxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.textBoxUsername.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+			this.textBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.textBoxUsername.HintForeColor = System.Drawing.Color.Gray;
+			this.textBoxUsername.HintText = "Логин";
+			this.textBoxUsername.isPassword = false;
+			this.textBoxUsername.LineFocusedColor = System.Drawing.Color.Firebrick;
+			this.textBoxUsername.LineIdleColor = System.Drawing.Color.Firebrick;
+			this.textBoxUsername.LineMouseHoverColor = System.Drawing.Color.Firebrick;
+			this.textBoxUsername.LineThickness = 4;
+			this.textBoxUsername.Location = new System.Drawing.Point(8, 66);
+			this.textBoxUsername.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+			this.textBoxUsername.Name = "textBoxUsername";
+			this.textBoxUsername.Size = new System.Drawing.Size(500, 50);
+			this.textBoxUsername.TabIndex = 1;
+			this.textBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
 			// textBoxPassword
 			// 
@@ -135,7 +135,7 @@
 			this.Controls.Add(lableNoAcc);
 			this.Controls.Add(labelAuthorizationsMain);
 			this.Controls.Add(this.textBoxPassword);
-			this.Controls.Add(this.textBoxUserName);
+			this.Controls.Add(this.textBoxUsername);
 			this.Name = "AuthorizationsControl";
 			this.Size = new System.Drawing.Size(530, 292);
 			this.ResumeLayout(false);
@@ -145,7 +145,7 @@
 
 		#endregion
 
-		private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxUserName;
+		private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxUsername;
 		private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxPassword;
 		private Bunifu.Framework.UI.BunifuFlatButton buttonAuth;
 	}

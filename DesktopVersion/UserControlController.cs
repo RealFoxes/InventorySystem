@@ -10,14 +10,16 @@ namespace DesktopVersion
 		public enum E_Control
 		{
 			AuthControl,
-			ItemsControl,
+			ServerControl,
 			EmployeeContorl,
 			OfficesContorl,
-			UsersContorl
+			UsersContorl,
+			OrdersControl,
+			LoadingControl
 		}
 
 		private static UserControlController instance; 
-		public static UserControlController init()     
+		public static UserControlController Instance()     
 		{                                              
 			if (instance == null)                      
 				instance = new UserControlController();
@@ -40,9 +42,9 @@ namespace DesktopVersion
 					Form.labelTopPanel.Text = "Авторизация";
 					Control = new AuthorizationsControl();
 					break;
-				case E_Control.ItemsControl:
-					Form.labelTopPanel.Text = "Инвентаризация";
-					Control = new ItemsControl();
+				case E_Control.ServerControl:
+					Form.labelTopPanel.Text = "Сервера";
+					Control = new ServersControl();
 					break;
 				case E_Control.EmployeeContorl:
 					Form.labelTopPanel.Text = "Учет сотрудников";
@@ -56,9 +58,17 @@ namespace DesktopVersion
 					Form.labelTopPanel.Text = "Учет пользователей";
 					Control = new UsersControl();
 					break;
+				case E_Control.OrdersControl:
+					Form.labelTopPanel.Text = "Заказы";
+					Control = new OrdersControl();
+					break;
+				case E_Control.LoadingControl:
+					Form.labelTopPanel.Text = "Мониторинг серверов и бугалтерия";
+					Control = new LoadingControl();
+					break;
 
 			}                      //Проверяем принимаемы enum и записываем в пустой контрол наш контрол
-			if (E_Controls == E_Control.AuthControl)
+			if (E_Controls == E_Control.AuthControl||E_Controls==E_Control.LoadingControl)
 			{
 				Form.panelMain.Dock = DockStyle.None;
 				Form.panelMain.Width = Control.Width;

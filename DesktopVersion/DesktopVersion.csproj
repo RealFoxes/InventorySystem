@@ -49,6 +49,13 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=6.4.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.6.4.1\lib\net461\EntityFramework6.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.10.9\lib\net452\MySql.Data.dll</HintPath>
       <Private>True</Private>
@@ -56,8 +63,14 @@
     <Reference Include="MySql.Data.Entity.EF6, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.Entity.6.10.9\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
+    <Reference Include="Npgsql, Version=5.0.1.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.5.0.1.1\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -66,13 +79,34 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,18 +120,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Services\DBInitializer.cs" />
-    <Compile Include="Migrations\202010091306500_Hueta.cs" />
-    <Compile Include="Migrations\202010091306500_Hueta.designer.cs">
-      <DependentUpon>202010091306500_Hueta.cs</DependentUpon>
+    <Compile Include="DragPanel.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\Server.cs" />
+    <Compile Include="Entities\JobPosition.cs" />
+    <Compile Include="Entities\Office.cs" />
+    <Compile Include="Entities\TypeOfServer.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Migrations\202105291804001_v1.cs" />
+    <Compile Include="Migrations\202105291804001_v1.designer.cs">
+      <DependentUpon>202105291804001_v1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Hueta2.cs" />
-    <Compile Include="Models\Office.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\JobPosition.cs" />
-    <Compile Include="Models\TypeOfItem.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Services\DBInitializer.cs" />
+    <Compile Include="Migrations\SqlGenerator.cs" />
+    <Compile Include="UserControls\LoadingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LoadingControl.Designer.cs">
+      <DependentUpon>LoadingControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AuthorizationsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,17 +148,23 @@
       <DependentUpon>AuthorizationsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SessionClass.cs" />
+    <Compile Include="UserControls\OrdersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OrdersControl.Designer.cs">
+      <DependentUpon>OrdersControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\EmployeesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\EmployeesControl.Designer.cs">
       <DependentUpon>EmployeesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ItemsControl.cs">
+    <Compile Include="UserControls\ServersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ItemsControl.Designer.cs">
-      <DependentUpon>ItemsControl.cs</DependentUpon>
+    <Compile Include="UserControls\ServersControl.Designer.cs">
+      <DependentUpon>ServersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -141,17 +190,23 @@
       <DependentUpon>UsersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
-    <EmbeddedResource Include="Migrations\202010091306500_Hueta.resx">
-      <DependentUpon>202010091306500_Hueta.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105291804001_v1.resx">
+      <DependentUpon>202105291804001_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LoadingControl.resx">
+      <DependentUpon>LoadingControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AuthorizationsControl.resx">
       <DependentUpon>AuthorizationsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OrdersControl.resx">
+      <DependentUpon>OrdersControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\EmployeesControl.resx">
       <DependentUpon>EmployeesControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ItemsControl.resx">
-      <DependentUpon>ItemsControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\ServersControl.resx">
+      <DependentUpon>ServersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

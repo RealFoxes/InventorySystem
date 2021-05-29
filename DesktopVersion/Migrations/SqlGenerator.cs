@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace DesktopVersion.Migrations
 {
-	internal class Hueta2 : MySqlMigrationSqlGenerator
+	internal class SqlGenerator : MySqlMigrationSqlGenerator
 	{
 		protected override MigrationStatement Generate(CreateIndexOperation op)
 		{
