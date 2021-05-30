@@ -4,7 +4,7 @@ using System.Data.Entity;
 
 namespace DesktopVersion
 {
-	class DBInitializer : DropCreateDatabaseAlways<MySQLModel>
+	class DBInitializer : CreateDatabaseIfNotExists<MySQLModel>
 	{
 		protected override void Seed(MySQLModel context)
 		{
@@ -24,12 +24,12 @@ namespace DesktopVersion
 			TypeOfServer typeOfItem = new TypeOfServer() { Name = "ТестовыйТипСервера" };
 			context.TypeOfServers.Add(typeOfItem);
 
-			Server server = new Server() { Details = "Тестовый данные о сервере", Name = "ТестовыйСервер", Office = office, TypeOfServer = typeOfItem };
+			Server server = new Server() { Details = "Тестовый данные о сервере", Name = "ТестовыйСервер", Ip= "168.212.226.204", Office = office, TypeOfServer = typeOfItem };
 			context.Servers.Add(server);
 
 			Client client = new Client() { FullName = "Тестовое имя клиента", PhoneNumber = "88005553535" };
 			context.Clients.Add(client);
-			Order order = new Order() { Client = client, Cost = 123, Currency = "$", DateTime = DateTime.Now, DateOfEnd = DateTime.Now.AddDays(31), Employee = employee, Server = server };
+			Order order = new Order() { Client = client, Cost = 123, Currency = "$", Domen = "фасоль.рф", DateTime = DateTime.Now, DateOfEnd = DateTime.Now.AddDays(31), Employee = employee, Server = server };
 			context.Orders.Add(order);
 			base.Seed(context);
 

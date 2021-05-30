@@ -17,6 +17,8 @@ namespace DesktopVersion
 		{
 			InitializeComponent();
 
+			DragPanel dragPanel = new DragPanel(panelEdit, buttonClosePanelEdit, buttonEditShow);
+
 			panelAddOffice.SignOnEventControlsToShowHint();
 
 			dataGridViewMain.AddClearRange(context.Offices.ToList());
@@ -58,9 +60,40 @@ namespace DesktopVersion
 				}
 			}
 			else
-				MessageBox.Show("Не выбран предмет");
+				MessageBox.Show("Не выбран офис");
 			
 		}
 
+		private void buttonOfficeEditShow_Click(object sender, EventArgs e)
+		{
+			if (dataGridViewMain.SelectedRows.Count<1)
+			{
+				MessageBox.Show("Не выбран офис");
+				return;
+			}
+			Office office = (Office)dataGridViewMain.SelectedRows[0].Tag;
+			textBoxOfficeEditName.Text = office.Name;
+			textBoxOfficeEditAddress.Text = office.Address;
+			panelEdit.Tag = office;
+		}
+
+		private void buttonOfficeConfirmEdit_Click(object sender, EventArgs e)
+		{
+			if (panelBackgroundEdit.CheckFullnessOfContols())
+			{
+				Office office = (Office)panelEdit.Tag;
+				office.Address = textBoxOfficeEditAddress.Text;
+				office.Name = textBoxOfficeEditName.Text;
+				context.SaveChanges();
+				dataGridViewMain.AddClearRange(context.Offices.ToList());
+				panelEdit.Visible = false;
+			}
+		}
+
+		private void buttonExcel_Click(object sender, EventArgs e)
+		{
+			var excel = new Excel(dataGridViewMain);
+			excel.StartExcel();
+		}
 	}
 }

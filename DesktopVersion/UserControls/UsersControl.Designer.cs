@@ -33,6 +33,11 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.labelAuthorizationsMain = new System.Windows.Forms.Label();
 			this.dataGridViewMain = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panelAddUser = new System.Windows.Forms.Panel();
 			this.textBoxUserLogin = new System.Windows.Forms.TextBox();
 			this.buttonUserDelete = new System.Windows.Forms.Button();
@@ -41,14 +46,21 @@
 			this.comboBoxAccessLVL = new System.Windows.Forms.ComboBox();
 			this.comboBoxEmployees = new System.Windows.Forms.ComboBox();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.panelEdit = new System.Windows.Forms.Panel();
+			this.buttonClosePanelEdit = new System.Windows.Forms.Button();
+			this.panelBackgroundEdit = new System.Windows.Forms.Panel();
+			this.buttonOfficeConfirmEdit = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.textBoxEditUserLogin = new System.Windows.Forms.TextBox();
+			this.textBoxEditPassword = new System.Windows.Forms.TextBox();
+			this.comboBoxEditAccessLVL = new System.Windows.Forms.ComboBox();
+			this.comboBoxEditEmployees = new System.Windows.Forms.ComboBox();
+			this.buttonEditShow = new Bunifu.Framework.UI.BunifuFlatButton();
 			labelSearch = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
 			this.panelAddUser.SuspendLayout();
+			this.panelEdit.SuspendLayout();
+			this.panelBackgroundEdit.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// labelSearch
@@ -109,6 +121,37 @@
 			this.dataGridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridViewMain.Size = new System.Drawing.Size(1000, 750);
 			this.dataGridViewMain.TabIndex = 0;
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "Идентификатор";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Visible = false;
+			// 
+			// Column4
+			// 
+			this.Column4.HeaderText = "Логин";
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			// 
+			// Column5
+			// 
+			this.Column5.HeaderText = "Шифр. Пароль";
+			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
+			// 
+			// Column2
+			// 
+			this.Column2.HeaderText = "Уровень доступа";
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this.Column3.HeaderText = "ФИО Сотрудника";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
 			// 
 			// panelAddUser
 			// 
@@ -182,6 +225,7 @@
 			// comboBoxAccessLVL
 			// 
 			this.comboBoxAccessLVL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxAccessLVL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxAccessLVL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.comboBoxAccessLVL.Font = new System.Drawing.Font("Segoe UI", 12.25F);
 			this.comboBoxAccessLVL.ForeColor = System.Drawing.Color.Gray;
@@ -199,6 +243,7 @@
 			// comboBoxEmployees
 			// 
 			this.comboBoxEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.comboBoxEmployees.Font = new System.Drawing.Font("Segoe UI", 12.25F);
 			this.comboBoxEmployees.ForeColor = System.Drawing.Color.Gray;
@@ -222,40 +267,172 @@
 			this.textBoxSearch.Tag = "";
 			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			// 
-			// Column1
+			// panelEdit
 			// 
-			this.Column1.HeaderText = "Идентификатор";
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Visible = false;
+			this.panelEdit.BackColor = System.Drawing.Color.Firebrick;
+			this.panelEdit.Controls.Add(this.buttonClosePanelEdit);
+			this.panelEdit.Controls.Add(this.panelBackgroundEdit);
+			this.panelEdit.Location = new System.Drawing.Point(685, 105);
+			this.panelEdit.Name = "panelEdit";
+			this.panelEdit.Size = new System.Drawing.Size(324, 412);
+			this.panelEdit.TabIndex = 24;
+			this.panelEdit.Visible = false;
 			// 
-			// Column4
+			// buttonClosePanelEdit
 			// 
-			this.Column4.HeaderText = "Логин";
-			this.Column4.Name = "Column4";
-			this.Column4.ReadOnly = true;
+			this.buttonClosePanelEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonClosePanelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonClosePanelEdit.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonClosePanelEdit.ForeColor = System.Drawing.Color.White;
+			this.buttonClosePanelEdit.Location = new System.Drawing.Point(285, 3);
+			this.buttonClosePanelEdit.Margin = new System.Windows.Forms.Padding(0);
+			this.buttonClosePanelEdit.Name = "buttonClosePanelEdit";
+			this.buttonClosePanelEdit.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+			this.buttonClosePanelEdit.Size = new System.Drawing.Size(33, 33);
+			this.buttonClosePanelEdit.TabIndex = 17;
+			this.buttonClosePanelEdit.Text = "X";
+			this.buttonClosePanelEdit.UseVisualStyleBackColor = true;
 			// 
-			// Column5
+			// panelBackgroundEdit
 			// 
-			this.Column5.HeaderText = "Шифр. Пароль";
-			this.Column5.Name = "Column5";
-			this.Column5.ReadOnly = true;
+			this.panelBackgroundEdit.BackColor = System.Drawing.Color.White;
+			this.panelBackgroundEdit.Controls.Add(this.textBoxEditUserLogin);
+			this.panelBackgroundEdit.Controls.Add(this.textBoxEditPassword);
+			this.panelBackgroundEdit.Controls.Add(this.comboBoxEditAccessLVL);
+			this.panelBackgroundEdit.Controls.Add(this.comboBoxEditEmployees);
+			this.panelBackgroundEdit.Controls.Add(this.buttonOfficeConfirmEdit);
+			this.panelBackgroundEdit.Controls.Add(this.label1);
+			this.panelBackgroundEdit.Location = new System.Drawing.Point(3, 39);
+			this.panelBackgroundEdit.Name = "panelBackgroundEdit";
+			this.panelBackgroundEdit.Size = new System.Drawing.Size(318, 370);
+			this.panelBackgroundEdit.TabIndex = 0;
 			// 
-			// Column2
+			// buttonOfficeConfirmEdit
 			// 
-			this.Column2.HeaderText = "Уровень доступа";
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
+			this.buttonOfficeConfirmEdit.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonOfficeConfirmEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonOfficeConfirmEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonOfficeConfirmEdit.Font = new System.Drawing.Font("Century Gothic", 13.75F);
+			this.buttonOfficeConfirmEdit.ForeColor = System.Drawing.Color.White;
+			this.buttonOfficeConfirmEdit.Location = new System.Drawing.Point(3, 321);
+			this.buttonOfficeConfirmEdit.Name = "buttonOfficeConfirmEdit";
+			this.buttonOfficeConfirmEdit.Size = new System.Drawing.Size(312, 46);
+			this.buttonOfficeConfirmEdit.TabIndex = 15;
+			this.buttonOfficeConfirmEdit.Text = "Потвердить изменение";
+			this.buttonOfficeConfirmEdit.UseVisualStyleBackColor = false;
+			this.buttonOfficeConfirmEdit.Click += new System.EventHandler(this.buttonOfficeConfirmEdit_Click);
 			// 
-			// Column3
+			// label1
 			// 
-			this.Column3.HeaderText = "ФИО Сотрудника";
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 13.75F);
+			this.label1.ForeColor = System.Drawing.Color.Firebrick;
+			this.label1.Location = new System.Drawing.Point(102, 2);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(119, 22);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Изменение";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// textBoxEditUserLogin
+			// 
+			this.textBoxEditUserLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxEditUserLogin.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxEditUserLogin.Location = new System.Drawing.Point(27, 98);
+			this.textBoxEditUserLogin.MaxLength = 255;
+			this.textBoxEditUserLogin.Multiline = true;
+			this.textBoxEditUserLogin.Name = "textBoxEditUserLogin";
+			this.textBoxEditUserLogin.Size = new System.Drawing.Size(271, 29);
+			this.textBoxEditUserLogin.TabIndex = 20;
+			this.textBoxEditUserLogin.Tag = "Логин";
+			// 
+			// textBoxEditPassword
+			// 
+			this.textBoxEditPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxEditPassword.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxEditPassword.Location = new System.Drawing.Point(26, 133);
+			this.textBoxEditPassword.MaxLength = 255;
+			this.textBoxEditPassword.Multiline = true;
+			this.textBoxEditPassword.Name = "textBoxEditPassword";
+			this.textBoxEditPassword.Size = new System.Drawing.Size(271, 29);
+			this.textBoxEditPassword.TabIndex = 19;
+			this.textBoxEditPassword.Tag = "Пароль";
+			this.textBoxEditPassword.UseSystemPasswordChar = true;
+			// 
+			// comboBoxEditAccessLVL
+			// 
+			this.comboBoxEditAccessLVL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxEditAccessLVL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxEditAccessLVL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxEditAccessLVL.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxEditAccessLVL.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxEditAccessLVL.FormattingEnabled = true;
+			this.comboBoxEditAccessLVL.Items.AddRange(new object[] {
+            "Администратор",
+            "Модератор",
+            "Обычный пользователь"});
+			this.comboBoxEditAccessLVL.Location = new System.Drawing.Point(26, 63);
+			this.comboBoxEditAccessLVL.Name = "comboBoxEditAccessLVL";
+			this.comboBoxEditAccessLVL.Size = new System.Drawing.Size(272, 29);
+			this.comboBoxEditAccessLVL.TabIndex = 17;
+			this.comboBoxEditAccessLVL.Tag = "Уровень доступа";
+			// 
+			// comboBoxEditEmployees
+			// 
+			this.comboBoxEditEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxEditEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxEditEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxEditEmployees.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxEditEmployees.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxEditEmployees.FormattingEnabled = true;
+			this.comboBoxEditEmployees.Location = new System.Drawing.Point(27, 27);
+			this.comboBoxEditEmployees.Name = "comboBoxEditEmployees";
+			this.comboBoxEditEmployees.Size = new System.Drawing.Size(272, 29);
+			this.comboBoxEditEmployees.TabIndex = 18;
+			this.comboBoxEditEmployees.Tag = "Сотрудник";
+			// 
+			// buttonEditShow
+			// 
+			this.buttonEditShow.Activecolor = System.Drawing.Color.Brown;
+			this.buttonEditShow.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonEditShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonEditShow.BorderRadius = 0;
+			this.buttonEditShow.ButtonText = "Изменить";
+			this.buttonEditShow.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonEditShow.DisabledColor = System.Drawing.Color.Gray;
+			this.buttonEditShow.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonEditShow.Iconcolor = System.Drawing.Color.Transparent;
+			this.buttonEditShow.Iconimage = null;
+			this.buttonEditShow.Iconimage_right = null;
+			this.buttonEditShow.Iconimage_right_Selected = null;
+			this.buttonEditShow.Iconimage_Selected = null;
+			this.buttonEditShow.IconMarginLeft = 0;
+			this.buttonEditShow.IconMarginRight = 0;
+			this.buttonEditShow.IconRightVisible = false;
+			this.buttonEditShow.IconRightZoom = 0D;
+			this.buttonEditShow.IconVisible = false;
+			this.buttonEditShow.IconZoom = 70D;
+			this.buttonEditShow.IsTab = false;
+			this.buttonEditShow.Location = new System.Drawing.Point(819, 24);
+			this.buttonEditShow.Margin = new System.Windows.Forms.Padding(5);
+			this.buttonEditShow.Name = "buttonEditShow";
+			this.buttonEditShow.Normalcolor = System.Drawing.Color.Firebrick;
+			this.buttonEditShow.OnHovercolor = System.Drawing.Color.Brown;
+			this.buttonEditShow.OnHoverTextColor = System.Drawing.Color.White;
+			this.buttonEditShow.selected = false;
+			this.buttonEditShow.Size = new System.Drawing.Size(191, 34);
+			this.buttonEditShow.TabIndex = 21;
+			this.buttonEditShow.Text = "Изменить";
+			this.buttonEditShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.buttonEditShow.Textcolor = System.Drawing.Color.White;
+			this.buttonEditShow.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
+			this.buttonEditShow.Click += new System.EventHandler(this.buttonOfficeEditShow_Click);
 			// 
 			// UsersControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+			this.Controls.Add(this.buttonEditShow);
+			this.Controls.Add(this.panelEdit);
 			this.Controls.Add(this.textBoxSearch);
 			this.Controls.Add(labelSearch);
 			this.Controls.Add(this.panelAddUser);
@@ -266,6 +443,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
 			this.panelAddUser.ResumeLayout(false);
 			this.panelAddUser.PerformLayout();
+			this.panelEdit.ResumeLayout(false);
+			this.panelBackgroundEdit.ResumeLayout(false);
+			this.panelBackgroundEdit.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -288,5 +468,15 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+		private System.Windows.Forms.Panel panelEdit;
+		private System.Windows.Forms.Button buttonClosePanelEdit;
+		private System.Windows.Forms.Button buttonOfficeConfirmEdit;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox textBoxEditUserLogin;
+		private System.Windows.Forms.TextBox textBoxEditPassword;
+		private System.Windows.Forms.ComboBox comboBoxEditAccessLVL;
+		private System.Windows.Forms.ComboBox comboBoxEditEmployees;
+		private Bunifu.Framework.UI.BunifuFlatButton buttonEditShow;
+		private System.Windows.Forms.Panel panelBackgroundEdit;
 	}
 }

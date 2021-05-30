@@ -109,7 +109,6 @@ namespace DesktopVersion
 				for (int q = 0; q < properties.Count; q++)
 				{
 					var property = properties[q];
-					if (property.Name == "Id") continue;
 					if (property.PropertyType.IsGenericType) continue;
 					object value = properties[q].GetValue(item) ?? DBNull.Value;
 					grid.Rows[i].Cells[q].Value = value.ToString();

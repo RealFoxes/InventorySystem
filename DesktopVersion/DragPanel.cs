@@ -15,6 +15,7 @@ namespace DesktopVersion
 		private Button buttonClose { get; set; }
 		private BunifuFlatButton buttonShowBunifu { get; set; }
 		private bool dragging { get; set; } = false;
+
 		private Point dragCursorPoint, dragFormPoint;
 		public DragPanel(Panel panel, Button buttonToClose, BunifuFlatButton buttonToShow)
 		{
@@ -29,6 +30,31 @@ namespace DesktopVersion
 			this.buttonShowBunifu.Click += buttonShowClick;
 			this.buttonClose.Click += buttonCloseClick;
 		}
+		public DragPanel(Panel panel, Button buttonToClose, DataGridView grid)
+		{
+			this.panelToDrag = panel;
+			this.buttonClose = buttonToClose;
+
+			panelToDrag.MouseUp += panelMouseUp;
+			panelToDrag.MouseMove += panelMouseMove;
+			panelToDrag.MouseDown += panelMouseDown;
+
+			grid.CellDoubleClick += Grid_CellDoubleClick;
+			this.buttonClose.Click += buttonCloseClick;
+		}
+
+		private void Grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (!panelToDrag.Visible)
+			{
+				panelToDrag.Visible = true;
+			}
+			else
+			{
+				panelToDrag.Visible = false;
+			}
+		}
+
 		private static Point GetPositionInForm(Control control)
 		{
 			Point p = control.Location;
@@ -69,9 +95,13 @@ namespace DesktopVersion
 		{
 			if (!panelToDrag.Visible)
 			{
-				panelToDrag.Visible = true;
 				Point p = GetPositionInForm(buttonShowBunifu);
 				panelToDrag.Location = new Point(p.X - panelToDrag.Width, p.Y);
+				panelToDrag.Visible = true;
+			}
+			else
+			{
+				panelToDrag.Visible = false;
 			}
 		}
 	}

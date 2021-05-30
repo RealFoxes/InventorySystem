@@ -18,6 +18,9 @@ namespace DesktopVersion.Entities
 		[Description("Сервер")]
 		public Server Server { get; set; }
 		[Required]
+		[Description("Домен")]
+		public string Domen { get; set; }
+		[Required]
 		[Description("Дата окончания заказа")]
 		public DateTime DateOfEnd { get; set; }
 		[Required]

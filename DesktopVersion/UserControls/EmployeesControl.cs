@@ -16,12 +16,15 @@ namespace DesktopVersion
 		{
 			InitializeComponent();
 
+			DragPanel dragPanel2 = new DragPanel(panelEdit, buttonClosePanelEdit, buttonEditShow);
 			DragPanel dragPanel = new DragPanel(panelAddJobPosition, buttonClosePanelAddJobPosition, buttonAddNewJobPosition);
 
 			panelAddEmployee.SignOnEventControlsToShowHint();
 
 			comboBoxOffices.AddClearEntities<Office>(context, "Name");
+			comboBoxEditOffices.AddClearEntities<Office>(context, "Name");
 			comboBoxJobPosition.AddClearEntities<JobPosition>(context, "Name");
+			comboBoxEditJobPosition.AddClearEntities<JobPosition>(context, "Name");
 
 			dataGridViewMain.AddClearRange(context.Employees.ToList());
 			dataGridJobPosition.AddClearRange(context.JobPositions.ToList());
@@ -39,6 +42,8 @@ namespace DesktopVersion
 
 					dataGridJobPosition.AddClearRange(context.JobPositions.ToList());
 					comboBoxJobPosition.AddClearEntities<JobPosition>(context, "Name");
+					comboBoxEditJobPosition.AddClearEntities<JobPosition>(context, "Name");
+
 				}
 			}
 			else 
@@ -102,7 +107,48 @@ namespace DesktopVersion
 
 				dataGridJobPosition.AddClearRange(context.JobPositions.ToList());
 				comboBoxJobPosition.AddClearEntities<JobPosition>(context, "Name");
+				comboBoxEditJobPosition.AddClearEntities<JobPosition>(context, "Name");
 			}
+		}
+
+		private void buttonEditShow_Click(object sender, EventArgs e)
+		{
+			if (dataGridViewMain.SelectedRows.Count < 1)
+			{
+				MessageBox.Show("Не выбран сотрудник");
+				return;
+			}
+			Employee employee = (Employee)dataGridViewMain.SelectedRows[0].Tag;
+			comboBoxEditJobPosition.SelectedItem = employee.JobPosition;
+			comboBoxEditOffices.SelectedItem = employee.Office;
+			textBoxEditEmployeeName.Text = employee.Name;
+			textBoxEditEmployeePatronymic.Text = employee.Patronymic;
+			textBoxEditEmployeeSurname.Text = employee.Surname;
+			datepickerEditBirthday.Value = employee.Birthdate;
+			panelEdit.Tag = employee;
+		}
+
+		private void buttonOfficeConfirmEdit_Click(object sender, EventArgs e)
+		{
+			if (panelBackgroundEdit.CheckFullnessOfContols())
+			{
+				Employee employee = (Employee)panelEdit.Tag;
+				employee.JobPosition = (JobPosition)comboBoxEditJobPosition.SelectedItem;
+				employee.Office = (Office)comboBoxEditOffices.SelectedItem;
+				employee.Name = textBoxEditEmployeeName.Text;
+				employee.Patronymic = textBoxEditEmployeePatronymic.Text;
+				employee.Surname = textBoxEditEmployeeSurname.Text;
+				employee.Birthdate = datepickerEditBirthday.Value;
+				context.SaveChanges();
+				dataGridViewMain.AddClearRange(context.Employees.ToList());
+				panelEdit.Visible = false;
+			}
+		}
+
+		private void buttonExcel_Click(object sender, EventArgs e)
+		{
+			var excel = new Excel(dataGridViewMain);
+			excel.StartExcel();
 		}
 	}
 }

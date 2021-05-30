@@ -14,6 +14,9 @@ namespace DesktopVersion.Entities
 		[MaxLength(255)]
 		[Description("Наименование")]
 		public string Name { get; set; }
+		[MaxLength(255)]
+		[Description("IP")]
+		public string Ip { get; set; }
 		[Required]
 		[Description("Офис")]
 		public Office Office { get; set; }

@@ -19,7 +19,7 @@ namespace DesktopVersion.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -143,6 +143,26 @@ namespace DesktopVersion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap order {
+            get {
+                object obj = ResourceManager.GetObject("order", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Server {
+            get {
+                object obj = ResourceManager.GetObject("Server", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap users {
             get {
                 object obj = ResourceManager.GetObject("users", resourceCulture);
@@ -166,6 +186,17 @@ namespace DesktopVersion.Properties {
         internal static System.Drawing.Bitmap varnoffLogoWhiteMini {
             get {
                 object obj = ResourceManager.GetObject("varnoffLogoWhiteMini", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap web_development_computer_icons_website_world_wide_web_web_design_global_globe_network_planet_web_world_icon_42410c55bffa56dc12e7d54d8e40c53d {
+            get {
+                object obj = ResourceManager.GetObject("web-development-computer-icons-website-world-wide-web-web-design-global-globe-net" +
+                        "work-planet-web-world-icon-42410c55bffa56dc12e7d54d8e40c53d", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -16,7 +16,7 @@ namespace DesktopVersion
 		private void LoadingControl_Load(object sender, EventArgs e)
 		{
 			SessionClass.Instance().Context = new MySQLModel();
-			SessionClass.Instance().Context.Database.Initialize(true);
+			SessionClass.Instance().Context.Database.Initialize(false);
 			UserControlController.Instance().ChangeControl(UserControlController.E_Control.AuthControl);
 		}
 	}

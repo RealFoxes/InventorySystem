@@ -51,6 +51,7 @@ namespace DesktopVersion
 			buttonMenu4.ButtonText = String.Empty;
 			buttonMenu5.ButtonText = String.Empty;
 			buttonMenu6.ButtonText = String.Empty;
+			button7.ButtonText = String.Empty;
 		}
 
 		private void ShowTextOnMenuButtons()//Умнее этого костыля ничего не придумал
@@ -61,6 +62,7 @@ namespace DesktopVersion
 			buttonMenu4.ButtonText = "Пользователи";
 			buttonMenu5.ButtonText = "Выйти";
 			buttonMenu6.ButtonText = "Заказы";
+			button7.ButtonText = "Перейти на сайт";
 		}
 
 		private void buttonsMenu_Click(object sender, EventArgs e)//Открытие нужного контрола используя тэг кнопок
@@ -77,6 +79,11 @@ namespace DesktopVersion
 			panelMenu.Visible = false;
 			labelName.Text = "";
 			UserControlController.Instance().ChangeControl(UserControlController.E_Control.AuthControl);
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://varnoff-studio.ru/");
 		}
 
 		private void timerMenu_Tick(object sender, EventArgs e)//Всегда активный таймер отвечающий за работу меню

@@ -17,9 +17,12 @@ namespace DesktopVersion
 		{
 			InitializeComponent();
 
+			DragPanel dragPanel = new DragPanel(panelEdit, buttonClosePanelEdit, buttonEditShow);
+
 			panelAddUser.SignOnEventControlsToShowHint();
 
 			comboBoxEmployees.AddClearEntities<Employee>(context, "Surname");
+			comboBoxEditEmployees.AddClearEntities<Employee>(context, "Surname");
 
 			dataGridViewMain.AddClearRange(context.Users.ToList());
 		}
@@ -63,6 +66,35 @@ namespace DesktopVersion
 			List<User> users = context.Users.ToList();
 			dataGridViewMain.AddClearRange(users.Where(r => r.Username.StartsWith(textBoxSearch.Text)).ToList());
 
+		}
+
+		private void buttonOfficeEditShow_Click(object sender, EventArgs e)
+		{
+			if (dataGridViewMain.SelectedRows.Count < 1)
+			{
+				MessageBox.Show("Не выбран пользователь");
+				return;
+			}
+			User user = (User)dataGridViewMain.SelectedRows[0].Tag;
+			textBoxEditUserLogin.Text = user.Username;
+			comboBoxEditAccessLVL.SelectedIndex = (int)user.AccessLVL;
+			comboBoxEditEmployees.SelectedItem = user.Employee;
+			panelEdit.Tag = user;
+		}
+
+		private void buttonOfficeConfirmEdit_Click(object sender, EventArgs e)
+		{
+			if (panelBackgroundEdit.CheckFullnessOfContols())
+			{
+				User user = (User)panelEdit.Tag;
+				user.Username = textBoxEditUserLogin.Text;
+				user.AccessLVL = (User.E_Access)comboBoxEditAccessLVL.SelectedIndex;
+				user.Employee = (Employee)comboBoxEditEmployees.SelectedItem;
+				user.Password = Utilities.GenerateHash(textBoxEditPassword.Text);
+				context.SaveChanges();
+				dataGridViewMain.AddClearRange(context.Users.ToList());
+				panelEdit.Visible = false;
+			}
 		}
 	}
 }

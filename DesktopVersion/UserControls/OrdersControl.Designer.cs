@@ -34,6 +34,8 @@
 			System.Windows.Forms.Label labelPhoneNumber;
 			System.Windows.Forms.Label labelFullName;
 			System.Windows.Forms.Panel panelAddClientSpliter;
+			System.Windows.Forms.Label label2;
+			System.Windows.Forms.Label label3;
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -49,10 +51,12 @@
 			this.Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panelAddOrder = new System.Windows.Forms.Panel();
 			this.dateTimePickerOrderEnd = new ns1.BunifuDatepicker();
 			this.textBoxCost = new System.Windows.Forms.TextBox();
 			this.buttonOrderDelete = new System.Windows.Forms.Button();
+			this.textBoxDomen = new System.Windows.Forms.TextBox();
 			this.buttonOrderAdd = new System.Windows.Forms.Button();
 			this.buttonAddNewClient = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.comboBoxClients = new System.Windows.Forms.ComboBox();
@@ -62,22 +66,41 @@
 			this.buttonAddClientAdd = new System.Windows.Forms.Button();
 			this.buttonAddClientDelete = new System.Windows.Forms.Button();
 			this.dataGridClients = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.buttonClosePanelAddClient = new System.Windows.Forms.Button();
-			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.buttonClosePanelAddClient = new System.Windows.Forms.Button();
+			this.textBoxSearch = new System.Windows.Forms.TextBox();
+			this.panelEdit = new System.Windows.Forms.Panel();
+			this.buttonClosePanelEdit = new System.Windows.Forms.Button();
+			this.panelBackgroundEdit = new System.Windows.Forms.Panel();
+			this.dateTimePickerEditOrderTime = new ns1.BunifuDatepicker();
+			this.dateTimePickerEditOrderEnd = new ns1.BunifuDatepicker();
+			this.buttonOfficeConfirmEdit = new System.Windows.Forms.Button();
+			this.textBoxEditDomen = new System.Windows.Forms.TextBox();
+			this.textBoxEditCost = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.comboBoxEditEmployee = new System.Windows.Forms.ComboBox();
+			this.comboBoxEditClients = new System.Windows.Forms.ComboBox();
+			this.comboBoxEditServers = new System.Windows.Forms.ComboBox();
+			this.comboBoxEditCurrency = new System.Windows.Forms.ComboBox();
+			this.buttonEditShow = new Bunifu.Framework.UI.BunifuFlatButton();
+			this.buttonExcel = new System.Windows.Forms.Button();
 			labelRight1 = new System.Windows.Forms.Label();
 			labelRight2 = new System.Windows.Forms.Label();
 			labelSearch = new System.Windows.Forms.Label();
 			labelPhoneNumber = new System.Windows.Forms.Label();
 			labelFullName = new System.Windows.Forms.Label();
 			panelAddClientSpliter = new System.Windows.Forms.Panel();
+			label2 = new System.Windows.Forms.Label();
+			label3 = new System.Windows.Forms.Label();
 			this.panelAddClientBackGround.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
 			this.panelAddOrder.SuspendLayout();
 			this.panelAddClient.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).BeginInit();
+			this.panelEdit.SuspendLayout();
+			this.panelBackgroundEdit.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// labelRight1
@@ -97,7 +120,7 @@
 			labelRight2.AutoSize = true;
 			labelRight2.Font = new System.Drawing.Font("Century Gothic", 10F);
 			labelRight2.ForeColor = System.Drawing.Color.Firebrick;
-			labelRight2.Location = new System.Drawing.Point(3, 168);
+			labelRight2.Location = new System.Drawing.Point(3, 204);
 			labelRight2.Name = "labelRight2";
 			labelRight2.Size = new System.Drawing.Size(177, 19);
 			labelRight2.TabIndex = 5;
@@ -147,6 +170,30 @@
 			panelAddClientSpliter.Name = "panelAddClientSpliter";
 			panelAddClientSpliter.Size = new System.Drawing.Size(1, 270);
 			panelAddClientSpliter.TabIndex = 16;
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Font = new System.Drawing.Font("Century Gothic", 10F);
+			label2.ForeColor = System.Drawing.Color.Firebrick;
+			label2.Location = new System.Drawing.Point(19, 204);
+			label2.Name = "label2";
+			label2.Size = new System.Drawing.Size(177, 19);
+			label2.TabIndex = 5;
+			label2.Text = "Дата окончания заказа:";
+			label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.Font = new System.Drawing.Font("Century Gothic", 10F);
+			label3.ForeColor = System.Drawing.Color.Firebrick;
+			label3.Location = new System.Drawing.Point(18, 259);
+			label3.Name = "label3";
+			label3.Size = new System.Drawing.Size(101, 19);
+			label3.TabIndex = 5;
+			label3.Text = "Дата заказа:";
+			label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panelAddClientBackGround
 			// 
@@ -222,7 +269,8 @@
             this.Column2,
             this.Column,
             this.Column6,
-            this.Column3});
+            this.Column3,
+            this.Column8});
 			this.dataGridViewMain.EnableHeadersVisualStyles = false;
 			this.dataGridViewMain.HeaderBgColor = System.Drawing.Color.Firebrick;
 			this.dataGridViewMain.HeaderForeColor = System.Drawing.Color.White;
@@ -279,11 +327,19 @@
 			this.Column3.Name = "Column3";
 			this.Column3.ReadOnly = true;
 			// 
+			// Column8
+			// 
+			this.Column8.HeaderText = "Домен";
+			this.Column8.Name = "Column8";
+			this.Column8.ReadOnly = true;
+			// 
 			// panelAddOrder
 			// 
+			this.panelAddOrder.Controls.Add(this.buttonExcel);
 			this.panelAddOrder.Controls.Add(this.dateTimePickerOrderEnd);
 			this.panelAddOrder.Controls.Add(this.textBoxCost);
 			this.panelAddOrder.Controls.Add(this.buttonOrderDelete);
+			this.panelAddOrder.Controls.Add(this.textBoxDomen);
 			this.panelAddOrder.Controls.Add(this.buttonOrderAdd);
 			this.panelAddOrder.Controls.Add(this.buttonAddNewClient);
 			this.panelAddOrder.Controls.Add(this.comboBoxClients);
@@ -303,7 +359,7 @@
 			this.dateTimePickerOrderEnd.ForeColor = System.Drawing.Color.White;
 			this.dateTimePickerOrderEnd.Format = System.Windows.Forms.DateTimePickerFormat.Long;
 			this.dateTimePickerOrderEnd.FormatCustom = null;
-			this.dateTimePickerOrderEnd.Location = new System.Drawing.Point(6, 190);
+			this.dateTimePickerOrderEnd.Location = new System.Drawing.Point(6, 226);
 			this.dateTimePickerOrderEnd.Name = "dateTimePickerOrderEnd";
 			this.dateTimePickerOrderEnd.Size = new System.Drawing.Size(271, 30);
 			this.dateTimePickerOrderEnd.TabIndex = 6;
@@ -335,6 +391,18 @@
 			this.buttonOrderDelete.Text = "Удалить";
 			this.buttonOrderDelete.UseVisualStyleBackColor = false;
 			this.buttonOrderDelete.Click += new System.EventHandler(this.buttonOrderDelete_Click);
+			// 
+			// textBoxDomen
+			// 
+			this.textBoxDomen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxDomen.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxDomen.Location = new System.Drawing.Point(6, 172);
+			this.textBoxDomen.MaxLength = 255;
+			this.textBoxDomen.Multiline = true;
+			this.textBoxDomen.Name = "textBoxDomen";
+			this.textBoxDomen.Size = new System.Drawing.Size(269, 29);
+			this.textBoxDomen.TabIndex = 3;
+			this.textBoxDomen.Tag = "Домен";
 			// 
 			// buttonOrderAdd
 			// 
@@ -391,6 +459,7 @@
 			// comboBoxClients
 			// 
 			this.comboBoxClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxClients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.comboBoxClients.Font = new System.Drawing.Font("Segoe UI", 12.25F);
 			this.comboBoxClients.ForeColor = System.Drawing.Color.Gray;
@@ -424,13 +493,14 @@
 			// comboBoxServers
 			// 
 			this.comboBoxServers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxServers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxServers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.comboBoxServers.Font = new System.Drawing.Font("Segoe UI", 12.25F);
 			this.comboBoxServers.ForeColor = System.Drawing.Color.Gray;
 			this.comboBoxServers.FormattingEnabled = true;
-			this.comboBoxServers.Location = new System.Drawing.Point(4, 103);
+			this.comboBoxServers.Location = new System.Drawing.Point(5, 103);
 			this.comboBoxServers.Name = "comboBoxServers";
-			this.comboBoxServers.Size = new System.Drawing.Size(272, 29);
+			this.comboBoxServers.Size = new System.Drawing.Size(271, 29);
 			this.comboBoxServers.TabIndex = 2;
 			this.comboBoxServers.Tag = "Сервер";
 			// 
@@ -518,6 +588,29 @@
 			this.dataGridClients.Size = new System.Drawing.Size(423, 266);
 			this.dataGridClients.TabIndex = 4;
 			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.FillWeight = 110F;
+			this.dataGridViewTextBoxColumn1.HeaderText = "Идентификатор";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			this.dataGridViewTextBoxColumn1.Visible = false;
+			this.dataGridViewTextBoxColumn1.Width = 150;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this.dataGridViewTextBoxColumn2.HeaderText = "ФИО";
+			this.dataGridViewTextBoxColumn2.MaxInputLength = 32;
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.dataGridViewTextBoxColumn2.ReadOnly = true;
+			this.dataGridViewTextBoxColumn2.Width = 200;
+			// 
+			// Column7
+			// 
+			this.Column7.HeaderText = "Номер телефона";
+			this.Column7.Name = "Column7";
+			this.Column7.ReadOnly = true;
+			// 
 			// buttonClosePanelAddClient
 			// 
 			this.buttonClosePanelAddClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -546,32 +639,248 @@
 			this.textBoxSearch.Tag = "";
 			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			// 
-			// dataGridViewTextBoxColumn1
+			// panelEdit
 			// 
-			this.dataGridViewTextBoxColumn1.FillWeight = 110F;
-			this.dataGridViewTextBoxColumn1.HeaderText = "Идентификатор";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			this.dataGridViewTextBoxColumn1.Visible = false;
-			this.dataGridViewTextBoxColumn1.Width = 150;
+			this.panelEdit.BackColor = System.Drawing.Color.Firebrick;
+			this.panelEdit.Controls.Add(this.buttonClosePanelEdit);
+			this.panelEdit.Controls.Add(this.panelBackgroundEdit);
+			this.panelEdit.Location = new System.Drawing.Point(307, 228);
+			this.panelEdit.Name = "panelEdit";
+			this.panelEdit.Size = new System.Drawing.Size(324, 412);
+			this.panelEdit.TabIndex = 22;
+			this.panelEdit.Visible = false;
 			// 
-			// dataGridViewTextBoxColumn2
+			// buttonClosePanelEdit
 			// 
-			this.dataGridViewTextBoxColumn2.HeaderText = "ФИО";
-			this.dataGridViewTextBoxColumn2.MaxInputLength = 32;
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			this.dataGridViewTextBoxColumn2.ReadOnly = true;
-			this.dataGridViewTextBoxColumn2.Width = 200;
+			this.buttonClosePanelEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonClosePanelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonClosePanelEdit.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonClosePanelEdit.ForeColor = System.Drawing.Color.White;
+			this.buttonClosePanelEdit.Location = new System.Drawing.Point(285, 3);
+			this.buttonClosePanelEdit.Margin = new System.Windows.Forms.Padding(0);
+			this.buttonClosePanelEdit.Name = "buttonClosePanelEdit";
+			this.buttonClosePanelEdit.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+			this.buttonClosePanelEdit.Size = new System.Drawing.Size(33, 33);
+			this.buttonClosePanelEdit.TabIndex = 17;
+			this.buttonClosePanelEdit.Text = "X";
+			this.buttonClosePanelEdit.UseVisualStyleBackColor = true;
 			// 
-			// Column7
+			// panelBackgroundEdit
 			// 
-			this.Column7.HeaderText = "Номер телефона";
-			this.Column7.Name = "Column7";
-			this.Column7.ReadOnly = true;
+			this.panelBackgroundEdit.BackColor = System.Drawing.Color.White;
+			this.panelBackgroundEdit.Controls.Add(this.dateTimePickerEditOrderTime);
+			this.panelBackgroundEdit.Controls.Add(this.dateTimePickerEditOrderEnd);
+			this.panelBackgroundEdit.Controls.Add(this.buttonOfficeConfirmEdit);
+			this.panelBackgroundEdit.Controls.Add(this.textBoxEditDomen);
+			this.panelBackgroundEdit.Controls.Add(this.textBoxEditCost);
+			this.panelBackgroundEdit.Controls.Add(this.label1);
+			this.panelBackgroundEdit.Controls.Add(this.comboBoxEditEmployee);
+			this.panelBackgroundEdit.Controls.Add(this.comboBoxEditClients);
+			this.panelBackgroundEdit.Controls.Add(label3);
+			this.panelBackgroundEdit.Controls.Add(label2);
+			this.panelBackgroundEdit.Controls.Add(this.comboBoxEditServers);
+			this.panelBackgroundEdit.Controls.Add(this.comboBoxEditCurrency);
+			this.panelBackgroundEdit.Location = new System.Drawing.Point(3, 39);
+			this.panelBackgroundEdit.Name = "panelBackgroundEdit";
+			this.panelBackgroundEdit.Size = new System.Drawing.Size(318, 370);
+			this.panelBackgroundEdit.TabIndex = 0;
+			// 
+			// dateTimePickerEditOrderTime
+			// 
+			this.dateTimePickerEditOrderTime.BackColor = System.Drawing.Color.Firebrick;
+			this.dateTimePickerEditOrderTime.BorderRadius = 0;
+			this.dateTimePickerEditOrderTime.ForeColor = System.Drawing.Color.White;
+			this.dateTimePickerEditOrderTime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+			this.dateTimePickerEditOrderTime.FormatCustom = null;
+			this.dateTimePickerEditOrderTime.Location = new System.Drawing.Point(21, 281);
+			this.dateTimePickerEditOrderTime.Name = "dateTimePickerEditOrderTime";
+			this.dateTimePickerEditOrderTime.Size = new System.Drawing.Size(271, 30);
+			this.dateTimePickerEditOrderTime.TabIndex = 6;
+			this.dateTimePickerEditOrderTime.Value = new System.DateTime(2020, 5, 20, 3, 6, 1, 333);
+			// 
+			// dateTimePickerEditOrderEnd
+			// 
+			this.dateTimePickerEditOrderEnd.BackColor = System.Drawing.Color.Firebrick;
+			this.dateTimePickerEditOrderEnd.BorderRadius = 0;
+			this.dateTimePickerEditOrderEnd.ForeColor = System.Drawing.Color.White;
+			this.dateTimePickerEditOrderEnd.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+			this.dateTimePickerEditOrderEnd.FormatCustom = null;
+			this.dateTimePickerEditOrderEnd.Location = new System.Drawing.Point(22, 226);
+			this.dateTimePickerEditOrderEnd.Name = "dateTimePickerEditOrderEnd";
+			this.dateTimePickerEditOrderEnd.Size = new System.Drawing.Size(271, 30);
+			this.dateTimePickerEditOrderEnd.TabIndex = 6;
+			this.dateTimePickerEditOrderEnd.Value = new System.DateTime(2020, 5, 20, 3, 6, 1, 333);
+			// 
+			// buttonOfficeConfirmEdit
+			// 
+			this.buttonOfficeConfirmEdit.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonOfficeConfirmEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonOfficeConfirmEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonOfficeConfirmEdit.Font = new System.Drawing.Font("Century Gothic", 13.75F);
+			this.buttonOfficeConfirmEdit.ForeColor = System.Drawing.Color.White;
+			this.buttonOfficeConfirmEdit.Location = new System.Drawing.Point(3, 321);
+			this.buttonOfficeConfirmEdit.Name = "buttonOfficeConfirmEdit";
+			this.buttonOfficeConfirmEdit.Size = new System.Drawing.Size(312, 46);
+			this.buttonOfficeConfirmEdit.TabIndex = 15;
+			this.buttonOfficeConfirmEdit.Text = "Потвердить изменение";
+			this.buttonOfficeConfirmEdit.UseVisualStyleBackColor = false;
+			this.buttonOfficeConfirmEdit.Click += new System.EventHandler(this.buttonOfficeConfirmEdit_Click);
+			// 
+			// textBoxEditDomen
+			// 
+			this.textBoxEditDomen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxEditDomen.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxEditDomen.Location = new System.Drawing.Point(23, 174);
+			this.textBoxEditDomen.MaxLength = 255;
+			this.textBoxEditDomen.Multiline = true;
+			this.textBoxEditDomen.Name = "textBoxEditDomen";
+			this.textBoxEditDomen.Size = new System.Drawing.Size(269, 29);
+			this.textBoxEditDomen.TabIndex = 3;
+			this.textBoxEditDomen.Tag = "Домен";
+			// 
+			// textBoxEditCost
+			// 
+			this.textBoxEditCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxEditCost.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxEditCost.Location = new System.Drawing.Point(23, 140);
+			this.textBoxEditCost.MaxLength = 255;
+			this.textBoxEditCost.Multiline = true;
+			this.textBoxEditCost.Name = "textBoxEditCost";
+			this.textBoxEditCost.Size = new System.Drawing.Size(212, 29);
+			this.textBoxEditCost.TabIndex = 3;
+			this.textBoxEditCost.Tag = "Цена";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 13.75F);
+			this.label1.ForeColor = System.Drawing.Color.Firebrick;
+			this.label1.Location = new System.Drawing.Point(102, 2);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(119, 22);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Изменение";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// comboBoxEditEmployee
+			// 
+			this.comboBoxEditEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxEditEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxEditEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxEditEmployee.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxEditEmployee.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxEditEmployee.FormattingEnabled = true;
+			this.comboBoxEditEmployee.Location = new System.Drawing.Point(23, 39);
+			this.comboBoxEditEmployee.Name = "comboBoxEditEmployee";
+			this.comboBoxEditEmployee.Size = new System.Drawing.Size(269, 29);
+			this.comboBoxEditEmployee.TabIndex = 1;
+			this.comboBoxEditEmployee.Tag = "Сотрудник";
+			// 
+			// comboBoxEditClients
+			// 
+			this.comboBoxEditClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxEditClients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxEditClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxEditClients.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxEditClients.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxEditClients.FormattingEnabled = true;
+			this.comboBoxEditClients.Location = new System.Drawing.Point(23, 74);
+			this.comboBoxEditClients.Name = "comboBoxEditClients";
+			this.comboBoxEditClients.Size = new System.Drawing.Size(269, 29);
+			this.comboBoxEditClients.TabIndex = 1;
+			this.comboBoxEditClients.Tag = "Клиент";
+			// 
+			// comboBoxEditServers
+			// 
+			this.comboBoxEditServers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxEditServers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxEditServers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxEditServers.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxEditServers.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxEditServers.FormattingEnabled = true;
+			this.comboBoxEditServers.Location = new System.Drawing.Point(23, 107);
+			this.comboBoxEditServers.Name = "comboBoxEditServers";
+			this.comboBoxEditServers.Size = new System.Drawing.Size(270, 29);
+			this.comboBoxEditServers.TabIndex = 2;
+			this.comboBoxEditServers.Tag = "Сервер";
+			// 
+			// comboBoxEditCurrency
+			// 
+			this.comboBoxEditCurrency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxEditCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxEditCurrency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxEditCurrency.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxEditCurrency.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxEditCurrency.FormattingEnabled = true;
+			this.comboBoxEditCurrency.Items.AddRange(new object[] {
+            "₽",
+            "$",
+            "€",
+            "₿",
+            "¥"});
+			this.comboBoxEditCurrency.Location = new System.Drawing.Point(241, 140);
+			this.comboBoxEditCurrency.Name = "comboBoxEditCurrency";
+			this.comboBoxEditCurrency.Size = new System.Drawing.Size(52, 29);
+			this.comboBoxEditCurrency.TabIndex = 2;
+			this.comboBoxEditCurrency.Tag = "Сервер";
+			// 
+			// buttonEditShow
+			// 
+			this.buttonEditShow.Activecolor = System.Drawing.Color.Brown;
+			this.buttonEditShow.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonEditShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonEditShow.BorderRadius = 0;
+			this.buttonEditShow.ButtonText = "Изменить";
+			this.buttonEditShow.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonEditShow.DisabledColor = System.Drawing.Color.Gray;
+			this.buttonEditShow.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonEditShow.Iconcolor = System.Drawing.Color.Transparent;
+			this.buttonEditShow.Iconimage = null;
+			this.buttonEditShow.Iconimage_right = null;
+			this.buttonEditShow.Iconimage_right_Selected = null;
+			this.buttonEditShow.Iconimage_Selected = null;
+			this.buttonEditShow.IconMarginLeft = 0;
+			this.buttonEditShow.IconMarginRight = 0;
+			this.buttonEditShow.IconRightVisible = false;
+			this.buttonEditShow.IconRightZoom = 0D;
+			this.buttonEditShow.IconVisible = false;
+			this.buttonEditShow.IconZoom = 70D;
+			this.buttonEditShow.IsTab = false;
+			this.buttonEditShow.Location = new System.Drawing.Point(819, 25);
+			this.buttonEditShow.Margin = new System.Windows.Forms.Padding(5);
+			this.buttonEditShow.Name = "buttonEditShow";
+			this.buttonEditShow.Normalcolor = System.Drawing.Color.Firebrick;
+			this.buttonEditShow.OnHovercolor = System.Drawing.Color.Brown;
+			this.buttonEditShow.OnHoverTextColor = System.Drawing.Color.White;
+			this.buttonEditShow.selected = false;
+			this.buttonEditShow.Size = new System.Drawing.Size(191, 34);
+			this.buttonEditShow.TabIndex = 18;
+			this.buttonEditShow.Text = "Изменить";
+			this.buttonEditShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.buttonEditShow.Textcolor = System.Drawing.Color.White;
+			this.buttonEditShow.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
+			this.buttonEditShow.Click += new System.EventHandler(this.buttonEditShow_Click);
+			// 
+			// buttonExcel
+			// 
+			this.buttonExcel.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonExcel.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonExcel.ForeColor = System.Drawing.Color.White;
+			this.buttonExcel.Location = new System.Drawing.Point(5, 624);
+			this.buttonExcel.Name = "buttonExcel";
+			this.buttonExcel.Size = new System.Drawing.Size(270, 52);
+			this.buttonExcel.TabIndex = 16;
+			this.buttonExcel.Text = "Вывод в Excel";
+			this.buttonExcel.UseVisualStyleBackColor = false;
+			this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
 			// 
 			// OrdersControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+			this.Controls.Add(this.buttonEditShow);
+			this.Controls.Add(this.panelEdit);
 			this.Controls.Add(this.textBoxSearch);
 			this.Controls.Add(labelSearch);
 			this.Controls.Add(this.panelAddClient);
@@ -587,6 +896,9 @@
 			this.panelAddOrder.PerformLayout();
 			this.panelAddClient.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).EndInit();
+			this.panelEdit.ResumeLayout(false);
+			this.panelBackgroundEdit.ResumeLayout(false);
+			this.panelBackgroundEdit.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -623,5 +935,22 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+		private System.Windows.Forms.Panel panelEdit;
+		private System.Windows.Forms.Button buttonClosePanelEdit;
+		private System.Windows.Forms.Panel panelBackgroundEdit;
+		private System.Windows.Forms.Button buttonOfficeConfirmEdit;
+		private System.Windows.Forms.Label label1;
+		private Bunifu.Framework.UI.BunifuFlatButton buttonEditShow;
+		private ns1.BunifuDatepicker dateTimePickerEditOrderTime;
+		private ns1.BunifuDatepicker dateTimePickerEditOrderEnd;
+		private System.Windows.Forms.TextBox textBoxEditCost;
+		private System.Windows.Forms.ComboBox comboBoxEditEmployee;
+		private System.Windows.Forms.ComboBox comboBoxEditClients;
+		private System.Windows.Forms.ComboBox comboBoxEditServers;
+		private System.Windows.Forms.ComboBox comboBoxEditCurrency;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+		private System.Windows.Forms.TextBox textBoxDomen;
+		private System.Windows.Forms.TextBox textBoxEditDomen;
+		private System.Windows.Forms.Button buttonExcel;
 	}
 }

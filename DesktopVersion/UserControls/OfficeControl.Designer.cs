@@ -31,6 +31,11 @@
 			System.Windows.Forms.Label labelSearch;
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			this.panelBackgroundEdit = new System.Windows.Forms.Panel();
+			this.textBoxOfficeEditName = new System.Windows.Forms.TextBox();
+			this.buttonOfficeConfirmEdit = new System.Windows.Forms.Button();
+			this.textBoxOfficeEditAddress = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.label = new System.Windows.Forms.Label();
 			this.dataGridViewMain = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,12 +44,18 @@
 			this.panelAddOffice = new System.Windows.Forms.Panel();
 			this.textBoxOfficeName = new System.Windows.Forms.TextBox();
 			this.buttonOfficeDelete = new System.Windows.Forms.Button();
+			this.buttonExcel = new System.Windows.Forms.Button();
 			this.buttonOfficeAdd = new System.Windows.Forms.Button();
 			this.textBoxAddress = new System.Windows.Forms.TextBox();
+			this.buttonEditShow = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
+			this.panelEdit = new System.Windows.Forms.Panel();
+			this.buttonClosePanelEdit = new System.Windows.Forms.Button();
 			labelSearch = new System.Windows.Forms.Label();
+			this.panelBackgroundEdit.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
 			this.panelAddOffice.SuspendLayout();
+			this.panelEdit.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// labelSearch
@@ -58,6 +69,69 @@
 			labelSearch.TabIndex = 19;
 			labelSearch.Text = "Поиск";
 			labelSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panelBackgroundEdit
+			// 
+			this.panelBackgroundEdit.BackColor = System.Drawing.Color.White;
+			this.panelBackgroundEdit.Controls.Add(this.textBoxOfficeEditName);
+			this.panelBackgroundEdit.Controls.Add(this.buttonOfficeConfirmEdit);
+			this.panelBackgroundEdit.Controls.Add(this.textBoxOfficeEditAddress);
+			this.panelBackgroundEdit.Controls.Add(this.label1);
+			this.panelBackgroundEdit.Location = new System.Drawing.Point(3, 39);
+			this.panelBackgroundEdit.Name = "panelBackgroundEdit";
+			this.panelBackgroundEdit.Size = new System.Drawing.Size(318, 370);
+			this.panelBackgroundEdit.TabIndex = 0;
+			// 
+			// textBoxOfficeEditName
+			// 
+			this.textBoxOfficeEditName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxOfficeEditName.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxOfficeEditName.Location = new System.Drawing.Point(23, 27);
+			this.textBoxOfficeEditName.MaxLength = 255;
+			this.textBoxOfficeEditName.Multiline = true;
+			this.textBoxOfficeEditName.Name = "textBoxOfficeEditName";
+			this.textBoxOfficeEditName.Size = new System.Drawing.Size(271, 29);
+			this.textBoxOfficeEditName.TabIndex = 16;
+			this.textBoxOfficeEditName.Tag = "Наименование";
+			// 
+			// buttonOfficeConfirmEdit
+			// 
+			this.buttonOfficeConfirmEdit.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonOfficeConfirmEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonOfficeConfirmEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonOfficeConfirmEdit.Font = new System.Drawing.Font("Century Gothic", 13.75F);
+			this.buttonOfficeConfirmEdit.ForeColor = System.Drawing.Color.White;
+			this.buttonOfficeConfirmEdit.Location = new System.Drawing.Point(3, 321);
+			this.buttonOfficeConfirmEdit.Name = "buttonOfficeConfirmEdit";
+			this.buttonOfficeConfirmEdit.Size = new System.Drawing.Size(312, 46);
+			this.buttonOfficeConfirmEdit.TabIndex = 15;
+			this.buttonOfficeConfirmEdit.Text = "Потвердить изменение";
+			this.buttonOfficeConfirmEdit.UseVisualStyleBackColor = false;
+			this.buttonOfficeConfirmEdit.Click += new System.EventHandler(this.buttonOfficeConfirmEdit_Click);
+			// 
+			// textBoxOfficeEditAddress
+			// 
+			this.textBoxOfficeEditAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.textBoxOfficeEditAddress.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.textBoxOfficeEditAddress.Location = new System.Drawing.Point(23, 62);
+			this.textBoxOfficeEditAddress.MaxLength = 255;
+			this.textBoxOfficeEditAddress.Multiline = true;
+			this.textBoxOfficeEditAddress.Name = "textBoxOfficeEditAddress";
+			this.textBoxOfficeEditAddress.Size = new System.Drawing.Size(271, 75);
+			this.textBoxOfficeEditAddress.TabIndex = 13;
+			this.textBoxOfficeEditAddress.Tag = "Адрес";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 13.75F);
+			this.label1.ForeColor = System.Drawing.Color.Firebrick;
+			this.label1.Location = new System.Drawing.Point(102, 2);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(119, 22);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Изменение";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label
 			// 
@@ -127,6 +201,7 @@
 			// 
 			this.panelAddOffice.Controls.Add(this.textBoxOfficeName);
 			this.panelAddOffice.Controls.Add(this.buttonOfficeDelete);
+			this.panelAddOffice.Controls.Add(this.buttonExcel);
 			this.panelAddOffice.Controls.Add(this.buttonOfficeAdd);
 			this.panelAddOffice.Controls.Add(this.textBoxAddress);
 			this.panelAddOffice.Controls.Add(this.label);
@@ -162,6 +237,21 @@
 			this.buttonOfficeDelete.UseVisualStyleBackColor = false;
 			this.buttonOfficeDelete.Click += new System.EventHandler(this.buttonOfficeDelete_Click);
 			// 
+			// buttonExcel
+			// 
+			this.buttonExcel.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonExcel.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonExcel.ForeColor = System.Drawing.Color.White;
+			this.buttonExcel.Location = new System.Drawing.Point(3, 629);
+			this.buttonExcel.Name = "buttonExcel";
+			this.buttonExcel.Size = new System.Drawing.Size(270, 52);
+			this.buttonExcel.TabIndex = 15;
+			this.buttonExcel.Text = "Вывод в Excel";
+			this.buttonExcel.UseVisualStyleBackColor = false;
+			this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
+			// 
 			// buttonOfficeAdd
 			// 
 			this.buttonOfficeAdd.BackColor = System.Drawing.Color.Firebrick;
@@ -169,7 +259,7 @@
 			this.buttonOfficeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonOfficeAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonOfficeAdd.ForeColor = System.Drawing.Color.White;
-			this.buttonOfficeAdd.Location = new System.Drawing.Point(4, 691);
+			this.buttonOfficeAdd.Location = new System.Drawing.Point(4, 687);
 			this.buttonOfficeAdd.Name = "buttonOfficeAdd";
 			this.buttonOfficeAdd.Size = new System.Drawing.Size(270, 52);
 			this.buttonOfficeAdd.TabIndex = 15;
@@ -189,6 +279,43 @@
 			this.textBoxAddress.TabIndex = 13;
 			this.textBoxAddress.Tag = "Адрес";
 			// 
+			// buttonEditShow
+			// 
+			this.buttonEditShow.Activecolor = System.Drawing.Color.Brown;
+			this.buttonEditShow.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonEditShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonEditShow.BorderRadius = 0;
+			this.buttonEditShow.ButtonText = "Изменить";
+			this.buttonEditShow.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonEditShow.DisabledColor = System.Drawing.Color.Gray;
+			this.buttonEditShow.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonEditShow.Iconcolor = System.Drawing.Color.Transparent;
+			this.buttonEditShow.Iconimage = null;
+			this.buttonEditShow.Iconimage_right = null;
+			this.buttonEditShow.Iconimage_right_Selected = null;
+			this.buttonEditShow.Iconimage_Selected = null;
+			this.buttonEditShow.IconMarginLeft = 0;
+			this.buttonEditShow.IconMarginRight = 0;
+			this.buttonEditShow.IconRightVisible = false;
+			this.buttonEditShow.IconRightZoom = 0D;
+			this.buttonEditShow.IconVisible = false;
+			this.buttonEditShow.IconZoom = 70D;
+			this.buttonEditShow.IsTab = false;
+			this.buttonEditShow.Location = new System.Drawing.Point(819, 25);
+			this.buttonEditShow.Margin = new System.Windows.Forms.Padding(5);
+			this.buttonEditShow.Name = "buttonEditShow";
+			this.buttonEditShow.Normalcolor = System.Drawing.Color.Firebrick;
+			this.buttonEditShow.OnHovercolor = System.Drawing.Color.Brown;
+			this.buttonEditShow.OnHoverTextColor = System.Drawing.Color.White;
+			this.buttonEditShow.selected = false;
+			this.buttonEditShow.Size = new System.Drawing.Size(191, 34);
+			this.buttonEditShow.TabIndex = 17;
+			this.buttonEditShow.Text = "Изменить";
+			this.buttonEditShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.buttonEditShow.Textcolor = System.Drawing.Color.White;
+			this.buttonEditShow.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
+			this.buttonEditShow.Click += new System.EventHandler(this.buttonOfficeEditShow_Click);
+			// 
 			// textBoxSearch
 			// 
 			this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -202,18 +329,49 @@
 			this.textBoxSearch.Tag = "";
 			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			// 
+			// panelEdit
+			// 
+			this.panelEdit.BackColor = System.Drawing.Color.Firebrick;
+			this.panelEdit.Controls.Add(this.buttonClosePanelEdit);
+			this.panelEdit.Controls.Add(this.panelBackgroundEdit);
+			this.panelEdit.Location = new System.Drawing.Point(685, 102);
+			this.panelEdit.Name = "panelEdit";
+			this.panelEdit.Size = new System.Drawing.Size(324, 412);
+			this.panelEdit.TabIndex = 20;
+			this.panelEdit.Visible = false;
+			// 
+			// buttonClosePanelEdit
+			// 
+			this.buttonClosePanelEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonClosePanelEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonClosePanelEdit.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonClosePanelEdit.ForeColor = System.Drawing.Color.White;
+			this.buttonClosePanelEdit.Location = new System.Drawing.Point(285, 3);
+			this.buttonClosePanelEdit.Margin = new System.Windows.Forms.Padding(0);
+			this.buttonClosePanelEdit.Name = "buttonClosePanelEdit";
+			this.buttonClosePanelEdit.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+			this.buttonClosePanelEdit.Size = new System.Drawing.Size(33, 33);
+			this.buttonClosePanelEdit.TabIndex = 17;
+			this.buttonClosePanelEdit.Text = "X";
+			this.buttonClosePanelEdit.UseVisualStyleBackColor = true;
+			// 
 			// OfficeControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+			this.Controls.Add(this.buttonEditShow);
+			this.Controls.Add(this.panelEdit);
 			this.Controls.Add(this.textBoxSearch);
 			this.Controls.Add(labelSearch);
 			this.Controls.Add(this.panelAddOffice);
 			this.Controls.Add(this.dataGridViewMain);
 			this.Name = "OfficeControl";
 			this.Size = new System.Drawing.Size(1300, 820);
+			this.panelBackgroundEdit.ResumeLayout(false);
+			this.panelBackgroundEdit.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
 			this.panelAddOffice.ResumeLayout(false);
 			this.panelAddOffice.PerformLayout();
+			this.panelEdit.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -232,5 +390,14 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+		private System.Windows.Forms.Panel panelEdit;
+		private System.Windows.Forms.Button buttonOfficeConfirmEdit;
+		private System.Windows.Forms.TextBox textBoxOfficeEditName;
+		private System.Windows.Forms.TextBox textBoxOfficeEditAddress;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button buttonClosePanelEdit;
+		private Bunifu.Framework.UI.BunifuFlatButton buttonEditShow;
+		private System.Windows.Forms.Panel panelBackgroundEdit;
+		private System.Windows.Forms.Button buttonExcel;
 	}
 }

@@ -38,24 +38,26 @@ namespace DesktopVersion
 			System.Windows.Forms.Panel panelMenuBottom;
 			System.Windows.Forms.Panel panelUnderMenu;
 			System.Windows.Forms.Panel panelMenuLineUnderButton5;
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			System.Windows.Forms.Panel panelMenuLineUnderButton6;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			System.Windows.Forms.Panel panelMenuLineUnderButton7;
 			this.panelTop = new System.Windows.Forms.Panel();
 			this.labelName = new System.Windows.Forms.Label();
 			this.labelTopPanel = new System.Windows.Forms.Label();
-			this.buttonClose = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.panelMain = new System.Windows.Forms.FlowLayoutPanel();
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.panelMenuRight = new System.Windows.Forms.Panel();
+			this.timerMenu = new System.Windows.Forms.Timer(this.components);
+			this.pictureBoxBackGround = new System.Windows.Forms.PictureBox();
+			this.buttonMenu6 = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.buttonMenu5 = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.buttonMenu4 = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.buttonMenu3 = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.buttonMenu2 = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.buttonMenu1 = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.pictureBoxLogoInMenu = new System.Windows.Forms.PictureBox();
-			this.panelMenuRight = new System.Windows.Forms.Panel();
-			this.timerMenu = new System.Windows.Forms.Timer(this.components);
-			this.pictureBoxBackGround = new System.Windows.Forms.PictureBox();
-			this.buttonMenu6 = new Bunifu.Framework.UI.BunifuFlatButton();
+			this.buttonClose = new Bunifu.Framework.UI.BunifuFlatButton();
+			this.button7 = new Bunifu.Framework.UI.BunifuFlatButton();
 			panelMenuLineUnderButto3 = new System.Windows.Forms.Panel();
 			panelMenuLineUnderButton2 = new System.Windows.Forms.Panel();
 			panelMenuLineUnderButton1 = new System.Windows.Forms.Panel();
@@ -65,10 +67,11 @@ namespace DesktopVersion
 			panelUnderMenu = new System.Windows.Forms.Panel();
 			panelMenuLineUnderButton5 = new System.Windows.Forms.Panel();
 			panelMenuLineUnderButton6 = new System.Windows.Forms.Panel();
+			panelMenuLineUnderButton7 = new System.Windows.Forms.Panel();
 			this.panelTop.SuspendLayout();
 			this.panelMenu.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoInMenu)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackGround)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoInMenu)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelMenuLineUnderButto3
@@ -148,6 +151,16 @@ namespace DesktopVersion
 			panelMenuLineUnderButton5.Size = new System.Drawing.Size(60, 3);
 			panelMenuLineUnderButton5.TabIndex = 12;
 			// 
+			// panelMenuLineUnderButton6
+			// 
+			panelMenuLineUnderButton6.BackColor = System.Drawing.Color.White;
+			panelMenuLineUnderButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			panelMenuLineUnderButton6.Dock = System.Windows.Forms.DockStyle.Top;
+			panelMenuLineUnderButton6.Location = new System.Drawing.Point(0, 406);
+			panelMenuLineUnderButton6.Name = "panelMenuLineUnderButton6";
+			panelMenuLineUnderButton6.Size = new System.Drawing.Size(60, 3);
+			panelMenuLineUnderButton6.TabIndex = 13;
+			// 
 			// panelTop
 			// 
 			this.panelTop.BackColor = System.Drawing.Color.Firebrick;
@@ -185,43 +198,6 @@ namespace DesktopVersion
 			this.labelTopPanel.TabIndex = 3;
 			this.labelTopPanel.Text = "null";
 			// 
-			// buttonClose
-			// 
-			this.buttonClose.Activecolor = System.Drawing.Color.Red;
-			this.buttonClose.BackColor = System.Drawing.Color.Transparent;
-			this.buttonClose.BackgroundImage = global::DesktopVersion.Properties.Resources.close;
-			this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.buttonClose.BorderRadius = 0;
-			this.buttonClose.ButtonText = "";
-			this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.buttonClose.DisabledColor = System.Drawing.Color.Gray;
-			this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
-			this.buttonClose.Iconcolor = System.Drawing.Color.Transparent;
-			this.buttonClose.Iconimage = ((System.Drawing.Image)(resources.GetObject("buttonClose.Iconimage")));
-			this.buttonClose.Iconimage_right = null;
-			this.buttonClose.Iconimage_right_Selected = null;
-			this.buttonClose.Iconimage_Selected = null;
-			this.buttonClose.IconMarginLeft = 0;
-			this.buttonClose.IconMarginRight = 0;
-			this.buttonClose.IconRightVisible = false;
-			this.buttonClose.IconRightZoom = 0D;
-			this.buttonClose.IconVisible = false;
-			this.buttonClose.IconZoom = 90D;
-			this.buttonClose.IsTab = false;
-			this.buttonClose.Location = new System.Drawing.Point(1445, 0);
-			this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.buttonClose.Name = "buttonClose";
-			this.buttonClose.Normalcolor = System.Drawing.Color.Transparent;
-			this.buttonClose.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-			this.buttonClose.OnHoverTextColor = System.Drawing.Color.Transparent;
-			this.buttonClose.selected = false;
-			this.buttonClose.Size = new System.Drawing.Size(55, 37);
-			this.buttonClose.TabIndex = 2;
-			this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.buttonClose.Textcolor = System.Drawing.Color.White;
-			this.buttonClose.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-			// 
 			// panelMain
 			// 
 			this.panelMain.Location = new System.Drawing.Point(667, 339);
@@ -232,6 +208,8 @@ namespace DesktopVersion
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.Firebrick;
+			this.panelMenu.Controls.Add(this.button7);
+			this.panelMenu.Controls.Add(panelMenuLineUnderButton7);
 			this.panelMenu.Controls.Add(panelMenuLineUnderButton6);
 			this.panelMenu.Controls.Add(this.buttonMenu6);
 			this.panelMenu.Controls.Add(this.buttonMenu5);
@@ -253,6 +231,72 @@ namespace DesktopVersion
 			this.panelMenu.Size = new System.Drawing.Size(67, 913);
 			this.panelMenu.TabIndex = 2;
 			this.panelMenu.Visible = false;
+			// 
+			// panelMenuRight
+			// 
+			this.panelMenuRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+			this.panelMenuRight.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panelMenuRight.Location = new System.Drawing.Point(60, 0);
+			this.panelMenuRight.Name = "panelMenuRight";
+			this.panelMenuRight.Size = new System.Drawing.Size(7, 913);
+			this.panelMenuRight.TabIndex = 14;
+			// 
+			// timerMenu
+			// 
+			this.timerMenu.Enabled = true;
+			this.timerMenu.Interval = 50;
+			this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
+			// 
+			// pictureBoxBackGround
+			// 
+			this.pictureBoxBackGround.Image = global::DesktopVersion.Properties.Resources.MaclL3udUmg;
+			this.pictureBoxBackGround.Location = new System.Drawing.Point(66, 299);
+			this.pictureBoxBackGround.Name = "pictureBoxBackGround";
+			this.pictureBoxBackGround.Size = new System.Drawing.Size(1434, 378);
+			this.pictureBoxBackGround.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBoxBackGround.TabIndex = 5;
+			this.pictureBoxBackGround.TabStop = false;
+			this.pictureBoxBackGround.Visible = false;
+			// 
+			// buttonMenu6
+			// 
+			this.buttonMenu6.Activecolor = System.Drawing.Color.Brown;
+			this.buttonMenu6.AutoSize = true;
+			this.buttonMenu6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.buttonMenu6.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonMenu6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonMenu6.BorderRadius = 1;
+			this.buttonMenu6.ButtonText = "";
+			this.buttonMenu6.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonMenu6.DisabledColor = System.Drawing.Color.Gray;
+			this.buttonMenu6.Dock = System.Windows.Forms.DockStyle.Top;
+			this.buttonMenu6.Font = new System.Drawing.Font("Century Gothic", 8.75F);
+			this.buttonMenu6.Iconcolor = System.Drawing.Color.Transparent;
+			this.buttonMenu6.Iconimage = global::DesktopVersion.Properties.Resources.order;
+			this.buttonMenu6.Iconimage_right = null;
+			this.buttonMenu6.Iconimage_right_Selected = null;
+			this.buttonMenu6.Iconimage_Selected = null;
+			this.buttonMenu6.IconMarginLeft = 0;
+			this.buttonMenu6.IconMarginRight = 0;
+			this.buttonMenu6.IconRightVisible = false;
+			this.buttonMenu6.IconRightZoom = 0D;
+			this.buttonMenu6.IconVisible = true;
+			this.buttonMenu6.IconZoom = 50D;
+			this.buttonMenu6.IsTab = false;
+			this.buttonMenu6.Location = new System.Drawing.Point(0, 343);
+			this.buttonMenu6.Margin = new System.Windows.Forms.Padding(5);
+			this.buttonMenu6.Name = "buttonMenu6";
+			this.buttonMenu6.Normalcolor = System.Drawing.Color.Firebrick;
+			this.buttonMenu6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+			this.buttonMenu6.OnHoverTextColor = System.Drawing.Color.White;
+			this.buttonMenu6.selected = false;
+			this.buttonMenu6.Size = new System.Drawing.Size(60, 63);
+			this.buttonMenu6.TabIndex = 18;
+			this.buttonMenu6.Tag = DesktopVersion.UserControlController.E_Control.OrdersControl;
+			this.buttonMenu6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.buttonMenu6.Textcolor = System.Drawing.Color.White;
+			this.buttonMenu6.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
+			this.buttonMenu6.Click += new System.EventHandler(this.buttonsMenu_Click);
 			// 
 			// buttonMenu5
 			// 
@@ -428,7 +472,7 @@ namespace DesktopVersion
 			this.buttonMenu1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.buttonMenu1.Font = new System.Drawing.Font("Century Gothic", 8.75F);
 			this.buttonMenu1.Iconcolor = System.Drawing.Color.Transparent;
-			this.buttonMenu1.Iconimage = global::DesktopVersion.Properties.Resources.archive;
+			this.buttonMenu1.Iconimage = global::DesktopVersion.Properties.Resources.Server;
 			this.buttonMenu1.Iconimage_right = null;
 			this.buttonMenu1.Iconimage_right_Selected = null;
 			this.buttonMenu1.Iconimage_Selected = null;
@@ -468,81 +512,91 @@ namespace DesktopVersion
 			this.pictureBoxLogoInMenu.TabIndex = 5;
 			this.pictureBoxLogoInMenu.TabStop = false;
 			// 
-			// panelMenuRight
+			// buttonClose
 			// 
-			this.panelMenuRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-			this.panelMenuRight.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panelMenuRight.Location = new System.Drawing.Point(60, 0);
-			this.panelMenuRight.Name = "panelMenuRight";
-			this.panelMenuRight.Size = new System.Drawing.Size(7, 913);
-			this.panelMenuRight.TabIndex = 14;
+			this.buttonClose.Activecolor = System.Drawing.Color.Red;
+			this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+			this.buttonClose.BackgroundImage = global::DesktopVersion.Properties.Resources.close;
+			this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.buttonClose.BorderRadius = 0;
+			this.buttonClose.ButtonText = "";
+			this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonClose.DisabledColor = System.Drawing.Color.Gray;
+			this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
+			this.buttonClose.Iconcolor = System.Drawing.Color.Transparent;
+			this.buttonClose.Iconimage = ((System.Drawing.Image)(resources.GetObject("buttonClose.Iconimage")));
+			this.buttonClose.Iconimage_right = null;
+			this.buttonClose.Iconimage_right_Selected = null;
+			this.buttonClose.Iconimage_Selected = null;
+			this.buttonClose.IconMarginLeft = 0;
+			this.buttonClose.IconMarginRight = 0;
+			this.buttonClose.IconRightVisible = false;
+			this.buttonClose.IconRightZoom = 0D;
+			this.buttonClose.IconVisible = false;
+			this.buttonClose.IconZoom = 90D;
+			this.buttonClose.IsTab = false;
+			this.buttonClose.Location = new System.Drawing.Point(1445, 0);
+			this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.buttonClose.Name = "buttonClose";
+			this.buttonClose.Normalcolor = System.Drawing.Color.Transparent;
+			this.buttonClose.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+			this.buttonClose.OnHoverTextColor = System.Drawing.Color.Transparent;
+			this.buttonClose.selected = false;
+			this.buttonClose.Size = new System.Drawing.Size(55, 37);
+			this.buttonClose.TabIndex = 2;
+			this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.buttonClose.Textcolor = System.Drawing.Color.White;
+			this.buttonClose.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
 			// 
-			// timerMenu
+			// panelMenuLineUnderButton7
 			// 
-			this.timerMenu.Enabled = true;
-			this.timerMenu.Interval = 50;
-			this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
+			panelMenuLineUnderButton7.BackColor = System.Drawing.Color.White;
+			panelMenuLineUnderButton7.Dock = System.Windows.Forms.DockStyle.Bottom;
+			panelMenuLineUnderButton7.Location = new System.Drawing.Point(0, 839);
+			panelMenuLineUnderButton7.Name = "panelMenuLineUnderButton7";
+			panelMenuLineUnderButton7.Size = new System.Drawing.Size(60, 4);
+			panelMenuLineUnderButton7.TabIndex = 17;
 			// 
-			// pictureBoxBackGround
+			// button7
 			// 
-			this.pictureBoxBackGround.Image = global::DesktopVersion.Properties.Resources.MaclL3udUmg;
-			this.pictureBoxBackGround.Location = new System.Drawing.Point(66, 299);
-			this.pictureBoxBackGround.Name = "pictureBoxBackGround";
-			this.pictureBoxBackGround.Size = new System.Drawing.Size(1434, 378);
-			this.pictureBoxBackGround.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBoxBackGround.TabIndex = 5;
-			this.pictureBoxBackGround.TabStop = false;
-			this.pictureBoxBackGround.Visible = false;
-			// 
-			// panelMenuLineUnderButton6
-			// 
-			panelMenuLineUnderButton6.BackColor = System.Drawing.Color.White;
-			panelMenuLineUnderButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			panelMenuLineUnderButton6.Dock = System.Windows.Forms.DockStyle.Top;
-			panelMenuLineUnderButton6.Location = new System.Drawing.Point(0, 406);
-			panelMenuLineUnderButton6.Name = "panelMenuLineUnderButton6";
-			panelMenuLineUnderButton6.Size = new System.Drawing.Size(60, 3);
-			panelMenuLineUnderButton6.TabIndex = 13;
-			// 
-			// buttonMenu6
-			// 
-			this.buttonMenu6.Activecolor = System.Drawing.Color.Brown;
-			this.buttonMenu6.AutoSize = true;
-			this.buttonMenu6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.buttonMenu6.BackColor = System.Drawing.Color.Firebrick;
-			this.buttonMenu6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.buttonMenu6.BorderRadius = 1;
-			this.buttonMenu6.ButtonText = "";
-			this.buttonMenu6.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.buttonMenu6.DisabledColor = System.Drawing.Color.Gray;
-			this.buttonMenu6.Dock = System.Windows.Forms.DockStyle.Top;
-			this.buttonMenu6.Font = new System.Drawing.Font("Century Gothic", 8.75F);
-			this.buttonMenu6.Iconcolor = System.Drawing.Color.Transparent;
-			this.buttonMenu6.Iconimage = global::DesktopVersion.Properties.Resources.exit_2;
-			this.buttonMenu6.Iconimage_right = null;
-			this.buttonMenu6.Iconimage_right_Selected = null;
-			this.buttonMenu6.Iconimage_Selected = null;
-			this.buttonMenu6.IconMarginLeft = 0;
-			this.buttonMenu6.IconMarginRight = 0;
-			this.buttonMenu6.IconRightVisible = false;
-			this.buttonMenu6.IconRightZoom = 0D;
-			this.buttonMenu6.IconVisible = true;
-			this.buttonMenu6.IconZoom = 50D;
-			this.buttonMenu6.IsTab = false;
-			this.buttonMenu6.Location = new System.Drawing.Point(0, 343);
-			this.buttonMenu6.Margin = new System.Windows.Forms.Padding(5);
-			this.buttonMenu6.Name = "buttonMenu6";
-			this.buttonMenu6.Normalcolor = System.Drawing.Color.Firebrick;
-			this.buttonMenu6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-			this.buttonMenu6.OnHoverTextColor = System.Drawing.Color.White;
-			this.buttonMenu6.selected = false;
-			this.buttonMenu6.Size = new System.Drawing.Size(60, 63);
-			this.buttonMenu6.TabIndex = 18;
-			this.buttonMenu6.Tag = UserControlController.E_Control.OrdersControl;
-			this.buttonMenu6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.buttonMenu6.Textcolor = System.Drawing.Color.White;
-			this.buttonMenu6.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
-			this.buttonMenu6.Click += new System.EventHandler(this.buttonsMenu_Click);
+			this.button7.Activecolor = System.Drawing.Color.Brown;
+			this.button7.AutoSize = true;
+			this.button7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.button7.BackColor = System.Drawing.Color.Firebrick;
+			this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button7.BorderRadius = 1;
+			this.button7.ButtonText = "";
+			this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.button7.DisabledColor = System.Drawing.Color.Gray;
+			this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.button7.Font = new System.Drawing.Font("Century Gothic", 8.75F);
+			this.button7.Iconcolor = System.Drawing.Color.Transparent;
+			this.button7.Iconimage = global::DesktopVersion.Properties.Resources.web_development_computer_icons_website_world_wide_web_web_design_global_globe_network_planet_web_world_icon_42410c55bffa56dc12e7d54d8e40c53d;
+			this.button7.Iconimage_right = null;
+			this.button7.Iconimage_right_Selected = null;
+			this.button7.Iconimage_Selected = null;
+			this.button7.IconMarginLeft = 0;
+			this.button7.IconMarginRight = 0;
+			this.button7.IconRightVisible = false;
+			this.button7.IconRightZoom = 0D;
+			this.button7.IconVisible = true;
+			this.button7.IconZoom = 50D;
+			this.button7.IsTab = false;
+			this.button7.Location = new System.Drawing.Point(0, 776);
+			this.button7.Margin = new System.Windows.Forms.Padding(5);
+			this.button7.Name = "button7";
+			this.button7.Normalcolor = System.Drawing.Color.Firebrick;
+			this.button7.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+			this.button7.OnHoverTextColor = System.Drawing.Color.White;
+			this.button7.selected = false;
+			this.button7.Size = new System.Drawing.Size(60, 63);
+			this.button7.TabIndex = 19;
+			this.button7.Tag = "";
+			this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button7.Textcolor = System.Drawing.Color.White;
+			this.button7.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
+			this.button7.Click += new System.EventHandler(this.button7_Click);
 			// 
 			// MainForm
 			// 
@@ -568,8 +622,8 @@ namespace DesktopVersion
 			this.panelTop.PerformLayout();
 			this.panelMenu.ResumeLayout(false);
 			this.panelMenu.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoInMenu)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackGround)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoInMenu)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -592,6 +646,7 @@ namespace DesktopVersion
 		public Bunifu.Framework.UI.BunifuFlatButton buttonMenu4;
 		public System.Windows.Forms.PictureBox pictureBoxBackGround;
 		private Bunifu.Framework.UI.BunifuFlatButton buttonMenu6;
+		private Bunifu.Framework.UI.BunifuFlatButton button7;
 	}
 }
 
