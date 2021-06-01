@@ -1,11 +1,11 @@
 ﻿using DesktopVersion.Entities;
+using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Application = Microsoft.Office.Interop.Word.Application;
 
 namespace DesktopVersion
 {
@@ -92,9 +92,8 @@ namespace DesktopVersion
 				}
 			}
 			else
-			{
 				MessageBox.Show("Не выбран заказ");
-			}
+			
 		}
 
 		private void buttonAddClientAdd_Click(object sender, EventArgs e)
@@ -180,6 +179,39 @@ namespace DesktopVersion
 		{
 			var excel = new Excel(dataGridViewMain);
 			excel.StartExcel();
+		}
+
+		private void buttonWord_Click(object sender, EventArgs e)
+		{
+			if (dataGridViewMain.SelectedRows.Count > 0)
+			{
+				Order order = (Order)dataGridViewMain.SelectedRows[0].Tag;
+
+				String fileName = Path.GetTempFileName();
+				File.WriteAllBytes(fileName, Properties.Resources.Contract);
+
+				var wordApp = new Application();
+				var wordDocument = wordApp.Documents.Add(fileName);
+
+				ReplaceWordStub("{IdContract}", order.Id.ToString(), wordDocument);
+				ReplaceWordStub("{ClientName}", order.Client.FullName.ToString(), wordDocument);
+				ReplaceWordStub("{DateOfContract}", order.DateTime.ToString("d"), wordDocument);
+				ReplaceWordStub("{Cost}", order.Cost.ToString(), wordDocument);
+				ReplaceWordStub("{CurrencyChar}", order.Currency, wordDocument);
+				ReplaceWordStub("{CostWithNDS}", (order.Cost+(order.Cost/100)*20).ToString(), wordDocument);
+				ReplaceWordStub("{CurrencyChar}", order.Currency, wordDocument);
+				ReplaceWordStub("{DaysContract}", (order.DateOfEnd-order.DateTime).Days.ToString(), wordDocument);
+
+				wordApp.Visible = true;
+			}
+			else
+				MessageBox.Show("Не выбран заказ");
+		}
+		private static void ReplaceWordStub(string stubToReplace, string text, Document wordDocument)
+		{
+			var range = wordDocument.Content;
+			range.Find.ClearFormatting();
+			range.Find.Execute(FindText: stubToReplace, ReplaceWith: text);
 		}
 	}
 }

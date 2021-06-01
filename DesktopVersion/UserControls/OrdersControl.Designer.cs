@@ -36,10 +36,10 @@
 			System.Windows.Forms.Panel panelAddClientSpliter;
 			System.Windows.Forms.Label label2;
 			System.Windows.Forms.Label label3;
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelAddClientBackGround = new System.Windows.Forms.Panel();
 			this.TextBoxAddClientPhoneNumber = new Bunifu.Framework.UI.BunifuMetroTextbox();
 			this.TextBoxAddClientFullName = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -87,6 +87,7 @@
 			this.comboBoxEditCurrency = new System.Windows.Forms.ComboBox();
 			this.buttonEditShow = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
+			this.buttonWord = new System.Windows.Forms.Button();
 			labelRight1 = new System.Windows.Forms.Label();
 			labelRight2 = new System.Windows.Forms.Label();
 			labelSearch = new System.Windows.Forms.Label();
@@ -248,20 +249,20 @@
 			// 
 			// dataGridViewMain
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dataGridViewMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dataGridViewMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dataGridViewMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridViewMain.BackgroundColor = System.Drawing.Color.Gainsboro;
 			this.dataGridViewMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridViewMain.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridViewMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Firebrick;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -336,6 +337,7 @@
 			// 
 			// panelAddOrder
 			// 
+			this.panelAddOrder.Controls.Add(this.buttonWord);
 			this.panelAddOrder.Controls.Add(this.buttonExcel);
 			this.panelAddOrder.Controls.Add(this.dateTimePickerOrderEnd);
 			this.panelAddOrder.Controls.Add(this.textBoxCost);
@@ -565,20 +567,20 @@
 			// 
 			// dataGridClients
 			// 
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dataGridClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dataGridClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
 			this.dataGridClients.BackgroundColor = System.Drawing.Color.White;
 			this.dataGridClients.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridClients.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dataGridClients.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Firebrick;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Firebrick;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
 			this.dataGridClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridClients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -890,6 +892,21 @@
 			this.comboBoxSearch.TabIndex = 23;
 			this.comboBoxSearch.Tag = "Тип сервера";
 			// 
+			// buttonWord
+			// 
+			this.buttonWord.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonWord.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonWord.ForeColor = System.Drawing.Color.White;
+			this.buttonWord.Location = new System.Drawing.Point(5, 566);
+			this.buttonWord.Name = "buttonWord";
+			this.buttonWord.Size = new System.Drawing.Size(270, 52);
+			this.buttonWord.TabIndex = 16;
+			this.buttonWord.Text = "Составить договор";
+			this.buttonWord.UseVisualStyleBackColor = false;
+			this.buttonWord.Click += new System.EventHandler(this.buttonWord_Click);
+			// 
 			// OrdersControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -968,5 +985,6 @@
 		private System.Windows.Forms.TextBox textBoxEditDomen;
 		private System.Windows.Forms.Button buttonExcel;
 		private System.Windows.Forms.ComboBox comboBoxSearch;
+		private System.Windows.Forms.Button buttonWord;
 	}
 }

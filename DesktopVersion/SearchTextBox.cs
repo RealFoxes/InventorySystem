@@ -38,10 +38,11 @@ namespace DesktopVersion
 
 			foreach (DataGridViewRow row in rows)
 			{
-				if (row.Cells[comboBox.SelectedIndex].Value == null)
+				var value = row.Cells[comboBox.SelectedIndex+invisibleColumnCount].Value;
+				if (value == null)
 					continue;
 
-				row.Visible = row.Cells[comboBox.SelectedIndex + invisibleColumnCount].Value.ToString().ToLower().Contains(textBox.Text.ToLower());
+				row.Visible = value.ToString().ToLower().Contains(textBox.Text.ToLower());
 			}
 		}
 	}

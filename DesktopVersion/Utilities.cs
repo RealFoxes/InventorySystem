@@ -14,7 +14,6 @@ namespace DesktopVersion
 {
 	public static class Utilities
 	{
-		
 		public static void OnlyForDecimal(this TextBox textBox)
 		{
 			textBox.KeyPress += textBox_KeyPress;
