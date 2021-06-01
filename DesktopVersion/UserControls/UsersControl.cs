@@ -64,7 +64,7 @@ namespace DesktopVersion
 		private void textBoxSearch_TextChanged(object sender, EventArgs e)
 		{
 			List<User> users = context.Users.ToList();
-			dataGridViewMain.AddClearRange(users.Where(r => r.Username.StartsWith(textBoxSearch.Text)).ToList());
+			dataGridViewMain.AddClearRange(users.Where(r => r.Username.Contains(textBoxSearch.Text)).ToList());
 
 		}
 

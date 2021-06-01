@@ -29,6 +29,8 @@ namespace DesktopVersion
 			DragPanel dragPanel2 = new DragPanel(panelEdit, buttonClosePanelEdit, buttonEditShow);
 			DragPanel dragPanel = new DragPanel(panelAddTypеOfServer, buttonClosePanelAddTypeOfServer, buttonAddNewTypeOfServer);
 
+			SearchTextBox search = new SearchTextBox(dataGridViewMain, textBoxSearch, comboBoxSearch);
+
 			panelAddServer.SignOnEventControlsToShowHint();
 			comboBoxOffices.AddClearEntities<Office>(context, "Name");
 			comboBoxEditOffices.AddClearEntities<Office>(context, "Name");
@@ -83,12 +85,6 @@ namespace DesktopVersion
 			}
 			else
 				MessageBox.Show("Не выбран сервер");
-		}
-
-		private void textBoxSearch_TextChanged(object sender, EventArgs e)
-		{
-			List<Server> servers = context.Servers.ToList();
-			dataGridViewMain.AddClearRange(servers.Where(r => r.Name.StartsWith(textBoxSearch.Text)).ToList());
 		}
 
 		private void buttonAddTypeOfServerAdd_Click(object sender, EventArgs e)

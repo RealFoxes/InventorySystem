@@ -18,7 +18,9 @@ namespace DesktopVersion
 
 			DragPanel dragPanel2 = new DragPanel(panelEdit, buttonClosePanelEdit, buttonEditShow);
 			DragPanel dragPanel = new DragPanel(panelAddJobPosition, buttonClosePanelAddJobPosition, buttonAddNewJobPosition);
-
+			
+			SearchTextBox search = new SearchTextBox(dataGridViewMain, textBoxSearch, comboBoxSearch);
+			
 			panelAddEmployee.SignOnEventControlsToShowHint();
 
 			comboBoxOffices.AddClearEntities<Office>(context, "Name");
@@ -85,12 +87,6 @@ namespace DesktopVersion
 			}
 			else
 				MessageBox.Show("Не выбран сотрудник");
-		}
-
-		private void textBoxSearch_TextChanged(object sender, EventArgs e)
-		{
-			List<Employee> employee = context.Employees.ToList();
-			dataGridViewMain.AddClearRange(employee.Where(r => r.Surname.StartsWith(textBoxSearch.Text)).ToList());
 		}
 
 		private void buttonAddJobPositionAdd_Click(object sender, EventArgs e)

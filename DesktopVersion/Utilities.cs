@@ -14,6 +14,25 @@ namespace DesktopVersion
 {
 	public static class Utilities
 	{
+		
+		public static void OnlyForDecimal(this TextBox textBox)
+		{
+			textBox.KeyPress += textBox_KeyPress;
+		}
+		private static void textBox_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+				(e.KeyChar != '.'))
+			{
+				e.Handled = true;
+			}
+
+			// only allow one decimal point
+			if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+			{
+				e.Handled = true;
+			}
+		}
 		public static void SignOnEventControlsToShowHint(this Panel panel)
 		{
 			foreach (Control control in panel.Controls.Cast<Control>())

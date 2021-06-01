@@ -19,6 +19,8 @@ namespace DesktopVersion
 
 			DragPanel dragPanel = new DragPanel(panelEdit, buttonClosePanelEdit, buttonEditShow);
 
+			SearchTextBox search = new SearchTextBox(dataGridViewMain, textBoxSearch, comboBoxSearch);
+
 			panelAddOffice.SignOnEventControlsToShowHint();
 
 			dataGridViewMain.AddClearRange(context.Offices.ToList());
@@ -37,12 +39,6 @@ namespace DesktopVersion
 
 				dataGridViewMain.AddClearRange(context.Offices.ToList());
 			}
-		}
-
-		private void textBoxSearch_TextChanged(object sender, EventArgs e)
-		{
-			List<Office> offices = context.Offices.ToList();
-			dataGridViewMain.AddClearRange(offices.Where(r => r.Name.StartsWith(textBoxSearch.Text)).ToList());
 		}
 
 		private void buttonOfficeDelete_Click(object sender, EventArgs e)

@@ -51,6 +51,7 @@
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.panelEdit = new System.Windows.Forms.Panel();
 			this.buttonClosePanelEdit = new System.Windows.Forms.Button();
+			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
 			labelSearch = new System.Windows.Forms.Label();
 			this.panelBackgroundEdit.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
@@ -327,7 +328,6 @@
 			this.textBoxSearch.Size = new System.Drawing.Size(363, 29);
 			this.textBoxSearch.TabIndex = 18;
 			this.textBoxSearch.Tag = "";
-			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			// 
 			// panelEdit
 			// 
@@ -355,9 +355,24 @@
 			this.buttonClosePanelEdit.Text = "X";
 			this.buttonClosePanelEdit.UseVisualStyleBackColor = true;
 			// 
+			// comboBoxSearch
+			// 
+			this.comboBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxSearch.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxSearch.FormattingEnabled = true;
+			this.comboBoxSearch.Location = new System.Drawing.Point(463, 25);
+			this.comboBoxSearch.Name = "comboBoxSearch";
+			this.comboBoxSearch.Size = new System.Drawing.Size(221, 29);
+			this.comboBoxSearch.TabIndex = 24;
+			this.comboBoxSearch.Tag = "Тип сервера";
+			// 
 			// OfficeControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+			this.Controls.Add(this.comboBoxSearch);
 			this.Controls.Add(this.buttonEditShow);
 			this.Controls.Add(this.panelEdit);
 			this.Controls.Add(this.textBoxSearch);
@@ -399,5 +414,6 @@
 		private Bunifu.Framework.UI.BunifuFlatButton buttonEditShow;
 		private System.Windows.Forms.Panel panelBackgroundEdit;
 		private System.Windows.Forms.Button buttonExcel;
+		private System.Windows.Forms.ComboBox comboBoxSearch;
 	}
 }

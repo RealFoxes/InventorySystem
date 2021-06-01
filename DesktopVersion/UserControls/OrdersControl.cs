@@ -19,7 +19,12 @@ namespace DesktopVersion
 			DragPanel dragPanel2 = new DragPanel(panelEdit, buttonClosePanelEdit, buttonEditShow);
 			DragPanel dragPanel = new DragPanel(panelAddClient, buttonClosePanelAddClient, buttonAddNewClient);
 
-			panelAddClient.SignOnEventControlsToShowHint();
+			SearchTextBox search = new SearchTextBox(dataGridViewMain, textBoxSearch, comboBoxSearch);
+
+			textBoxCost.OnlyForDecimal();
+			textBoxEditCost.OnlyForDecimal();
+
+			panelAddOrder.SignOnEventControlsToShowHint();
 
 			comboBoxEditEmployee.AddClearEntities<Employee>(context, "Surname");
 			comboBoxEditServers.AddClearEntities<Server>(context, "Name");
@@ -90,12 +95,6 @@ namespace DesktopVersion
 			{
 				MessageBox.Show("Не выбран заказ");
 			}
-		}
-
-		private void textBoxSearch_TextChanged(object sender, EventArgs e)
-		{
-			List<Order> orders = context.Orders.ToList();
-			UpdateTable(orders.Where(o => o.Server.Name.Contains(textBoxSearch.Text)).ToList());
 		}
 
 		private void buttonAddClientAdd_Click(object sender, EventArgs e)

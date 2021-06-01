@@ -149,6 +149,7 @@
     <Compile Include="Migrations\202105301247393_v3.designer.cs">
       <DependentUpon>202105301247393_v3.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchTextBox.cs" />
     <Compile Include="Services\DBInitializer.cs" />
     <Compile Include="Migrations\SqlGenerator.cs" />
     <Compile Include="UserControls\ConnSettingControl.cs">

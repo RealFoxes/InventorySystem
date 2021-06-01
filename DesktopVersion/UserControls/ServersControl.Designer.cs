@@ -101,6 +101,7 @@
 			this.buttonCloseMonitoring = new System.Windows.Forms.Button();
 			this.labelNameOfServer = new System.Windows.Forms.Label();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
 			label = new System.Windows.Forms.Label();
 			labelSearch = new System.Windows.Forms.Label();
 			label1 = new System.Windows.Forms.Label();
@@ -703,7 +704,6 @@
 			this.textBoxSearch.Size = new System.Drawing.Size(363, 29);
 			this.textBoxSearch.TabIndex = 16;
 			this.textBoxSearch.Tag = "";
-			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			// 
 			// panelEdit
 			// 
@@ -1163,6 +1163,20 @@
 			this.timer.Interval = 1000;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
+			// comboBoxSearch
+			// 
+			this.comboBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxSearch.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxSearch.FormattingEnabled = true;
+			this.comboBoxSearch.Location = new System.Drawing.Point(460, 29);
+			this.comboBoxSearch.Name = "comboBoxSearch";
+			this.comboBoxSearch.Size = new System.Drawing.Size(221, 29);
+			this.comboBoxSearch.TabIndex = 12;
+			this.comboBoxSearch.Tag = "Тип сервера";
+			// 
 			// ServersControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -1173,6 +1187,7 @@
 			this.Controls.Add(labelSearch);
 			this.Controls.Add(this.panelAddTypеOfServer);
 			this.Controls.Add(this.panelAddServer);
+			this.Controls.Add(this.comboBoxSearch);
 			this.Controls.Add(this.dataGridViewMain);
 			this.DoubleBuffered = true;
 			this.Name = "ServersControl";
@@ -1255,5 +1270,6 @@
 		private Bunifu.DataViz.BunifuDataViz bunifuDataVizDisk;
 		private Bunifu.DataViz.BunifuDataViz bunifuDataVizInternet;
 		private System.Windows.Forms.Button buttonExcel;
+		private System.Windows.Forms.ComboBox comboBoxSearch;
 	}
 }

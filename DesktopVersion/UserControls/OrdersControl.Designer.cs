@@ -53,6 +53,7 @@
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panelAddOrder = new System.Windows.Forms.Panel();
+			this.buttonExcel = new System.Windows.Forms.Button();
 			this.dateTimePickerOrderEnd = new ns1.BunifuDatepicker();
 			this.textBoxCost = new System.Windows.Forms.TextBox();
 			this.buttonOrderDelete = new System.Windows.Forms.Button();
@@ -85,7 +86,7 @@
 			this.comboBoxEditServers = new System.Windows.Forms.ComboBox();
 			this.comboBoxEditCurrency = new System.Windows.Forms.ComboBox();
 			this.buttonEditShow = new Bunifu.Framework.UI.BunifuFlatButton();
-			this.buttonExcel = new System.Windows.Forms.Button();
+			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
 			labelRight1 = new System.Windows.Forms.Label();
 			labelRight2 = new System.Windows.Forms.Label();
 			labelSearch = new System.Windows.Forms.Label();
@@ -351,6 +352,21 @@
 			this.panelAddOrder.Name = "panelAddOrder";
 			this.panelAddOrder.Size = new System.Drawing.Size(280, 800);
 			this.panelAddOrder.TabIndex = 1;
+			// 
+			// buttonExcel
+			// 
+			this.buttonExcel.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonExcel.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonExcel.ForeColor = System.Drawing.Color.White;
+			this.buttonExcel.Location = new System.Drawing.Point(5, 624);
+			this.buttonExcel.Name = "buttonExcel";
+			this.buttonExcel.Size = new System.Drawing.Size(270, 52);
+			this.buttonExcel.TabIndex = 16;
+			this.buttonExcel.Text = "Вывод в Excel";
+			this.buttonExcel.UseVisualStyleBackColor = false;
+			this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
 			// 
 			// dateTimePickerOrderEnd
 			// 
@@ -637,7 +653,6 @@
 			this.textBoxSearch.Size = new System.Drawing.Size(363, 29);
 			this.textBoxSearch.TabIndex = 20;
 			this.textBoxSearch.Tag = "";
-			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			// 
 			// panelEdit
 			// 
@@ -861,24 +876,24 @@
 			this.buttonEditShow.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
 			this.buttonEditShow.Click += new System.EventHandler(this.buttonEditShow_Click);
 			// 
-			// buttonExcel
+			// comboBoxSearch
 			// 
-			this.buttonExcel.BackColor = System.Drawing.Color.Firebrick;
-			this.buttonExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.buttonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonExcel.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			this.buttonExcel.ForeColor = System.Drawing.Color.White;
-			this.buttonExcel.Location = new System.Drawing.Point(5, 624);
-			this.buttonExcel.Name = "buttonExcel";
-			this.buttonExcel.Size = new System.Drawing.Size(270, 52);
-			this.buttonExcel.TabIndex = 16;
-			this.buttonExcel.Text = "Вывод в Excel";
-			this.buttonExcel.UseVisualStyleBackColor = false;
-			this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
+			this.comboBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.comboBoxSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+			this.comboBoxSearch.ForeColor = System.Drawing.Color.Gray;
+			this.comboBoxSearch.FormattingEnabled = true;
+			this.comboBoxSearch.Location = new System.Drawing.Point(462, 25);
+			this.comboBoxSearch.Name = "comboBoxSearch";
+			this.comboBoxSearch.Size = new System.Drawing.Size(221, 29);
+			this.comboBoxSearch.TabIndex = 23;
+			this.comboBoxSearch.Tag = "Тип сервера";
 			// 
 			// OrdersControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+			this.Controls.Add(this.comboBoxSearch);
 			this.Controls.Add(this.buttonEditShow);
 			this.Controls.Add(this.panelEdit);
 			this.Controls.Add(this.textBoxSearch);
@@ -952,5 +967,6 @@
 		private System.Windows.Forms.TextBox textBoxDomen;
 		private System.Windows.Forms.TextBox textBoxEditDomen;
 		private System.Windows.Forms.Button buttonExcel;
+		private System.Windows.Forms.ComboBox comboBoxSearch;
 	}
 }
