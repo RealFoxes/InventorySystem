@@ -15,7 +15,8 @@ namespace DesktopVersion
 			OfficesContorl,
 			UsersContorl,
 			OrdersControl,
-			LoadingControl
+			LoadingControl,
+			ConnSettingControl
 		}
 
 		private static UserControlController instance; 
@@ -28,15 +29,15 @@ namespace DesktopVersion
 
 		private UserControlController()
 		{
-			this.Form = new MainForm();                 //Создаем Основную форму при этом изменив запуск программы в Program.cs
+			this.Form = new MainForm(); //Создаем Основную форму при этом изменив запуск программы в Program.cs
 			Form.Show();
 		}
 
-		public void ChangeControl(E_Control E_Controls)//Основая функция класса позволяющая менять контролы
+		public void ChangeControl(E_Control E_Controls) //Основая функция класса позволяющая менять контролы
 		{
-			UserControl Control = new UserControl();   //Объявляем пустой юзерконтрол
-			Form.panelMain.Controls.Clear();           //Очищаем панель в основной форме
-			switch (E_Controls)
+			UserControl Control = new UserControl(); //Объявляем пустой юзерконтрол
+			Form.panelMain.Controls.Clear(); //Очищаем панель в основной форме
+			switch (E_Controls) //Проверяем принимаемы enum и записываем в пустой контрол наш контрол
 			{
 				case E_Control.AuthControl:
 					Form.labelTopPanel.Text = "Авторизация";
@@ -66,15 +67,21 @@ namespace DesktopVersion
 					Form.labelTopPanel.Text = "Мониторинг серверов и бугалтерия";
 					Control = new LoadingControl();
 					break;
+				case E_Control.ConnSettingControl:
+					Form.labelTopPanel.Text = "Настройка подключения";
+					Control = new ConnSettingControl();
+					break;
 
-			}                      //Проверяем принимаемы enum и записываем в пустой контрол наш контрол
-			if (E_Controls == E_Control.AuthControl||E_Controls==E_Control.LoadingControl)
+			}                      
+			if  (  E_Controls == E_Control.AuthControl
+				|| E_Controls == E_Control.LoadingControl
+				|| E_Controls == E_Control.ConnSettingControl)
 			{
 				Form.panelMain.Dock = DockStyle.None;
 				Form.panelMain.Width = Control.Width;
 				Form.panelMain.Height = Control.Height;
 				Form.panelMain.Controls.Add(Control);
-				Form.panelMain.Location = new Point(Form.Width / 2 - Control.Width / 2, Form.Height / 2 - Control.Height / 2);//align center
+				Form.panelMain.Location = new Point(Form.Width / 2 - Control.Width / 2, Form.Height / 2 - Control.Height / 2);//Центруем юзерКонтрол по центру
 			}
 			else
 			{

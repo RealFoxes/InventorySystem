@@ -593,7 +593,7 @@
 			this.buttonOfficeConfirmEdit.Name = "buttonOfficeConfirmEdit";
 			this.buttonOfficeConfirmEdit.Size = new System.Drawing.Size(312, 46);
 			this.buttonOfficeConfirmEdit.TabIndex = 15;
-			this.buttonOfficeConfirmEdit.Text = "Потвердить изменение";
+			this.buttonOfficeConfirmEdit.Text = "Подтвердить изменение";
 			this.buttonOfficeConfirmEdit.UseVisualStyleBackColor = false;
 			this.buttonOfficeConfirmEdit.Click += new System.EventHandler(this.buttonOfficeConfirmEdit_Click);
 			// 

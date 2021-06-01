@@ -151,6 +151,12 @@
     </Compile>
     <Compile Include="Services\DBInitializer.cs" />
     <Compile Include="Migrations\SqlGenerator.cs" />
+    <Compile Include="UserControls\ConnSettingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConnSettingControl.Designer.cs">
+      <DependentUpon>ConnSettingControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\LoadingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105301247393_v3.resx">
       <DependentUpon>202105301247393_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ConnSettingControl.resx">
+      <DependentUpon>ConnSettingControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LoadingControl.resx">
       <DependentUpon>LoadingControl.cs</DependentUpon>

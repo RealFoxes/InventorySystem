@@ -15,9 +15,13 @@ namespace DesktopVersion
 
 		private void LoadingControl_Load(object sender, EventArgs e)
 		{
-			SessionClass.Instance().Context = new MySQLModel();
-			SessionClass.Instance().Context.Database.Initialize(false);
-			UserControlController.Instance().ChangeControl(UserControlController.E_Control.AuthControl);
+			if (ConnSettingControl.CheckConnection(ConnSettingControl.GetConnString()))
+				UserControlController.Instance().ChangeControl(UserControlController.E_Control.AuthControl);
+			else
+			{
+				UserControlController.Instance().ChangeControl(UserControlController.E_Control.ConnSettingControl);
+				MessageBox.Show("Не удалось подключится к базе проверьте настройки подключения");
+			}
 		}
 	}
 }

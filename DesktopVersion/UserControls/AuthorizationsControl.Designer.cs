@@ -25,6 +25,7 @@
 			this.textBoxUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
 			this.textBoxPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
 			this.buttonAuth = new Bunifu.Framework.UI.BunifuFlatButton();
+			this.buttonConn = new System.Windows.Forms.Button();
 			labelAuthorizationsMain = new System.Windows.Forms.Label();
 			lableNoAcc = new System.Windows.Forms.Label();
 			this.SuspendLayout();
@@ -128,16 +129,32 @@
 			this.buttonAuth.TextFont = new System.Drawing.Font("Century Gothic", 12.75F);
 			this.buttonAuth.Click += new System.EventHandler(this.buttonAuth_Click);
 			// 
+			// buttonConn
+			// 
+			this.buttonConn.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonConn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonConn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonConn.Font = new System.Drawing.Font("Century Gothic", 14.75F);
+			this.buttonConn.ForeColor = System.Drawing.Color.White;
+			this.buttonConn.Location = new System.Drawing.Point(238, 288);
+			this.buttonConn.Name = "buttonConn";
+			this.buttonConn.Size = new System.Drawing.Size(270, 52);
+			this.buttonConn.TabIndex = 19;
+			this.buttonConn.Text = "Настройка подключения";
+			this.buttonConn.UseVisualStyleBackColor = false;
+			this.buttonConn.Click += new System.EventHandler(this.buttonConn_Click);
+			// 
 			// AuthorizationsControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+			this.Controls.Add(this.buttonConn);
 			this.Controls.Add(this.buttonAuth);
 			this.Controls.Add(lableNoAcc);
 			this.Controls.Add(labelAuthorizationsMain);
 			this.Controls.Add(this.textBoxPassword);
 			this.Controls.Add(this.textBoxUsername);
 			this.Name = "AuthorizationsControl";
-			this.Size = new System.Drawing.Size(530, 292);
+			this.Size = new System.Drawing.Size(530, 343);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -148,5 +165,6 @@
 		private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxUsername;
 		private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxPassword;
 		private Bunifu.Framework.UI.BunifuFlatButton buttonAuth;
+		private System.Windows.Forms.Button buttonConn;
 	}
 }

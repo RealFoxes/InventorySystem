@@ -1,5 +1,4 @@
-﻿using DesktopVersion.Entities;
-using ns1;
+﻿using ns1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

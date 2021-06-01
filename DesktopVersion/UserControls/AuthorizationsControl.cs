@@ -71,5 +71,10 @@ namespace DesktopVersion
 		{
 			MessageBox.Show("Обратитесь к администратору для проведения регистрации");
 		}
+
+		private void buttonConn_Click(object sender, EventArgs e)
+		{
+			UserControlController.Instance().ChangeControl(UserControlController.E_Control.ConnSettingControl);
+		}
 	}
 }
