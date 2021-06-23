@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DesktopVersion.Entities
 {
-
+	[Table("jobpositions")]
 	public class JobPosition
 	{
 		[Key]

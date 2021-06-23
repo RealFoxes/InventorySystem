@@ -19,8 +19,8 @@ namespace DesktopVersion
 				UserControlController.Instance().ChangeControl(UserControlController.E_Control.AuthControl);
 			else
 			{
-				UserControlController.Instance().ChangeControl(UserControlController.E_Control.ConnSettingControl);
 				MessageBox.Show("Не удалось подключится к базе проверьте настройки подключения");
+				UserControlController.Instance().ChangeControl(UserControlController.E_Control.ConnSettingControl);
 			}
 		}
 	}

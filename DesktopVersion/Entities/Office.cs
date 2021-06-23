@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DesktopVersion.Entities
 {
+	[Table("offices")]
 	public class Office
 	{
 		[Key]

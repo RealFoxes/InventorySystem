@@ -53,6 +53,7 @@
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panelAddOrder = new System.Windows.Forms.Panel();
+			this.buttonWord = new System.Windows.Forms.Button();
 			this.buttonExcel = new System.Windows.Forms.Button();
 			this.dateTimePickerOrderEnd = new ns1.BunifuDatepicker();
 			this.textBoxCost = new System.Windows.Forms.TextBox();
@@ -87,7 +88,6 @@
 			this.comboBoxEditCurrency = new System.Windows.Forms.ComboBox();
 			this.buttonEditShow = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
-			this.buttonWord = new System.Windows.Forms.Button();
 			labelRight1 = new System.Windows.Forms.Label();
 			labelRight2 = new System.Windows.Forms.Label();
 			labelSearch = new System.Windows.Forms.Label();
@@ -134,7 +134,7 @@
 			labelSearch.AutoSize = true;
 			labelSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			labelSearch.ForeColor = System.Drawing.Color.Firebrick;
-			labelSearch.Location = new System.Drawing.Point(11, 25);
+			labelSearch.Location = new System.Drawing.Point(3, 6);
 			labelSearch.Name = "labelSearch";
 			labelSearch.Size = new System.Drawing.Size(76, 24);
 			labelSearch.TabIndex = 21;
@@ -276,14 +276,14 @@
 			this.dataGridViewMain.EnableHeadersVisualStyles = false;
 			this.dataGridViewMain.HeaderBgColor = System.Drawing.Color.Firebrick;
 			this.dataGridViewMain.HeaderForeColor = System.Drawing.Color.White;
-			this.dataGridViewMain.Location = new System.Drawing.Point(10, 60);
+			this.dataGridViewMain.Location = new System.Drawing.Point(3, 79);
 			this.dataGridViewMain.Name = "dataGridViewMain";
 			this.dataGridViewMain.ReadOnly = true;
 			this.dataGridViewMain.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dataGridViewMain.RowHeadersVisible = false;
 			this.dataGridViewMain.RowHeadersWidth = 100;
 			this.dataGridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridViewMain.Size = new System.Drawing.Size(1000, 750);
+			this.dataGridViewMain.Size = new System.Drawing.Size(655, 500);
 			this.dataGridViewMain.TabIndex = 0;
 			// 
 			// Column1
@@ -350,10 +350,25 @@
 			this.panelAddOrder.Controls.Add(this.comboBoxServers);
 			this.panelAddOrder.Controls.Add(labelRight2);
 			this.panelAddOrder.Controls.Add(labelRight1);
-			this.panelAddOrder.Location = new System.Drawing.Point(1015, 10);
+			this.panelAddOrder.Location = new System.Drawing.Point(666, 6);
 			this.panelAddOrder.Name = "panelAddOrder";
-			this.panelAddOrder.Size = new System.Drawing.Size(280, 800);
+			this.panelAddOrder.Size = new System.Drawing.Size(280, 570);
 			this.panelAddOrder.TabIndex = 1;
+			// 
+			// buttonWord
+			// 
+			this.buttonWord.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonWord.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+			this.buttonWord.ForeColor = System.Drawing.Color.White;
+			this.buttonWord.Location = new System.Drawing.Point(5, 338);
+			this.buttonWord.Name = "buttonWord";
+			this.buttonWord.Size = new System.Drawing.Size(270, 52);
+			this.buttonWord.TabIndex = 16;
+			this.buttonWord.Text = "Составить договор";
+			this.buttonWord.UseVisualStyleBackColor = false;
+			this.buttonWord.Click += new System.EventHandler(this.buttonWord_Click);
 			// 
 			// buttonExcel
 			// 
@@ -362,7 +377,7 @@
 			this.buttonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonExcel.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonExcel.ForeColor = System.Drawing.Color.White;
-			this.buttonExcel.Location = new System.Drawing.Point(5, 624);
+			this.buttonExcel.Location = new System.Drawing.Point(5, 396);
 			this.buttonExcel.Name = "buttonExcel";
 			this.buttonExcel.Size = new System.Drawing.Size(270, 52);
 			this.buttonExcel.TabIndex = 16;
@@ -402,7 +417,7 @@
 			this.buttonOrderDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonOrderDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonOrderDelete.ForeColor = System.Drawing.Color.White;
-			this.buttonOrderDelete.Location = new System.Drawing.Point(5, 740);
+			this.buttonOrderDelete.Location = new System.Drawing.Point(5, 512);
 			this.buttonOrderDelete.Name = "buttonOrderDelete";
 			this.buttonOrderDelete.Size = new System.Drawing.Size(270, 52);
 			this.buttonOrderDelete.TabIndex = 15;
@@ -429,7 +444,7 @@
 			this.buttonOrderAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonOrderAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonOrderAdd.ForeColor = System.Drawing.Color.White;
-			this.buttonOrderAdd.Location = new System.Drawing.Point(5, 682);
+			this.buttonOrderAdd.Location = new System.Drawing.Point(5, 454);
 			this.buttonOrderAdd.Name = "buttonOrderAdd";
 			this.buttonOrderAdd.Size = new System.Drawing.Size(270, 52);
 			this.buttonOrderAdd.TabIndex = 7;
@@ -531,7 +546,7 @@
 			this.panelAddClient.Controls.Add(this.dataGridClients);
 			this.panelAddClient.Controls.Add(this.buttonClosePanelAddClient);
 			this.panelAddClient.Controls.Add(this.panelAddClientBackGround);
-			this.panelAddClient.Location = new System.Drawing.Point(356, 438);
+			this.panelAddClient.Location = new System.Drawing.Point(3, 249);
 			this.panelAddClient.Name = "panelAddClient";
 			this.panelAddClient.Size = new System.Drawing.Size(653, 298);
 			this.panelAddClient.TabIndex = 3;
@@ -648,7 +663,7 @@
 			// 
 			this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-			this.textBoxSearch.Location = new System.Drawing.Point(93, 25);
+			this.textBoxSearch.Location = new System.Drawing.Point(3, 44);
 			this.textBoxSearch.MaxLength = 255;
 			this.textBoxSearch.Multiline = true;
 			this.textBoxSearch.Name = "textBoxSearch";
@@ -661,7 +676,7 @@
 			this.panelEdit.BackColor = System.Drawing.Color.Firebrick;
 			this.panelEdit.Controls.Add(this.buttonClosePanelEdit);
 			this.panelEdit.Controls.Add(this.panelBackgroundEdit);
-			this.panelEdit.Location = new System.Drawing.Point(307, 228);
+			this.panelEdit.Location = new System.Drawing.Point(15, 125);
 			this.panelEdit.Name = "panelEdit";
 			this.panelEdit.Size = new System.Drawing.Size(324, 412);
 			this.panelEdit.TabIndex = 22;
@@ -863,14 +878,14 @@
 			this.buttonEditShow.IconVisible = false;
 			this.buttonEditShow.IconZoom = 70D;
 			this.buttonEditShow.IsTab = false;
-			this.buttonEditShow.Location = new System.Drawing.Point(819, 25);
+			this.buttonEditShow.Location = new System.Drawing.Point(479, 37);
 			this.buttonEditShow.Margin = new System.Windows.Forms.Padding(5);
 			this.buttonEditShow.Name = "buttonEditShow";
 			this.buttonEditShow.Normalcolor = System.Drawing.Color.Firebrick;
 			this.buttonEditShow.OnHovercolor = System.Drawing.Color.Brown;
 			this.buttonEditShow.OnHoverTextColor = System.Drawing.Color.White;
 			this.buttonEditShow.selected = false;
-			this.buttonEditShow.Size = new System.Drawing.Size(191, 34);
+			this.buttonEditShow.Size = new System.Drawing.Size(179, 34);
 			this.buttonEditShow.TabIndex = 18;
 			this.buttonEditShow.Text = "Изменить";
 			this.buttonEditShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -886,26 +901,11 @@
 			this.comboBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
 			this.comboBoxSearch.ForeColor = System.Drawing.Color.Gray;
 			this.comboBoxSearch.FormattingEnabled = true;
-			this.comboBoxSearch.Location = new System.Drawing.Point(462, 25);
+			this.comboBoxSearch.Location = new System.Drawing.Point(145, 10);
 			this.comboBoxSearch.Name = "comboBoxSearch";
 			this.comboBoxSearch.Size = new System.Drawing.Size(221, 29);
 			this.comboBoxSearch.TabIndex = 23;
 			this.comboBoxSearch.Tag = "Тип сервера";
-			// 
-			// buttonWord
-			// 
-			this.buttonWord.BackColor = System.Drawing.Color.Firebrick;
-			this.buttonWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.buttonWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonWord.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-			this.buttonWord.ForeColor = System.Drawing.Color.White;
-			this.buttonWord.Location = new System.Drawing.Point(5, 566);
-			this.buttonWord.Name = "buttonWord";
-			this.buttonWord.Size = new System.Drawing.Size(270, 52);
-			this.buttonWord.TabIndex = 16;
-			this.buttonWord.Text = "Составить договор";
-			this.buttonWord.UseVisualStyleBackColor = false;
-			this.buttonWord.Click += new System.EventHandler(this.buttonWord_Click);
 			// 
 			// OrdersControl
 			// 
@@ -920,7 +920,7 @@
 			this.Controls.Add(this.dataGridViewMain);
 			this.DoubleBuffered = true;
 			this.Name = "OrdersControl";
-			this.Size = new System.Drawing.Size(1300, 820);
+			this.Size = new System.Drawing.Size(960, 600);
 			this.panelAddClientBackGround.ResumeLayout(false);
 			this.panelAddClientBackGround.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DesktopVersion.Entities
 {
+	[Table("users")]
 	public class User
 	{
 		public static String[] S_Access = {

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DesktopVersion.Entities
 {
+	[Table("typeofservers")]
 	public class TypeOfServer
 	{
 		[Key]

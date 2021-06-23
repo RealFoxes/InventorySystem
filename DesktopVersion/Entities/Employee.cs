@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DesktopVersion.Entities
 {
-
+	[Table("employees")]
 	public class Employee
 	{
 		[Key]

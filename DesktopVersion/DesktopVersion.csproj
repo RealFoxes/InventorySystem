@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsResize.cs" />
     <Compile Include="DragPanel.cs" />
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Employee.cs" />

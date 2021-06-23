@@ -49,12 +49,12 @@
 			this.panelEdit = new System.Windows.Forms.Panel();
 			this.buttonClosePanelEdit = new System.Windows.Forms.Button();
 			this.panelBackgroundEdit = new System.Windows.Forms.Panel();
-			this.buttonOfficeConfirmEdit = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
 			this.textBoxEditUserLogin = new System.Windows.Forms.TextBox();
 			this.textBoxEditPassword = new System.Windows.Forms.TextBox();
 			this.comboBoxEditAccessLVL = new System.Windows.Forms.ComboBox();
 			this.comboBoxEditEmployees = new System.Windows.Forms.ComboBox();
+			this.buttonOfficeConfirmEdit = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.buttonEditShow = new Bunifu.Framework.UI.BunifuFlatButton();
 			labelSearch = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
@@ -68,7 +68,7 @@
 			labelSearch.AutoSize = true;
 			labelSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			labelSearch.ForeColor = System.Drawing.Color.Firebrick;
-			labelSearch.Location = new System.Drawing.Point(8, 25);
+			labelSearch.Location = new System.Drawing.Point(3, 6);
 			labelSearch.Name = "labelSearch";
 			labelSearch.Size = new System.Drawing.Size(76, 24);
 			labelSearch.TabIndex = 23;
@@ -113,13 +113,13 @@
 			this.dataGridViewMain.EnableHeadersVisualStyles = false;
 			this.dataGridViewMain.HeaderBgColor = System.Drawing.Color.Firebrick;
 			this.dataGridViewMain.HeaderForeColor = System.Drawing.Color.White;
-			this.dataGridViewMain.Location = new System.Drawing.Point(10, 60);
+			this.dataGridViewMain.Location = new System.Drawing.Point(3, 79);
 			this.dataGridViewMain.Name = "dataGridViewMain";
 			this.dataGridViewMain.ReadOnly = true;
 			this.dataGridViewMain.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dataGridViewMain.RowHeadersVisible = false;
 			this.dataGridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridViewMain.Size = new System.Drawing.Size(1000, 750);
+			this.dataGridViewMain.Size = new System.Drawing.Size(655, 500);
 			this.dataGridViewMain.TabIndex = 0;
 			// 
 			// Column1
@@ -162,9 +162,9 @@
 			this.panelAddUser.Controls.Add(this.comboBoxAccessLVL);
 			this.panelAddUser.Controls.Add(this.comboBoxEmployees);
 			this.panelAddUser.Controls.Add(this.labelAuthorizationsMain);
-			this.panelAddUser.Location = new System.Drawing.Point(1015, 10);
+			this.panelAddUser.Location = new System.Drawing.Point(666, 9);
 			this.panelAddUser.Name = "panelAddUser";
-			this.panelAddUser.Size = new System.Drawing.Size(280, 800);
+			this.panelAddUser.Size = new System.Drawing.Size(280, 570);
 			this.panelAddUser.TabIndex = 1;
 			// 
 			// textBoxUserLogin
@@ -186,7 +186,7 @@
 			this.buttonUserDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonUserDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonUserDelete.ForeColor = System.Drawing.Color.White;
-			this.buttonUserDelete.Location = new System.Drawing.Point(4, 745);
+			this.buttonUserDelete.Location = new System.Drawing.Point(5, 515);
 			this.buttonUserDelete.Name = "buttonUserDelete";
 			this.buttonUserDelete.Size = new System.Drawing.Size(270, 52);
 			this.buttonUserDelete.TabIndex = 15;
@@ -201,7 +201,7 @@
 			this.buttonUserAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonUserAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonUserAdd.ForeColor = System.Drawing.Color.White;
-			this.buttonUserAdd.Location = new System.Drawing.Point(4, 687);
+			this.buttonUserAdd.Location = new System.Drawing.Point(5, 457);
 			this.buttonUserAdd.Name = "buttonUserAdd";
 			this.buttonUserAdd.Size = new System.Drawing.Size(270, 52);
 			this.buttonUserAdd.TabIndex = 15;
@@ -258,7 +258,7 @@
 			// 
 			this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-			this.textBoxSearch.Location = new System.Drawing.Point(90, 25);
+			this.textBoxSearch.Location = new System.Drawing.Point(7, 44);
 			this.textBoxSearch.MaxLength = 255;
 			this.textBoxSearch.Multiline = true;
 			this.textBoxSearch.Name = "textBoxSearch";
@@ -272,7 +272,7 @@
 			this.panelEdit.BackColor = System.Drawing.Color.Firebrick;
 			this.panelEdit.Controls.Add(this.buttonClosePanelEdit);
 			this.panelEdit.Controls.Add(this.panelBackgroundEdit);
-			this.panelEdit.Location = new System.Drawing.Point(685, 105);
+			this.panelEdit.Location = new System.Drawing.Point(197, 96);
 			this.panelEdit.Name = "panelEdit";
 			this.panelEdit.Size = new System.Drawing.Size(324, 412);
 			this.panelEdit.TabIndex = 24;
@@ -306,33 +306,6 @@
 			this.panelBackgroundEdit.Name = "panelBackgroundEdit";
 			this.panelBackgroundEdit.Size = new System.Drawing.Size(318, 370);
 			this.panelBackgroundEdit.TabIndex = 0;
-			// 
-			// buttonOfficeConfirmEdit
-			// 
-			this.buttonOfficeConfirmEdit.BackColor = System.Drawing.Color.Firebrick;
-			this.buttonOfficeConfirmEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.buttonOfficeConfirmEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonOfficeConfirmEdit.Font = new System.Drawing.Font("Century Gothic", 13.75F);
-			this.buttonOfficeConfirmEdit.ForeColor = System.Drawing.Color.White;
-			this.buttonOfficeConfirmEdit.Location = new System.Drawing.Point(3, 321);
-			this.buttonOfficeConfirmEdit.Name = "buttonOfficeConfirmEdit";
-			this.buttonOfficeConfirmEdit.Size = new System.Drawing.Size(312, 46);
-			this.buttonOfficeConfirmEdit.TabIndex = 15;
-			this.buttonOfficeConfirmEdit.Text = "Подтвердить изменение";
-			this.buttonOfficeConfirmEdit.UseVisualStyleBackColor = false;
-			this.buttonOfficeConfirmEdit.Click += new System.EventHandler(this.buttonOfficeConfirmEdit_Click);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Century Gothic", 13.75F);
-			this.label1.ForeColor = System.Drawing.Color.Firebrick;
-			this.label1.Location = new System.Drawing.Point(102, 2);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(119, 22);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "Изменение";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// textBoxEditUserLogin
 			// 
@@ -391,6 +364,33 @@
 			this.comboBoxEditEmployees.TabIndex = 18;
 			this.comboBoxEditEmployees.Tag = "Сотрудник";
 			// 
+			// buttonOfficeConfirmEdit
+			// 
+			this.buttonOfficeConfirmEdit.BackColor = System.Drawing.Color.Firebrick;
+			this.buttonOfficeConfirmEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.buttonOfficeConfirmEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonOfficeConfirmEdit.Font = new System.Drawing.Font("Century Gothic", 13.75F);
+			this.buttonOfficeConfirmEdit.ForeColor = System.Drawing.Color.White;
+			this.buttonOfficeConfirmEdit.Location = new System.Drawing.Point(3, 321);
+			this.buttonOfficeConfirmEdit.Name = "buttonOfficeConfirmEdit";
+			this.buttonOfficeConfirmEdit.Size = new System.Drawing.Size(312, 46);
+			this.buttonOfficeConfirmEdit.TabIndex = 15;
+			this.buttonOfficeConfirmEdit.Text = "Подтвердить изменение";
+			this.buttonOfficeConfirmEdit.UseVisualStyleBackColor = false;
+			this.buttonOfficeConfirmEdit.Click += new System.EventHandler(this.buttonOfficeConfirmEdit_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 13.75F);
+			this.label1.ForeColor = System.Drawing.Color.Firebrick;
+			this.label1.Location = new System.Drawing.Point(102, 2);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(119, 22);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Изменение";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// buttonEditShow
 			// 
 			this.buttonEditShow.Activecolor = System.Drawing.Color.Brown;
@@ -413,7 +413,7 @@
 			this.buttonEditShow.IconVisible = false;
 			this.buttonEditShow.IconZoom = 70D;
 			this.buttonEditShow.IsTab = false;
-			this.buttonEditShow.Location = new System.Drawing.Point(819, 24);
+			this.buttonEditShow.Location = new System.Drawing.Point(467, 37);
 			this.buttonEditShow.Margin = new System.Windows.Forms.Padding(5);
 			this.buttonEditShow.Name = "buttonEditShow";
 			this.buttonEditShow.Normalcolor = System.Drawing.Color.Firebrick;
@@ -439,7 +439,7 @@
 			this.Controls.Add(this.dataGridViewMain);
 			this.DoubleBuffered = true;
 			this.Name = "UsersControl";
-			this.Size = new System.Drawing.Size(1300, 820);
+			this.Size = new System.Drawing.Size(960, 600);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
 			this.panelAddUser.ResumeLayout(false);
 			this.panelAddUser.PerformLayout();

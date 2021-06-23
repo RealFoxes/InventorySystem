@@ -8,11 +8,14 @@ namespace DesktopVersion
 	{
 		private bool dragging = false;
 		private Point dragCursorPoint, dragFormPoint;
+		//public clsResize FormResize;
 		public MainForm()
 		{
 			InitializeComponent();
 			SetStyle(ControlStyles.ResizeRedraw, true);
 			SessionClass.Instance().Form = this;
+			//this.AutoScaleMode = AutoScaleMode.Dpi;
+			//FormResize = new clsResize(this);
 		}
 
 		private void buttonClose_Click(object sender, EventArgs e)
@@ -84,6 +87,11 @@ namespace DesktopVersion
 		private void button7_Click(object sender, EventArgs e)
 		{
 			System.Diagnostics.Process.Start("https://varnoff-studio.ru/");
+		}
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Maximized;
 		}
 
 		private void timerMenu_Tick(object sender, EventArgs e)//Всегда активный таймер отвечающий за работу меню

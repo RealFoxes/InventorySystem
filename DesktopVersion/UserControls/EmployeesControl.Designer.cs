@@ -118,7 +118,7 @@
 			labelSearch.AutoSize = true;
 			labelSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			labelSearch.ForeColor = System.Drawing.Color.Firebrick;
-			labelSearch.Location = new System.Drawing.Point(11, 25);
+			labelSearch.Location = new System.Drawing.Point(3, 2);
 			labelSearch.Name = "labelSearch";
 			labelSearch.Size = new System.Drawing.Size(76, 24);
 			labelSearch.TabIndex = 21;
@@ -165,14 +165,14 @@
 			this.dataGridViewMain.EnableHeadersVisualStyles = false;
 			this.dataGridViewMain.HeaderBgColor = System.Drawing.Color.Firebrick;
 			this.dataGridViewMain.HeaderForeColor = System.Drawing.Color.White;
-			this.dataGridViewMain.Location = new System.Drawing.Point(10, 60);
+			this.dataGridViewMain.Location = new System.Drawing.Point(3, 72);
 			this.dataGridViewMain.Name = "dataGridViewMain";
 			this.dataGridViewMain.ReadOnly = true;
 			this.dataGridViewMain.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dataGridViewMain.RowHeadersVisible = false;
 			this.dataGridViewMain.RowHeadersWidth = 100;
 			this.dataGridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridViewMain.Size = new System.Drawing.Size(1000, 750);
+			this.dataGridViewMain.Size = new System.Drawing.Size(655, 500);
 			this.dataGridViewMain.TabIndex = 0;
 			// 
 			// Column1
@@ -232,9 +232,9 @@
 			this.panelAddEmployee.Controls.Add(this.comboBoxOffices);
 			this.panelAddEmployee.Controls.Add(labelRight2);
 			this.panelAddEmployee.Controls.Add(label);
-			this.panelAddEmployee.Location = new System.Drawing.Point(1015, 10);
+			this.panelAddEmployee.Location = new System.Drawing.Point(666, 10);
 			this.panelAddEmployee.Name = "panelAddEmployee";
-			this.panelAddEmployee.Size = new System.Drawing.Size(280, 800);
+			this.panelAddEmployee.Size = new System.Drawing.Size(280, 570);
 			this.panelAddEmployee.TabIndex = 1;
 			// 
 			// buttonExcel
@@ -244,7 +244,7 @@
 			this.buttonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonExcel.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonExcel.ForeColor = System.Drawing.Color.White;
-			this.buttonExcel.Location = new System.Drawing.Point(5, 624);
+			this.buttonExcel.Location = new System.Drawing.Point(7, 400);
 			this.buttonExcel.Name = "buttonExcel";
 			this.buttonExcel.Size = new System.Drawing.Size(270, 52);
 			this.buttonExcel.TabIndex = 17;
@@ -308,7 +308,7 @@
 			this.buttonEmployeeDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonEmployeeDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonEmployeeDelete.ForeColor = System.Drawing.Color.White;
-			this.buttonEmployeeDelete.Location = new System.Drawing.Point(5, 740);
+			this.buttonEmployeeDelete.Location = new System.Drawing.Point(7, 516);
 			this.buttonEmployeeDelete.Name = "buttonEmployeeDelete";
 			this.buttonEmployeeDelete.Size = new System.Drawing.Size(270, 52);
 			this.buttonEmployeeDelete.TabIndex = 15;
@@ -323,7 +323,7 @@
 			this.buttonEmployeeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonEmployeeAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonEmployeeAdd.ForeColor = System.Drawing.Color.White;
-			this.buttonEmployeeAdd.Location = new System.Drawing.Point(5, 682);
+			this.buttonEmployeeAdd.Location = new System.Drawing.Point(7, 458);
 			this.buttonEmployeeAdd.Name = "buttonEmployeeAdd";
 			this.buttonEmployeeAdd.Size = new System.Drawing.Size(270, 52);
 			this.buttonEmployeeAdd.TabIndex = 7;
@@ -404,7 +404,7 @@
 			this.panelAddJobPosition.Controls.Add(this.buttonAddJobPositionDelete);
 			this.panelAddJobPosition.Controls.Add(this.dataGridJobPosition);
 			this.panelAddJobPosition.Controls.Add(this.buttonClosePanelAddJobPosition);
-			this.panelAddJobPosition.Location = new System.Drawing.Point(559, 510);
+			this.panelAddJobPosition.Location = new System.Drawing.Point(15, 233);
 			this.panelAddJobPosition.Name = "panelAddJobPosition";
 			this.panelAddJobPosition.Size = new System.Drawing.Size(450, 300);
 			this.panelAddJobPosition.TabIndex = 3;
@@ -533,7 +533,7 @@
 			// 
 			this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-			this.textBoxSearch.Location = new System.Drawing.Point(93, 25);
+			this.textBoxSearch.Location = new System.Drawing.Point(3, 37);
 			this.textBoxSearch.MaxLength = 255;
 			this.textBoxSearch.Multiline = true;
 			this.textBoxSearch.Name = "textBoxSearch";
@@ -546,7 +546,7 @@
 			this.panelEdit.BackColor = System.Drawing.Color.Firebrick;
 			this.panelEdit.Controls.Add(this.buttonClosePanelEdit);
 			this.panelEdit.Controls.Add(this.panelBackgroundEdit);
-			this.panelEdit.Location = new System.Drawing.Point(686, 104);
+			this.panelEdit.Location = new System.Drawing.Point(305, 166);
 			this.panelEdit.Name = "panelEdit";
 			this.panelEdit.Size = new System.Drawing.Size(324, 412);
 			this.panelEdit.TabIndex = 25;
@@ -710,14 +710,14 @@
 			this.buttonEditShow.IconVisible = false;
 			this.buttonEditShow.IconZoom = 70D;
 			this.buttonEditShow.IsTab = false;
-			this.buttonEditShow.Location = new System.Drawing.Point(819, 24);
+			this.buttonEditShow.Location = new System.Drawing.Point(479, 32);
 			this.buttonEditShow.Margin = new System.Windows.Forms.Padding(5);
 			this.buttonEditShow.Name = "buttonEditShow";
 			this.buttonEditShow.Normalcolor = System.Drawing.Color.Firebrick;
 			this.buttonEditShow.OnHovercolor = System.Drawing.Color.Brown;
 			this.buttonEditShow.OnHoverTextColor = System.Drawing.Color.White;
 			this.buttonEditShow.selected = false;
-			this.buttonEditShow.Size = new System.Drawing.Size(191, 34);
+			this.buttonEditShow.Size = new System.Drawing.Size(179, 34);
 			this.buttonEditShow.TabIndex = 22;
 			this.buttonEditShow.Text = "Изменить";
 			this.buttonEditShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -733,7 +733,7 @@
 			this.comboBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
 			this.comboBoxSearch.ForeColor = System.Drawing.Color.Gray;
 			this.comboBoxSearch.FormattingEnabled = true;
-			this.comboBoxSearch.Location = new System.Drawing.Point(462, 25);
+			this.comboBoxSearch.Location = new System.Drawing.Point(145, 2);
 			this.comboBoxSearch.Name = "comboBoxSearch";
 			this.comboBoxSearch.Size = new System.Drawing.Size(221, 29);
 			this.comboBoxSearch.TabIndex = 26;
@@ -751,7 +751,7 @@
 			this.Controls.Add(this.panelAddEmployee);
 			this.Controls.Add(this.dataGridViewMain);
 			this.Name = "EmployeesControl";
-			this.Size = new System.Drawing.Size(1300, 820);
+			this.Size = new System.Drawing.Size(960, 600);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
 			this.panelAddEmployee.ResumeLayout(false);
 			this.panelAddEmployee.PerformLayout();

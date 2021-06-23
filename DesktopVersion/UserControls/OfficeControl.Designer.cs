@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			System.Windows.Forms.Label labelSearch;
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panelBackgroundEdit = new System.Windows.Forms.Panel();
 			this.textBoxOfficeEditName = new System.Windows.Forms.TextBox();
 			this.buttonOfficeConfirmEdit = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@
 			labelSearch.AutoSize = true;
 			labelSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			labelSearch.ForeColor = System.Drawing.Color.Firebrick;
-			labelSearch.Location = new System.Drawing.Point(12, 25);
+			labelSearch.Location = new System.Drawing.Point(3, 6);
 			labelSearch.Name = "labelSearch";
 			labelSearch.Size = new System.Drawing.Size(76, 24);
 			labelSearch.TabIndex = 19;
@@ -148,20 +148,20 @@
 			// 
 			// dataGridViewMain
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.dataGridViewMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.dataGridViewMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dataGridViewMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridViewMain.BackgroundColor = System.Drawing.Color.Gainsboro;
 			this.dataGridViewMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridViewMain.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridViewMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Firebrick;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -170,13 +170,13 @@
 			this.dataGridViewMain.EnableHeadersVisualStyles = false;
 			this.dataGridViewMain.HeaderBgColor = System.Drawing.Color.Firebrick;
 			this.dataGridViewMain.HeaderForeColor = System.Drawing.Color.White;
-			this.dataGridViewMain.Location = new System.Drawing.Point(10, 60);
+			this.dataGridViewMain.Location = new System.Drawing.Point(3, 79);
 			this.dataGridViewMain.Name = "dataGridViewMain";
 			this.dataGridViewMain.ReadOnly = true;
 			this.dataGridViewMain.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dataGridViewMain.RowHeadersVisible = false;
 			this.dataGridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridViewMain.Size = new System.Drawing.Size(1000, 750);
+			this.dataGridViewMain.Size = new System.Drawing.Size(655, 500);
 			this.dataGridViewMain.TabIndex = 0;
 			// 
 			// Column1
@@ -206,9 +206,9 @@
 			this.panelAddOffice.Controls.Add(this.buttonOfficeAdd);
 			this.panelAddOffice.Controls.Add(this.textBoxAddress);
 			this.panelAddOffice.Controls.Add(this.label);
-			this.panelAddOffice.Location = new System.Drawing.Point(1015, 10);
+			this.panelAddOffice.Location = new System.Drawing.Point(666, 9);
 			this.panelAddOffice.Name = "panelAddOffice";
-			this.panelAddOffice.Size = new System.Drawing.Size(280, 800);
+			this.panelAddOffice.Size = new System.Drawing.Size(280, 570);
 			this.panelAddOffice.TabIndex = 1;
 			// 
 			// textBoxOfficeName
@@ -230,7 +230,7 @@
 			this.buttonOfficeDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonOfficeDelete.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonOfficeDelete.ForeColor = System.Drawing.Color.White;
-			this.buttonOfficeDelete.Location = new System.Drawing.Point(4, 745);
+			this.buttonOfficeDelete.Location = new System.Drawing.Point(5, 514);
 			this.buttonOfficeDelete.Name = "buttonOfficeDelete";
 			this.buttonOfficeDelete.Size = new System.Drawing.Size(270, 52);
 			this.buttonOfficeDelete.TabIndex = 15;
@@ -245,7 +245,7 @@
 			this.buttonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonExcel.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonExcel.ForeColor = System.Drawing.Color.White;
-			this.buttonExcel.Location = new System.Drawing.Point(3, 629);
+			this.buttonExcel.Location = new System.Drawing.Point(4, 398);
 			this.buttonExcel.Name = "buttonExcel";
 			this.buttonExcel.Size = new System.Drawing.Size(270, 52);
 			this.buttonExcel.TabIndex = 15;
@@ -260,7 +260,7 @@
 			this.buttonOfficeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonOfficeAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F);
 			this.buttonOfficeAdd.ForeColor = System.Drawing.Color.White;
-			this.buttonOfficeAdd.Location = new System.Drawing.Point(4, 687);
+			this.buttonOfficeAdd.Location = new System.Drawing.Point(5, 456);
 			this.buttonOfficeAdd.Name = "buttonOfficeAdd";
 			this.buttonOfficeAdd.Size = new System.Drawing.Size(270, 52);
 			this.buttonOfficeAdd.TabIndex = 15;
@@ -302,14 +302,14 @@
 			this.buttonEditShow.IconVisible = false;
 			this.buttonEditShow.IconZoom = 70D;
 			this.buttonEditShow.IsTab = false;
-			this.buttonEditShow.Location = new System.Drawing.Point(819, 25);
+			this.buttonEditShow.Location = new System.Drawing.Point(487, 37);
 			this.buttonEditShow.Margin = new System.Windows.Forms.Padding(5);
 			this.buttonEditShow.Name = "buttonEditShow";
 			this.buttonEditShow.Normalcolor = System.Drawing.Color.Firebrick;
 			this.buttonEditShow.OnHovercolor = System.Drawing.Color.Brown;
 			this.buttonEditShow.OnHoverTextColor = System.Drawing.Color.White;
 			this.buttonEditShow.selected = false;
-			this.buttonEditShow.Size = new System.Drawing.Size(191, 34);
+			this.buttonEditShow.Size = new System.Drawing.Size(171, 34);
 			this.buttonEditShow.TabIndex = 17;
 			this.buttonEditShow.Text = "Изменить";
 			this.buttonEditShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,7 +321,7 @@
 			// 
 			this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-			this.textBoxSearch.Location = new System.Drawing.Point(94, 25);
+			this.textBoxSearch.Location = new System.Drawing.Point(7, 44);
 			this.textBoxSearch.MaxLength = 255;
 			this.textBoxSearch.Multiline = true;
 			this.textBoxSearch.Name = "textBoxSearch";
@@ -334,7 +334,7 @@
 			this.panelEdit.BackColor = System.Drawing.Color.Firebrick;
 			this.panelEdit.Controls.Add(this.buttonClosePanelEdit);
 			this.panelEdit.Controls.Add(this.panelBackgroundEdit);
-			this.panelEdit.Location = new System.Drawing.Point(685, 102);
+			this.panelEdit.Location = new System.Drawing.Point(314, 102);
 			this.panelEdit.Name = "panelEdit";
 			this.panelEdit.Size = new System.Drawing.Size(324, 412);
 			this.panelEdit.TabIndex = 20;
@@ -363,7 +363,7 @@
 			this.comboBoxSearch.Font = new System.Drawing.Font("Segoe UI", 12.25F);
 			this.comboBoxSearch.ForeColor = System.Drawing.Color.Gray;
 			this.comboBoxSearch.FormattingEnabled = true;
-			this.comboBoxSearch.Location = new System.Drawing.Point(463, 25);
+			this.comboBoxSearch.Location = new System.Drawing.Point(149, 3);
 			this.comboBoxSearch.Name = "comboBoxSearch";
 			this.comboBoxSearch.Size = new System.Drawing.Size(221, 29);
 			this.comboBoxSearch.TabIndex = 24;
@@ -380,7 +380,7 @@
 			this.Controls.Add(this.panelAddOffice);
 			this.Controls.Add(this.dataGridViewMain);
 			this.Name = "OfficeControl";
-			this.Size = new System.Drawing.Size(1300, 820);
+			this.Size = new System.Drawing.Size(960, 600);
 			this.panelBackgroundEdit.ResumeLayout(false);
 			this.panelBackgroundEdit.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();

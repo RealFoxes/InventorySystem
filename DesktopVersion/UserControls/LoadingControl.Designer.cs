@@ -40,7 +40,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
 			this.Controls.Add(label);
 			this.Name = "LoadingControl";
-			this.Size = new System.Drawing.Size(530, 292);
+			this.Size = new System.Drawing.Size(163, 39);
 			this.Load += new System.EventHandler(this.LoadingControl_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -80,8 +80,9 @@ namespace DesktopVersion
 				Form.panelMain.Dock = DockStyle.None;
 				Form.panelMain.Width = Control.Width;
 				Form.panelMain.Height = Control.Height;
-				Form.panelMain.Controls.Add(Control);
 				Form.panelMain.Location = new Point(Form.Width / 2 - Control.Width / 2, Form.Height / 2 - Control.Height / 2);//Центруем юзерКонтрол по центру
+				Form.panelMain.Controls.Add(Control);
+				
 			}
 			else
 			{
